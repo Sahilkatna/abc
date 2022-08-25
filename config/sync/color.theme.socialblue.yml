@@ -1,0 +1,17 @@
+palette:
+  brand-primary: '#343434'
+  brand-secondary: '#A3A3A3'
+  brand-accent: '#F0D140'
+  brand-link: '#FFFFFF'
+  navbar-bg: '#000000'
+  navbar-text: '#ffffff'
+  navbar-active-bg: '#1C1C1C'
+  navbar-active-text: '#ffffff'
+  navbar-sec-bg: '#1C1C1C'
+  navbar-sec-text: '#f9f9f9'
+logo: 'public://color/socialblue-3c05fb10/logo.svg'
+stylesheets:
+  - 'public://color/socialblue-3c05fb10/brand.css'
+files:
+  - 'public://color/socialblue-3c05fb10/logo.svg'
+  - 'public://color/socialblue-3c05fb10/brand.css'

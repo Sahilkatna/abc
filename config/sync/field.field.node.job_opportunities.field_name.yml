@@ -1,0 +1,19 @@
+uuid: bba87f45-85a9-4394-9998-7c3d13a27d56
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_name
+    - node.type.job_opportunities
+id: node.job_opportunities.field_name
+field_name: field_name
+entity_type: node
+bundle: job_opportunities
+label: 'Contact name'
+description: 'Who should applicants address their correspondence to?'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

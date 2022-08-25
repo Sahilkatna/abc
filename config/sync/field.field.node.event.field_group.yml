@@ -1,0 +1,111 @@
+uuid: 8d694950-473e-46d7-9b98-c6eaff609f34
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_group
+    - group.type.closed_group
+    - group.type.open_group
+    - node.type.event
+  module:
+    - talawa_profile
+id: node.event.field_group
+field_name: field_group
+entity_type: node
+bundle: event
+label: Group
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  group:
+    handler: 'default:group'
+    handler_settings:
+      target_bundles:
+        closed_group: closed_group
+        open_group: open_group
+      sort:
+        field: _none
+      auto_create: false
+      auto_create_bundle: closed_group
+  activity:
+    handler: 'default:activity'
+    handler_settings: {  }
+  comment:
+    handler: 'default:comment'
+    handler_settings: {  }
+  node:
+    handler: 'default:node'
+    handler_settings: {  }
+  content_moderation_state:
+    handler: 'default:content_moderation_state'
+    handler_settings: {  }
+  crop:
+    handler: 'default:crop'
+    handler_settings: {  }
+  block_content:
+    handler: 'default:block_content'
+    handler_settings: {  }
+  menu_link_content:
+    handler: 'default:menu_link_content'
+    handler_settings: {  }
+  event_enrollment:
+    handler: 'default:event_enrollment'
+    handler_settings: {  }
+  file:
+    handler: 'default:file'
+    handler_settings: {  }
+  flagging:
+    handler: 'default:flagging'
+    handler_settings: {  }
+  font:
+    handler: 'default:font'
+    handler_settings: {  }
+  group_content:
+    handler: 'default:group_content'
+    handler_settings: {  }
+  mentions:
+    handler: 'default:mentions'
+    handler_settings: {  }
+  message:
+    handler: 'default:message'
+    handler_settings: {  }
+  post:
+    handler: 'default:post'
+    handler_settings: {  }
+  private_message:
+    handler: 'default:private_message'
+    handler_settings: {  }
+  private_message_thread:
+    handler: 'default:private_message_thread'
+    handler_settings: {  }
+  pm_thread_access_time:
+    handler: 'default:pm_thread_access_time'
+    handler_settings: {  }
+  pm_thread_delete_time:
+    handler: 'default:pm_thread_delete_time'
+    handler_settings: {  }
+  profile:
+    handler: 'default:profile'
+    handler_settings: {  }
+  search_api_task:
+    handler: 'default:search_api_task'
+    handler_settings: {  }
+  taxonomy_term:
+    handler: 'default:taxonomy_term'
+    handler_settings: {  }
+  user:
+    handler: 'default:user'
+    handler_settings: {  }
+  vote:
+    handler: 'default:vote'
+    handler_settings: {  }
+  vote_result:
+    handler: 'default:vote_result'
+    handler_settings: {  }
+  webform_submission:
+    handler: 'default:webform_submission'
+    handler_settings: {  }
+field_type: dynamic_entity_reference

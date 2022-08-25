@@ -1,0 +1,26 @@
+uuid: 0b2bd5b0-2a30-45ef-b88d-601a22b7b311
+langcode: en
+status: true
+dependencies:
+  module:
+    - social_core
+    - system
+  theme:
+    - talawa
+id: talawa_pagetitleblock_content
+theme: talawa
+region: title
+weight: 0
+provider: null
+plugin: social_page_title_block
+settings:
+  id: social_page_title_block
+  label: 'Page title block'
+  provider: social_core
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: "/search/*\r\n*/stream\r\n*/events\r\n*/topics\r\n*/groups\r\n*/information\r\n*/members\r\n*/membership\r\n*/about\r\n*/job"
+    negate: true
+    context_mapping: {  }

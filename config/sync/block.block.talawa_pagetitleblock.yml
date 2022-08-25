@@ -1,0 +1,37 @@
+uuid: 3073682e-b34e-4b44-b911-c93e6ab3fdf5
+langcode: en
+status: false
+dependencies:
+  module:
+    - node
+    - social_core
+    - system
+  theme:
+    - talawa
+id: talawa_pagetitleblock
+theme: talawa
+region: hero
+weight: -44
+provider: null
+plugin: social_page_title_block
+settings:
+  id: social_page_title_block
+  label: 'Page title for nodes'
+  provider: social_core
+  label_display: '0'
+visibility:
+  node_type:
+    id: node_type
+    bundles:
+      event: event
+      page: page
+      topic: topic
+      book: book
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+  request_path:
+    id: request_path
+    pages: "/node/add/*\r\n/node/*/edit\r\n/node/*/delete"
+    negate: true
+    context_mapping: {  }

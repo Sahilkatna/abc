@@ -1,0 +1,252 @@
+uuid: 02d405fc-754e-4847-bd86-b1016a9234d8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.topic.body
+    - field.field.node.topic.field_content_visibility
+    - field.field.node.topic.field_crop_position
+    - field.field.node.topic.field_except
+    - field.field.node.topic.field_files
+    - field.field.node.topic.field_group
+    - field.field.node.topic.field_image_gallery
+    - field.field.node.topic.field_promoted_to_landing_page
+    - field.field.node.topic.field_promoted_to_landing_slide
+    - field.field.node.topic.field_sticky_top_of_lists
+    - field.field.node.topic.field_tags
+    - field.field.node.topic.field_topic_comments
+    - field.field.node.topic.field_topic_image
+    - field.field.node.topic.field_topic_type
+    - field.field.node.topic.field_view_mode
+    - image.style.medium
+    - node.type.topic
+  module:
+    - comment
+    - content_moderation
+    - dynamic_entity_reference
+    - field_group
+    - file
+    - image
+    - path
+    - social_group
+    - text
+third_party_settings:
+  field_group:
+    group_topic_content:
+      children: {  }
+      parent_name: ''
+      weight: 22
+      label: Content
+      format_type: fieldset
+      format_settings:
+        label: Content
+        required_fields: true
+        id: content
+        classes: 'card '
+      region: hidden
+    group_topic_description:
+      children: {  }
+      parent_name: ''
+      weight: 24
+      label: Description
+      format_type: fieldset
+      format_settings:
+        label: Description
+        required_fields: true
+        id: description
+        classes: 'card '
+      region: hidden
+    group_topic_visibility:
+      children: {  }
+      parent_name: ''
+      weight: 23
+      label: Visibility
+      format_type: fieldset
+      format_settings:
+        label: Visibility
+        required_fields: true
+        id: visibility
+        classes: 'card '
+      region: hidden
+    group_attachments:
+      children: {  }
+      parent_name: ''
+      weight: 25
+      label: Attachments
+      format_type: fieldset
+      format_settings:
+        label: Attachments
+        required_fields: true
+        id: attachments
+        classes: 'card '
+      region: hidden
+_core:
+  default_config_hash: FBM4ybh9fYsTPXvjBw0lGx19IGZDwj8aDC8PiSg_IHQ
+id: node.topic.default
+targetEntityType: node
+bundle: topic
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 0
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  created:
+    type: datetime_timestamp
+    weight: 4
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_content_visibility:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_crop_position:
+    weight: 27
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_except:
+    weight: 15
+    settings:
+      rows: 5
+      placeholder: 'Write here the except...'
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_files:
+    weight: 8
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: file_generic
+    region: content
+  field_group:
+    weight: 18
+    settings: {  }
+    third_party_settings: {  }
+    type: dynamic_entity_reference_options_select
+    region: content
+  field_image_gallery:
+    weight: 13
+    settings:
+      preview_image_style: gallary_image_form_size_100x100
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_promoted_to_landing_page:
+    weight: 17
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_promoted_to_landing_slide:
+    weight: 19
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_sticky_top_of_lists:
+    weight: 26
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_tags:
+    weight: 14
+    settings: {  }
+    third_party_settings: {  }
+    type: dynamic_entity_reference_options_select
+    region: content
+  field_topic_comments:
+    weight: 6
+    settings: {  }
+    third_party_settings: {  }
+    type: comment_default
+    region: content
+  field_topic_image:
+    weight: 5
+    settings:
+      preview_image_style: medium
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_topic_type:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_view_mode:
+    weight: 16
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  groups:
+    type: social_group_selector_widget
+    settings: {  }
+    weight: 16
+    region: content
+    third_party_settings: {  }
+  moderation_state:
+    type: moderation_state_default
+    weight: 11
+    settings: {  }
+    region: content
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 7
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  promote:
+    type: boolean_checkbox
+    weight: 20
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  status:
+    region: content
+    settings:
+      display_label: true
+    type: boolean_checkbox
+    weight: 12
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    weight: 21
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 3
+    settings:
+      size: 60
+      placeholder: 'Your title here...'
+    third_party_settings: {  }
+    region: content
+  uid:
+    type: options_select
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden: {  }

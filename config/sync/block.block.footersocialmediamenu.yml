@@ -1,0 +1,28 @@
+uuid: 2e1b501e-dcc7-4e0b-b714-c79961e4975d
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.footer-social-media-menu
+  module:
+    - block_class
+    - system
+  theme:
+    - talawa
+third_party_settings:
+  block_class:
+    classes: 'col-lg-2 col-md-3 col-sm-3 col-xs-12 block--intro-text'
+id: footersocialmediamenu
+theme: talawa
+region: footer
+weight: -33
+provider: null
+plugin: 'system_menu_block:footer-social-media-menu'
+settings:
+  id: 'system_menu_block:footer-social-media-menu'
+  label: 'Footer Social media menu'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 0
+visibility: {  }

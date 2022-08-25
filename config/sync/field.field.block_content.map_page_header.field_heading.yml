@@ -1,0 +1,19 @@
+uuid: 6c6ea035-7496-4df3-af37-531790ca6dc9
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.map_page_header
+    - field.storage.block_content.field_heading
+id: block_content.map_page_header.field_heading
+field_name: field_heading
+entity_type: block_content
+bundle: map_page_header
+label: Heading
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

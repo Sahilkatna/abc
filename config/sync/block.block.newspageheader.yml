@@ -1,0 +1,26 @@
+uuid: 9126957b-7b77-4e47-ab0d-39ef348a4484
+langcode: en
+status: false
+dependencies:
+  module:
+    - system
+    - talawa_landing_pages
+  theme:
+    - talawa
+id: newspageheader
+theme: talawa
+region: hero
+weight: -47
+provider: null
+plugin: news_page_header
+settings:
+  id: news_page_header
+  label: 'News page header'
+  provider: talawa_landing_pages
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: /news-landing-page
+    negate: false
+    context_mapping: {  }

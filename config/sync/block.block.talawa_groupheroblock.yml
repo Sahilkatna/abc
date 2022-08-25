@@ -1,0 +1,31 @@
+uuid: 510b397e-e4fc-4905-aa5e-493cba8a7cd6
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_class
+    - social_group
+    - system
+  theme:
+    - talawa
+third_party_settings:
+  block_class:
+    classes: block-social-profile
+id: talawa_groupheroblock
+theme: talawa
+region: profile_hero
+weight: -43
+provider: null
+plugin: group_hero_block
+settings:
+  id: group_hero_block
+  label: 'Group hero block'
+  provider: social_group
+  label_display: '0'
+  context_mapping: {  }
+visibility:
+  request_path:
+    id: request_path
+    pages: '/group/*'
+    negate: false
+    context_mapping: {  }

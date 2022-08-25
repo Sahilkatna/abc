@@ -1,0 +1,61 @@
+uuid: 426e4f14-a9a5-4e23-a938-4f488f793d9c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_section_wfc
+    - paragraphs.paragraphs_type.section_grid
+    - paragraphs.paragraphs_type.section_with_four_column
+  module:
+    - entity_reference_revisions
+id: paragraph.section_grid.field_section_wfc
+field_name: field_section_wfc
+entity_type: paragraph
+bundle: section_grid
+label: 'Section With Four Column'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      section_with_four_column: section_with_four_column
+    target_bundles_drag_drop:
+      block:
+        weight: 12
+        enabled: false
+      button:
+        weight: 13
+        enabled: false
+      carousel:
+        weight: 14
+        enabled: false
+      faq_block:
+        weight: 15
+        enabled: false
+      featured:
+        weight: 16
+        enabled: false
+      hero:
+        weight: 17
+        enabled: false
+      introduction:
+        weight: 18
+        enabled: false
+      section:
+        weight: 19
+        enabled: false
+      section_grid:
+        weight: 20
+        enabled: false
+      section_with_four_column:
+        enabled: true
+        weight: 21
+      talawa_block:
+        weight: 22
+        enabled: false
+field_type: entity_reference_revisions

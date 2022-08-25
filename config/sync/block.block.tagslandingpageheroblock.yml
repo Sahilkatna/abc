@@ -1,0 +1,20 @@
+uuid: 53fa9263-f383-4fb6-852d-c3df4df03b4f
+langcode: en
+status: true
+dependencies:
+  module:
+    - wes_module
+  theme:
+    - talawa
+id: tagslandingpageheroblock
+theme: talawa
+region: header_slider
+weight: 0
+provider: null
+plugin: tags_landing_page_hero_block
+settings:
+  id: tags_landing_page_hero_block
+  label: 'Tags landing page hero block'
+  provider: wes_module
+  label_display: '0'
+visibility: {  }

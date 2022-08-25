@@ -1,0 +1,19 @@
+uuid: 4b5e73d8-bcdb-48d7-b1cc-2c27c1c79c6a
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.landing_page_header
+    - field.storage.block_content.field_heading
+id: block_content.landing_page_header.field_heading
+field_name: field_heading
+entity_type: block_content
+bundle: landing_page_header
+label: Heading
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

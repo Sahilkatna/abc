@@ -1,0 +1,15 @@
+uuid: 43a03fd2-2230-47f6-9d48-5d3d47000618
+langcode: en
+status: true
+dependencies: {  }
+name: portrait_shape
+label: portrait_shape
+effects:
+  475cc8e8-401f-4f9c-9e45-59686e2be794:
+    uuid: 475cc8e8-401f-4f9c-9e45-59686e2be794
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 262
+      height: 408
+      anchor: center-center

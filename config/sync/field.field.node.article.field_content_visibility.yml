@@ -1,0 +1,21 @@
+uuid: dd261052-a443-49c9-b9c9-8a620b4b3e81
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_content_visibility
+    - node.type.article
+  module:
+    - entity_access_by_field
+id: node.article.field_content_visibility
+field_name: field_content_visibility
+entity_type: node
+bundle: article
+label: Visibility
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: entity_access_field

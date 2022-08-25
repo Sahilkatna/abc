@@ -1,0 +1,29 @@
+uuid: 94607ee3-04c2-4a29-9d0a-f5eb37b7afe9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_faq_discover_topics
+    - node.type.faq_discover_make
+    - taxonomy.vocabulary.faq_discover_make
+id: node.faq_discover_make.field_faq_discover_topics
+field_name: field_faq_discover_topics
+entity_type: node
+bundle: faq_discover_make
+label: Topics
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      faq_discover_make: faq_discover_make
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

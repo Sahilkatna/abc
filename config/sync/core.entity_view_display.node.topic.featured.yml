@@ -1,0 +1,97 @@
+uuid: d49fd225-ff8f-4cfc-bdeb-34ea5cf0b94f
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.featured
+    - field.field.node.topic.body
+    - field.field.node.topic.field_content_visibility
+    - field.field.node.topic.field_except
+    - field.field.node.topic.field_files
+    - field.field.node.topic.field_group
+    - field.field.node.topic.field_image_gallery
+    - field.field.node.topic.field_promoted_to_landing_page
+    - field.field.node.topic.field_tags
+    - field.field.node.topic.field_topic_comments
+    - field.field.node.topic.field_topic_image
+    - field.field.node.topic.field_topic_type
+    - field.field.node.topic.field_view_mode
+    - image.style.social_featured
+    - node.type.topic
+  module:
+    - image
+    - user
+_core:
+  default_config_hash: dNJMuud7mVgH76B3uilYl9XRl7eQ2tLTqDLVxFekf5A
+id: node.topic.featured
+targetEntityType: node
+bundle: topic
+mode: featured
+content:
+  field_topic_image:
+    type: image
+    weight: 0
+    region: content
+    label: hidden
+    settings:
+      image_style: social_featured
+      image_link: content
+    third_party_settings: {  }
+  field_topic_type:
+    type: entity_reference_label
+    weight: 1
+    region: content
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+  groups:
+    label: above
+    weight: -5
+    region: content
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  groups_type_closed_group:
+    label: above
+    weight: -5
+    region: content
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  groups_type_open_group:
+    label: above
+    weight: -5
+    region: content
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  groups_type_public_group:
+    label: above
+    weight: -5
+    region: content
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+hidden:
+  addtoany: true
+  body: true
+  field_content_visibility: true
+  field_except: true
+  field_files: true
+  field_group: true
+  field_image_gallery: true
+  field_promoted_to_landing_page: true
+  field_promoted_to_landing_slide: true
+  field_sticky_top_of_lists: true
+  field_tags: true
+  field_topic_comments: true
+  field_view_mode: true
+  flag_follow_content: true
+  like_and_dislike: true
+  links: true
+  private_message_link: true

@@ -1,0 +1,46 @@
+name: Talawa theme
+description: Talawa Customized theme.
+screenshot: screenshot.jpg
+type: theme
+
+base theme: socialblue
+
+core: 8.x
+
+libraries:
+  - talawa/talawa-style
+  - talawa/talawa-brand
+
+regions:
+  hidden: Hidden
+  header: Header
+  headlights: HeadLights
+  header_node_edit: Header Node Edit
+  breadcrumb: Breadcrumb
+  content_title: Content Title
+  hero: Hero
+  hero_bottom: Hero Bottom
+  profile_hero: Profile Hero
+  header_user_edit: User Edit Header
+  user_edit_tab: User Edit Tabs
+  secondary_navigation: Secondary navigation
+  content_top: Content top
+  status_region: Status Region
+  title: Page title
+  content: Content
+  complementary_top: Complementary top
+  complementary_bottom: Complementary bottom
+  content_bottom: Content bottom
+  sidebar_first: Sidebar First
+  sidebar_second: Sidebar Second
+  header_slider: Header Slider
+  footer: Footer
+
+
+libraries-override:
+  fullcalendar_view/fullcalendar:
+    css:
+        theme:
+          css/fullcalendar.min.css: assets/css/talawa_fullcalendar_view.css
+    js:
+      js/fullcalendar_view.js: assets/js/talawa_fullcalendar_view.js

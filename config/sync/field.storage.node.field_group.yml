@@ -1,0 +1,27 @@
+uuid: aa7e8910-5d81-49c5-b69b-7798ac9915a6
+langcode: en
+status: true
+dependencies:
+  module:
+    - field_permissions
+    - group
+    - node
+    - talawa_profile
+third_party_settings:
+  field_permissions:
+    permission_type: public
+id: node.field_group
+field_name: field_group
+entity_type: node
+type: dynamic_entity_reference
+settings:
+  exclude_entity_types: false
+  entity_type_ids:
+    group: group
+module: talawa_profile
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

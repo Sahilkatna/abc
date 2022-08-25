@@ -1,0 +1,23 @@
+uuid: 71e3909c-0999-4f82-b4fa-d9bc9666720b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_faq_block
+    - paragraphs.paragraphs_type.faq_block
+  module:
+    - block_field
+id: paragraph.faq_block.field_faq_block
+field_name: field_faq_block
+entity_type: paragraph
+bundle: faq_block
+label: 'Faq Block'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  plugin_ids:
+    'views_block:faq_topic_block-block_1': 'views_block:faq_topic_block-block_1'
+field_type: block_field

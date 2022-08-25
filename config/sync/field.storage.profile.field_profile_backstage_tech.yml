@@ -1,0 +1,23 @@
+uuid: 913a470c-5886-4ac6-addb-abcb965a9ddb
+langcode: en
+status: true
+dependencies:
+  module:
+    - dynamic_entity_reference
+    - profile
+    - taxonomy
+id: profile.field_profile_backstage_tech
+field_name: field_profile_backstage_tech
+entity_type: profile
+type: dynamic_entity_reference
+settings:
+  exclude_entity_types: false
+  entity_type_ids:
+    taxonomy_term: taxonomy_term
+module: dynamic_entity_reference
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,32 @@
+uuid: 5b66a864-60bf-4122-9bc4-b09705f06e0b
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.job_related_content
+  module:
+    - node
+    - views
+  theme:
+    - talawa
+id: views_block__job_related_content_block_1
+theme: talawa
+region: content_bottom
+weight: 0
+provider: null
+plugin: 'views_block:job_related_content-block_1'
+settings:
+  id: 'views_block:job_related_content-block_1'
+  label: 'Latest opportunity'
+  provider: views
+  label_display: visible
+  views_label: 'Latest opportunity'
+  items_per_page: none
+visibility:
+  node_type:
+    id: node_type
+    bundles:
+      job_opportunities: job_opportunities
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

@@ -1,0 +1,22 @@
+uuid: aa807993-7b50-4bba-9c17-6bf9c648b48f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.job_opportunities
+  module:
+    - text
+id: node.job_opportunities.body
+field_name: body
+entity_type: node
+bundle: job_opportunities
+label: Description
+description: 'Type here the detailed description for this job/opportunity.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+field_type: text_with_summary

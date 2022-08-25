@@ -1,0 +1,45 @@
+uuid: 606031a9-ff66-4017-9b6e-d53a677fc72c
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - user
+id: user.field_account_gender
+field_name: field_account_gender
+entity_type: user
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: Male
+      label: Male
+    -
+      value: Female
+      label: Female
+    -
+      value: Non-Binary
+      label: Non-Binary
+    -
+      value: Genderqueer
+      label: Genderqueer
+    -
+      value: 'Gender Non-Conforming'
+      label: 'Gender Non-Conforming'
+    -
+      value: 'Prefer not to say'
+      label: 'Prefer not to say'
+    -
+      value: Other
+      label: Other
+    -
+      value: 'Not known'
+      label: 'Not known'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

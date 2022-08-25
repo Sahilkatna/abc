@@ -1,0 +1,28 @@
+uuid: 39dfec0e-8cec-49dd-8fb2-7474a3b40017
+langcode: en
+status: true
+dependencies:
+  module:
+    - social_profile
+    - system
+  theme:
+    - talawa
+id: talawa_profile_hero_block
+theme: talawa
+region: profile_hero
+weight: -44
+provider: null
+plugin: profile_hero_block
+settings:
+  id: profile_hero_block
+  label: 'Profile hero block'
+  provider: social_profile
+  label_display: '0'
+  context_mapping:
+    user: '@social_user.user_route_context:user'
+visibility:
+  request_path:
+    id: request_path
+    pages: "/user\r\n/user/*"
+    negate: false
+    context_mapping: {  }

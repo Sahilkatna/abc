@@ -1,0 +1,36 @@
+uuid: a10d34f1-13fd-4fa1-993f-6d8d75fd167d
+langcode: en
+status: true
+dependencies:
+  module:
+    - activity_logger
+third_party_settings:
+  activity_logger:
+    activity_context: group_activity_context
+    activity_destinations:
+      stream_home: stream_home
+      stream_explore: stream_explore
+      stream_profile: stream_profile
+      stream_group: stream_group
+    activity_create_direct: 1
+    activity_action: create_entitiy_action
+    activity_bundle_entities:
+      post-photo: post-photo
+      post-post: post-post
+    activity_aggregate: 0
+    activity_entity_condition: ''
+_core:
+  default_config_hash: FSiWpXVjHWQe6wjHZyrDbvmAS-QZJh3bkKx9DllyP7E
+template: create_post_group
+label: 'Create post in a group'
+description: 'A user created a post in a group'
+text:
+  -
+    value: "<p>[message:author:display-name] posted in [message:gtitle]</p>\r\n"
+    format: full_html
+settings:
+  'token options':
+    clear: false
+    'token replace': true
+  purge_override: false
+  purge_methods: {  }

@@ -1,0 +1,18 @@
+uuid: 57b3eea7-b4ef-40cc-94ee-350e2571cf5e
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: 'Talawa Landing Page'
+type: talawa_landing_page
+description: ''
+help: ''
+new_revision: true
+preview_mode: 0
+display_submitted: true

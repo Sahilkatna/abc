@@ -1,0 +1,23 @@
+uuid: d7b5767a-a5a3-4b0d-b697-f46284cad1bc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.group.field_group_description
+    - group.type.public_group
+  module:
+    - text
+_core:
+  default_config_hash: iW7FYiG9qjPg8mBWEmrduz2IKONozPCF1rsnGUw52ZE
+id: group.public_group.field_group_description
+field_name: field_group_description
+entity_type: group
+bundle: public_group
+label: Description
+description: 'Lorem Ipsum dollar sit amet is a simply dummy text'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

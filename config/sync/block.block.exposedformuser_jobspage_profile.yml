@@ -1,0 +1,29 @@
+uuid: dd7447c7-71fc-4b26-9c6f-4453be70740e
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.user_jobs
+  module:
+    - system
+    - views
+  theme:
+    - talawa
+id: exposedformuser_jobspage_profile
+theme: talawa
+region: complementary_top
+weight: -50
+provider: null
+plugin: 'views_exposed_filter_block:user_jobs-page_profile'
+settings:
+  id: 'views_exposed_filter_block:user_jobs-page_profile'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: Filter
+visibility:
+  request_path:
+    id: request_path
+    pages: '/user/*/jobs'
+    negate: false
+    context_mapping: {  }

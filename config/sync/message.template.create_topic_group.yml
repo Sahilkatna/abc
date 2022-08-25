@@ -1,0 +1,36 @@
+uuid: 3cbc3389-daf2-4012-8489-6ccad1d4d4e6
+langcode: en
+status: true
+dependencies:
+  module:
+    - activity_logger
+third_party_settings:
+  activity_logger:
+    activity_context: group_activity_context
+    activity_destinations:
+      stream_home: stream_home
+      notifications: notifications
+      stream_explore: stream_explore
+      stream_profile: stream_profile
+      stream_group: stream_group
+    activity_create_direct: 0
+    activity_action: create_entitiy_action
+    activity_bundle_entities:
+      node-topic: node-topic
+    activity_aggregate: 0
+    activity_entity_condition: ''
+_core:
+  default_config_hash: OrkUYYKXIRasMwuzGHiVq927BlFg0vX1kMV6f2NDI0Q
+template: create_topic_group
+label: 'Create topic in group'
+description: 'A user created a topic in a group'
+text:
+  -
+    value: "<p>[message:author:display-name] created a topic in [message:gtitle]</p>\r\n"
+    format: full_html
+settings:
+  'token options':
+    clear: false
+    'token replace': true
+  purge_override: false
+  purge_methods: {  }

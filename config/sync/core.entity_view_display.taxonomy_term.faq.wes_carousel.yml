@@ -1,0 +1,26 @@
+uuid: 2994480a-3af4-43fa-b6fb-6c95f510d1f7
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.taxonomy_term.wes_carousel
+    - field.field.taxonomy_term.faq.field_hero_carousel
+    - taxonomy.vocabulary.faq
+  module:
+    - entity_reference_revisions
+id: taxonomy_term.faq.wes_carousel
+targetEntityType: taxonomy_term
+bundle: faq
+mode: wes_carousel
+content:
+  field_hero_carousel:
+    type: entity_reference_revisions_entity_view
+    weight: 0
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+hidden:
+  description: true

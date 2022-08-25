@@ -1,0 +1,76 @@
+uuid: 37833f32-f26a-4380-8371-ae7d8349d08c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.testcontent.body
+    - field.field.node.testcontent.field_content_visibility
+    - node.type.testcontent
+  module:
+    - options
+    - text
+    - user
+id: node.testcontent.default
+targetEntityType: node
+bundle: testcontent
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_content_visibility:
+    weight: 102
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  flag_follow_content:
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  groups:
+    label: above
+    weight: -5
+    region: content
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  groups_type_closed_group:
+    label: above
+    weight: -5
+    region: content
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  groups_type_open_group:
+    label: above
+    weight: -5
+    region: content
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  groups_type_public_group:
+    label: above
+    weight: -5
+    region: content
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  links:
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  addtoany: true
+  private_message_link: true

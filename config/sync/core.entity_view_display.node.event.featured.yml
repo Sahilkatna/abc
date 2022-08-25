@@ -1,0 +1,156 @@
+uuid: 74f37101-6c2a-4ac6-a4e3-e5b0beabcdf0
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.featured
+    - field.field.node.event.body
+    - field.field.node.event.field_address
+    - field.field.node.event.field_audience
+    - field.field.node.event.field_book_link
+    - field.field.node.event.field_capacity
+    - field.field.node.event.field_community_participation
+    - field.field.node.event.field_contact
+    - field.field.node.event.field_content_visibility
+    - field.field.node.event.field_dates
+    - field.field.node.event.field_email
+    - field.field.node.event.field_event_address
+    - field.field.node.event.field_event_backstage_technical
+    - field.field.node.event.field_event_comments
+    - field.field.node.event.field_event_dance_movement
+    - field.field.node.event.field_event_date
+    - field.field.node.event.field_event_date_end
+    - field.field.node.event.field_event_image
+    - field.field.node.event.field_event_location
+    - field.field.node.event.field_event_producing
+    - field.field.node.event.field_event_type
+    - field.field.node.event.field_except
+    - field.field.node.event.field_field_event_literary
+    - field.field.node.event.field_files
+    - field.field.node.event.field_float_lat
+    - field.field.node.event.field_float_lng
+    - field.field.node.event.field_group
+    - field.field.node.event.field_music
+    - field.field.node.event.field_name
+    - field.field.node.event.field_organiser
+    - field.field.node.event.field_organiser_logo
+    - field.field.node.event.field_phone
+    - field.field.node.event.field_price
+    - field.field.node.event.field_promoted_to_landing_page
+    - field.field.node.event.field_tags
+    - field.field.node.event.field_theatre_performance
+    - field.field.node.event.field_type_of_content
+    - field.field.node.event.field_venue_location
+    - field.field.node.event.field_view_mode
+    - image.style.social_featured
+    - node.type.event
+  module:
+    - address
+    - image
+    - user
+_core:
+  default_config_hash: OQUwJOT5fstd7FikiimFLGHotgazHIUo1m3Tz5-eiu0
+id: node.event.featured
+targetEntityType: node
+bundle: event
+mode: featured
+content:
+  field_event_address:
+    type: address_plain
+    weight: 2
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_event_image:
+    type: image
+    weight: 0
+    region: content
+    label: hidden
+    settings:
+      image_style: social_featured
+      image_link: content
+    third_party_settings: {  }
+  field_event_location:
+    type: string
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    region: content
+  groups:
+    label: above
+    weight: -5
+    region: content
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  groups_type_closed_group:
+    label: above
+    weight: -5
+    region: content
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  groups_type_open_group:
+    label: above
+    weight: -5
+    region: content
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  groups_type_public_group:
+    label: above
+    weight: -5
+    region: content
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+hidden:
+  addtoany: true
+  body: true
+  field_address: true
+  field_audience: true
+  field_book_link: true
+  field_capacity: true
+  field_community_participation: true
+  field_contact: true
+  field_content_visibility: true
+  field_dates: true
+  field_email: true
+  field_event_backstage_technical: true
+  field_event_comments: true
+  field_event_dance_movement: true
+  field_event_date: true
+  field_event_date_end: true
+  field_event_producing: true
+  field_event_type: true
+  field_except: true
+  field_field_event_literary: true
+  field_files: true
+  field_float_lat: true
+  field_float_lng: true
+  field_group: true
+  field_music: true
+  field_name: true
+  field_organiser: true
+  field_organiser_logo: true
+  field_phone: true
+  field_price: true
+  field_promoted_to_landing_page: true
+  field_promoted_to_landing_slide: true
+  field_sticky_top_of_lists: true
+  field_tags: true
+  field_theatre_performance: true
+  field_type_of_content: true
+  field_venue_location: true
+  field_view_mode: true
+  flag_follow_content: true
+  like_and_dislike: true
+  links: true
+  private_message_link: true

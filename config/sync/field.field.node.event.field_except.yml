@@ -1,0 +1,19 @@
+uuid: 177b6664-5307-48b9-a786-a82d838b2e1f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_except
+    - node.type.event
+id: node.event.field_except
+field_name: field_except
+entity_type: node
+bundle: event
+label: Except
+description: 'Enter the name of the event in the top section, followed by an excerpt from the description below in order to provide some insight into what the event is all about.'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

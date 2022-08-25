@@ -1,0 +1,23 @@
+uuid: 83c13b8d-830f-4230-b2cd-5da325b3495f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_content_visibility
+    - node.type.testcontent
+  module:
+    - entity_access_by_field
+id: node.testcontent.field_content_visibility
+field_name: field_content_visibility
+entity_type: node
+bundle: testcontent
+label: Visibility
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: community
+default_value_callback: ''
+settings: {  }
+field_type: entity_access_field

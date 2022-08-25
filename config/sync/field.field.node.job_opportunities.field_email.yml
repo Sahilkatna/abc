@@ -1,0 +1,19 @@
+uuid: 2929f280-cd17-4434-9bc7-bc733b1488ff
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_email
+    - node.type.job_opportunities
+id: node.job_opportunities.field_email
+field_name: field_email
+entity_type: node
+bundle: job_opportunities
+label: Email
+description: 'What is the email address the applications should be sent to?'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: email

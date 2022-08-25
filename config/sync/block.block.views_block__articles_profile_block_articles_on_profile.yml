@@ -1,0 +1,30 @@
+uuid: 30bdd9a9-19e0-4359-97de-dfaa95c47fe6
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.articles_profile
+  module:
+    - system
+    - views
+  theme:
+    - talawa
+id: views_block__articles_profile_block_articles_on_profile
+theme: talawa
+region: complementary_bottom
+weight: -58
+provider: null
+plugin: 'views_block:articles_profile-block_articles_on_profile'
+settings:
+  id: 'views_block:articles_profile-block_articles_on_profile'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    pages: '/user/*/stream'
+    negate: false
+    context_mapping: {  }

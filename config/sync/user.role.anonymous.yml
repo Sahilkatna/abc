@@ -1,0 +1,27 @@
+uuid: ce110ccb-aa75-4226-b36a-5fea2f66570f
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: j5zLMOdJBqC0bMvSdth5UebkprJB8g_2FXHqhfpJzow
+id: anonymous
+label: 'Anonymous user'
+weight: 0
+is_admin: false
+permissions:
+  - 'access content'
+  - 'add event enrollment entities'
+  - 'administer event_enrollment form display'
+  - 'view field_event_image'
+  - 'view field_job_application'
+  - 'view field_topic_image'
+  - 'view like widget'
+  - 'view node.article.field_content_visibility:public content'
+  - 'view node.book.field_content_visibility:public content'
+  - 'view node.event.field_content_visibility:public content'
+  - 'view node.landing_page.field_content_visibility:public content'
+  - 'view node.page.field_content_visibility:public content'
+  - 'view node.topic.field_content_visibility:public content'
+  - 'view public posts'
+  - 'view published event enrollment entities'
+  - 'view published post entities'

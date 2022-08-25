@@ -1,0 +1,63 @@
+uuid: 3474e6a8-a027-4f46-bf13-cdbb5e481f80
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.group.portrait_shape
+    - field.field.group.open_group.field_group_address
+    - field.field.group.open_group.field_group_description
+    - field.field.group.open_group.field_group_image
+    - field.field.group.open_group.field_group_location
+    - field.field.group.open_group.field_promoted_to_landing_page
+    - field.field.group.open_group.field_view_mode
+    - group.type.open_group
+  module:
+    - options
+    - text
+_core:
+  default_config_hash: tj0C9vTgOJqklTir6Q_hC9Zz24QAgL3DwuUe3SXaY1A
+id: group.open_group.portrait_shape
+targetEntityType: group
+bundle: open_group
+mode: portrait_shape
+content:
+  field_group_description:
+    type: text_trimmed
+    weight: 1
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  field_promoted_to_landing_page:
+    weight: 2
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_view_mode:
+    weight: 3
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  label:
+    type: string
+    weight: 0
+    region: content
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+hidden:
+  changed: true
+  created: true
+  field_group_address: true
+  field_group_image: true
+  field_group_location: true
+  uid: true

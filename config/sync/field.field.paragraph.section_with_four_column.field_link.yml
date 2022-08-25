@@ -1,0 +1,23 @@
+uuid: ceb6fd90-64b6-4abc-9b22-d83e74284e50
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_link
+    - paragraphs.paragraphs_type.section_with_four_column
+  module:
+    - link
+id: paragraph.section_with_four_column.field_link
+field_name: field_link
+entity_type: paragraph
+bundle: section_with_four_column
+label: Link
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+field_type: link

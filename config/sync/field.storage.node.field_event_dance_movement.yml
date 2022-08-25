@@ -1,0 +1,27 @@
+uuid: 594e2cd1-a7f0-4130-b8f2-94b2d976f8a7
+langcode: en
+status: true
+dependencies:
+  module:
+    - dynamic_entity_reference
+    - field_permissions
+    - node
+    - taxonomy
+third_party_settings:
+  field_permissions:
+    permission_type: public
+id: node.field_event_dance_movement
+field_name: field_event_dance_movement
+entity_type: node
+type: dynamic_entity_reference
+settings:
+  exclude_entity_types: false
+  entity_type_ids:
+    taxonomy_term: taxonomy_term
+module: dynamic_entity_reference
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

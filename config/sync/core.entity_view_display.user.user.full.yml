@@ -1,0 +1,52 @@
+uuid: c29af6fe-fc4a-4f33-bf54-7c6ebc363186
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.user.full
+    - field.field.user.user.field_account_cultural_bkg
+    - field.field.user.user.field_account_dob
+    - field.field.user.user.field_account_gender
+    - field.field.user.user.field_account_organisation
+    - field.field.user.user.field_account_profile_public
+    - field.field.user.user.field_account_public_loc_map
+    - field.field.user.user.field_account_subs_forum
+    - field.field.user.user.field_account_subs_message
+    - field.field.user.user.field_account_subs_profile
+    - field.field.user.user.field_lat
+    - field.field.user.user.field_lng
+    - field.field.user.user.field_promoted_to_landing_page
+    - field.field.user.user.field_view_mode
+  module:
+    - user
+_core:
+  default_config_hash: mZKjV79TZE_tU-VDdpJZzsaM5Ab2QByRJvOTYom5HEA
+id: user.user.full
+targetEntityType: user
+bundle: user
+mode: full
+content: {  }
+hidden:
+  field_account_cultural_bkg: true
+  field_account_dob: true
+  field_account_gender: true
+  field_account_organisation: true
+  field_account_profile_public: true
+  field_account_public_loc_map: true
+  field_account_subs_forum: true
+  field_account_subs_message: true
+  field_account_subs_profile: true
+  field_lat: true
+  field_lng: true
+  field_promoted_to_landing_page: true
+  field_view_mode: true
+  flag_follow_user: true
+  groups: true
+  groups_type_closed_group: true
+  groups_type_open_group: true
+  groups_type_public_group: true
+  linked_username: true
+  member_for: true
+  private_message_link: true
+  profile_main: true
+  profile_profile: true

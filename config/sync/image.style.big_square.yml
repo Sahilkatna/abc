@@ -1,0 +1,15 @@
+uuid: 08d531af-419b-47e5-b0e0-f01a58d528ef
+langcode: en
+status: true
+dependencies: {  }
+name: big_square
+label: big_square
+effects:
+  c51cc3f7-a3cf-4775-a3d4-27d83fff7604:
+    uuid: c51cc3f7-a3cf-4775-a3d4-27d83fff7604
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 555
+      height: 408
+      anchor: center-center

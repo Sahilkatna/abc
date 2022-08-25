@@ -1,0 +1,21 @@
+uuid: 6f82637a-3ede-411b-8bfd-2c2c6ee896f7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_view_mode
+    - node.type.topic
+  module:
+    - options
+id: node.topic.field_view_mode
+field_name: field_view_mode
+entity_type: node
+bundle: topic
+label: 'View Mode'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

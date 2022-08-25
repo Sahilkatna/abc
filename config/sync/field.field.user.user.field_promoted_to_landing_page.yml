@@ -1,0 +1,24 @@
+uuid: 0d756ff5-c6b5-4ba2-8e90-2790250a2e9d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_promoted_to_landing_page
+  module:
+    - user
+id: user.user.field_promoted_to_landing_page
+field_name: field_promoted_to_landing_page
+entity_type: user
+bundle: user
+label: 'Promoted to landing page'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

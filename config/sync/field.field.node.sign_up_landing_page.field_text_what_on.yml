@@ -1,0 +1,19 @@
+uuid: bf8f48ae-3ea9-44fd-a268-4f016161ca68
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_text_what_on
+    - node.type.sign_up_landing_page
+id: node.sign_up_landing_page.field_text_what_on
+field_name: field_text_what_on
+entity_type: node
+bundle: sign_up_landing_page
+label: 'Text What on'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

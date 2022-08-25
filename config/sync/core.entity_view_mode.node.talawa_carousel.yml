@@ -1,0 +1,10 @@
+uuid: 3c6ba5c8-8d65-447f-b5ec-e7e337b37bd3
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.talawa_carousel
+label: 'Talawa Carousel'
+targetEntityType: node
+cache: true

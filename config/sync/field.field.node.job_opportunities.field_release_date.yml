@@ -1,0 +1,21 @@
+uuid: fc223329-41fa-48e6-8c97-82b9cba29033
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_release_date
+    - node.type.job_opportunities
+  module:
+    - datetime
+id: node.job_opportunities.field_release_date
+field_name: field_release_date
+entity_type: node
+bundle: job_opportunities
+label: 'Release date'
+description: 'Set a date and time for releasing your ad.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

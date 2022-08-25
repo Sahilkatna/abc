@@ -1,0 +1,30 @@
+uuid: 1333b82e-1f91-4b96-a048-806621e7048d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_account_cultural_bkg
+    - taxonomy.vocabulary.cultural_background
+  module:
+    - user
+id: user.user.field_account_cultural_bkg
+field_name: field_account_cultural_bkg
+entity_type: user
+bundle: user
+label: 'Cultural Background'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      cultural_background: cultural_background
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,10 @@
+uuid: 18a3ba91-61a5-4e2e-8d26-c194740f80cb
+langcode: en
+status: true
+dependencies:
+  module:
+    - profile
+id: profile.search_list
+label: 'Search List'
+targetEntityType: profile
+cache: true

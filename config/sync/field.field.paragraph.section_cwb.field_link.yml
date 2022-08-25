@@ -1,0 +1,23 @@
+uuid: 1cf14b93-4521-4210-ac70-c4706c8ee0c9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_link
+    - paragraphs.paragraphs_type.section_cwb
+  module:
+    - link
+id: paragraph.section_cwb.field_link
+field_name: field_link
+entity_type: paragraph
+bundle: section_cwb
+label: Link
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+field_type: link

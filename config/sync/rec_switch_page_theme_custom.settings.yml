@@ -1,0 +1,16 @@
+spt_table:
+  -
+    status: '1'
+    pages: node/add/sign_up_landing_page
+    theme: talawa
+    roles:
+      anonymous: anonymous
+      authenticated: authenticated
+      administrator: administrator
+      contentmanager: contentmanager
+      sitemanager: sitemanager
+      industry: industry
+      artist: artist
+      premium: premium
+    weight: '-10'
+    remove: Remove

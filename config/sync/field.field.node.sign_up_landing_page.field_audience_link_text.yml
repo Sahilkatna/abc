@@ -1,0 +1,19 @@
+uuid: 67c3d802-c852-4c1d-a597-690dc3dad7d9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_audience_link_text
+    - node.type.sign_up_landing_page
+id: node.sign_up_landing_page.field_audience_link_text
+field_name: field_audience_link_text
+entity_type: node
+bundle: sign_up_landing_page
+label: 'Audience Link Text'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

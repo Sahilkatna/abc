@@ -1,0 +1,29 @@
+uuid: dbd3f889-7edb-4c76-9836-7ba650c5bcfb
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:platform_intro:ec5b8e64-0ede-495c-885c-e289713a0bec'
+  module:
+    - block_class
+    - block_content
+  theme:
+    - talawa
+third_party_settings:
+  block_class:
+    classes: 'col-lg-8 col-md-4 col-sm-12 col-xs-12'
+id: footerright
+theme: talawa
+region: footer
+weight: -32
+provider: null
+plugin: 'block_content:ec5b8e64-0ede-495c-885c-e289713a0bec'
+settings:
+  id: 'block_content:ec5b8e64-0ede-495c-885c-e289713a0bec'
+  label: 'Footer Right'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

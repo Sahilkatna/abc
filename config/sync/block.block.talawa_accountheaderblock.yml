@@ -1,0 +1,31 @@
+uuid: f34c1591-0178-4694-8a7c-7fc35df751ce
+langcode: en
+status: true
+dependencies:
+  module:
+    - social_user
+    - user
+  theme:
+    - talawa
+id: talawa_accountheaderblock
+theme: talawa
+region: header
+weight: 2
+provider: null
+plugin: account_header_block
+settings:
+  id: account_header_block
+  label: 'Account header block'
+  provider: social_user
+  label_display: '0'
+  context_mapping:
+    user: '@user.current_user_context:current_user'
+visibility:
+  user_role:
+    id: user_role
+    roles:
+      authenticated: authenticated
+      administrator: administrator
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'

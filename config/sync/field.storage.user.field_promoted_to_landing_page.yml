@@ -1,0 +1,18 @@
+uuid: 957fa8f1-48e8-458e-a10f-40997193855a
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+id: user.field_promoted_to_landing_page
+field_name: field_promoted_to_landing_page
+entity_type: user
+type: boolean
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

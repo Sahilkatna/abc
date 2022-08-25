@@ -1,0 +1,21 @@
+uuid: c67f9e4e-7dc0-4378-a952-a60a65c13b6f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_call_open_until
+    - node.type.job_opportunities
+  module:
+    - datetime
+id: node.job_opportunities.field_call_open_until
+field_name: field_call_open_until
+entity_type: node
+bundle: job_opportunities
+label: 'Call open until'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

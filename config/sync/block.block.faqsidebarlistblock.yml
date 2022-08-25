@@ -1,0 +1,20 @@
+uuid: 0ba8fbad-78bb-4a4d-a26d-9e06124f874f
+langcode: en
+status: true
+dependencies:
+  module:
+    - wes_module
+  theme:
+    - talawa
+id: faqsidebarlistblock
+theme: talawa
+region: sidebar_second
+weight: -60
+provider: null
+plugin: faq_sidebar_list_block
+settings:
+  id: faq_sidebar_list_block
+  label: 'Faq sidebar list block'
+  provider: wes_module
+  label_display: '0'
+visibility: {  }

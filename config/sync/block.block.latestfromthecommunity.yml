@@ -1,0 +1,31 @@
+uuid: cb841b34-f2ca-48dc-988c-5896b5ca7f35
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:home_page_header:1f2000c2-2364-4a7b-9466-b43e73af05bb'
+  module:
+    - block_content
+    - system
+  theme:
+    - talawa
+id: latestfromthecommunity
+theme: talawa
+region: hero
+weight: 0
+provider: null
+plugin: 'block_content:1f2000c2-2364-4a7b-9466-b43e73af05bb'
+settings:
+  id: 'block_content:1f2000c2-2364-4a7b-9466-b43e73af05bb'
+  label: 'Latest from the community'
+  provider: block_content
+  label_display: visible
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: /home-page
+    negate: false
+    context_mapping: {  }

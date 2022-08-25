@@ -1,0 +1,26 @@
+uuid: 058cdb94-6e41-40af-98e3-9b605bb4310d
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+    - talawa_landing_pages
+  theme:
+    - talawa
+id: eventpageheaderbottom
+theme: talawa
+region: hero_bottom
+weight: 0
+provider: null
+plugin: event_page_header_bottom
+settings:
+  id: event_page_header_bottom
+  label: 'Event page header bottom'
+  provider: talawa_landing_pages
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: /event-landing-page
+    negate: false
+    context_mapping: {  }

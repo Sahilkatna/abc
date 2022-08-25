@@ -1,0 +1,135 @@
+{#
+/**
+ * @file
+ *
+ * Default theme implementation for profiles.
+ *
+ * Available variables:
+ * - content: Items for the content of the profile.
+ *   Use 'content' to print them all, or print a subset such as
+ *   'content.title'. Use the following code to exclude the
+ *   printing of a given child element:
+ *   @code
+ *   {{ content|without('title') }}
+ *   @endcode
+ * - attributes: HTML attributes for the wrapper.
+ * - profile: The profile object.
+ * - url: The profile URL.
+ *
+ * @ingroup themeable
+ */
+#}
+
+{{ attach_library('socialbase/hero') }}
+
+{% set cover_classes = [
+'cover',
+group_hero_styled_image_url ? 'cover-img cover-img-gradient',
+] %}
+
+<div{{ attributes.addClass(cover_classes) }} {% if group_hero_styled_image_url %} style="background-image: url('{{ group_hero_styled_image_url }}');" {% endif %}>
+    <div class="profile-content">
+        <div class="container">
+            {% if group_edit_url %}
+                <div class="hero-action-button">
+                    <a href="{{ group_edit_url }}" title="Edit group" class="btn btn-default btn-floating">
+                        <svg class="icon-gray icon-medium">
+                            <use xlink:href="#icon-edit"></use>
+                        </svg>
+                    </a>
+                </div>
+            {% endif %}
+            <div class="cover-wrap">
+                <header>
+                    <div class="row">
+                        <div class="col-lg-3 col-md-4">
+                        </div>
+                        <div class="col-lg-9 col-md-8">
+                            <h1 class="page-title">
+                                <a href="/group/{{ group_id }}/stream" class="group-title">{{ content.label }}</a>
+                            </h1>
+                            <h3>
+                                {% if closed_group_lock %}
+                                    <span>{% trans %}Closed group{% endtrans %}</span> &bullet;
+                                {% endif %}
+                                <span>
+                                    {% trans %}1 member {% plural group_members %} @count members{% endtrans %}
+                                </span>
+                            </h3>
+                            <div class="links">
+								<div class="btn-group">
+                                    {% if group_operations_url %}
+                                        {% if joined %}
+                                            <a type="button" autocomplete="off" data-toggle="dropdown"
+                                               aria-haspopup="true" aria-expanded="false"
+                                               class="btn btn-red dropdown-toggle">{% trans %}
+                                                Joined{% endtrans %}<i class="fa fa-chevron-down"></i></a>
+                                            <ul class="dropdown-menu dropdown-menu-right">
+                                                <li><a href="{{ group_operations_url }}">{% trans %}Leave
+                                                        group{% endtrans %}</a></li>
+                                            </ul>
+                                        {% elseif closed_group %}
+                                            <a href="{{ group_operations_url }}"
+                                               class="btn btn-red dropdown-toggle disabled"
+                                               title="{{ cta }}">{{ cta }}</a>
+                                        {% else %}
+                                            <a href="{{ group_operations_url }}"
+                                               class="btn btn-red dropdown-toggle"
+                                               title="Join">{% trans %}Join{% endtrans %}</a>
+                                        {% endif %}
+                                    {% endif %}
+                                </div>
+									<a href="/group/{{ group_id }}/articles" class="my-followers btn">Articles</a>
+									<a href="/group/{{ group_id }}/events" class="my-followers btn">Events</a>
+									<a href="/group/{{ group_id }}/topics" class="my-followers btn">Topics</a>
+									<a href="/group/{{ group_id }}/members" class="my-followers btn">Members</a>
+									{% if(group_admin) %}
+										<a href="/group/{{ group_id }}/membership" class="my-followers btn">Manage Members</a>
+									{% endif %}
+
+                            </div>
+                            <div class="cumbs hidden-xs">
+                                <ol class="breadcrumb">
+                                    <li>
+                                        <a href="/" class="home">Home</a>
+                                    </li>
+                                    <li>
+                                        <a href="/" class="home">Make</a>
+                                    </li>
+                                    <li>
+                                        <a href="/user/{{ group_uid }}/groups" class="home">Groups</a>
+                                    </li>
+                                    <li>
+                                        {{ group_title }}
+                                    </li>
+                                </ol>
+                            </div>
+							<div class="blk-create-content">
+                            {% if(group_admin or group_member) %}
+                                        <span class="post-smth">
+                                            <i class="fa fa-pencil-square"
+                                               aria-hidden="true"></i> Post Something...</span>
+                                    <span class="crt-cnt">
+                                            <a href="/group/{{ group_id }}/content/create/group_node:article">
+                                                <i class="fa fa-pencil" aria-hidden="true"></i>
+                                            </a>
+                                        </span>
+                                    <span class="crt-cnt">
+                                            <a href="/group/{{ group_id }}/content/create/group_node:event">
+                                                <i class="fa fa-calendar" aria-hidden="true"></i>
+                                            </a>
+                                        </span>
+                                    <span class="crt-cnt">
+                                            <a href="/group/{{ group_id }}/content/create/group_node:topic">
+                                                <i class="fa fa-newspaper-o" aria-hidden="true"></i>
+                                            </a>
+                                        </span>
+                            {% endif %}
+							</div>
+                        </div>
+                    </div>
+                </header>
+            </div> {# cover-wrap #}
+        </div>
+    </div>
+</div> {# cover #}

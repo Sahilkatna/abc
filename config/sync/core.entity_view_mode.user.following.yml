@@ -1,0 +1,10 @@
+uuid: 17eba72d-fa97-4b56-b057-fbb3fb448201
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+id: user.following
+label: Following
+targetEntityType: user
+cache: true

@@ -1,0 +1,20 @@
+uuid: 8bb12722-6680-46f5-b8f5-f52a821f5ca2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_account_organisation
+  module:
+    - user
+id: user.user.field_account_organisation
+field_name: field_account_organisation
+entity_type: user
+bundle: user
+label: Organisation
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

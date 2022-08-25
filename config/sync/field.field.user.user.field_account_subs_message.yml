@@ -1,0 +1,21 @@
+uuid: a825d24d-c82c-4538-a286-06f714043979
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_account_subs_message
+  module:
+    - options
+    - user
+id: user.user.field_account_subs_message
+field_name: field_account_subs_message
+entity_type: user
+bundle: user
+label: Messages
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

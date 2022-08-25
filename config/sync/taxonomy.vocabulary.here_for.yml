@@ -1,0 +1,9 @@
+uuid: a3612b51-3840-4f50-af7e-d4fef1d2dbdd
+langcode: en
+status: true
+dependencies: {  }
+name: 'Here for'
+vid: here_for
+description: 'Reasons a member has for joining, tag for profiles and content'
+hierarchy: 0
+weight: 0

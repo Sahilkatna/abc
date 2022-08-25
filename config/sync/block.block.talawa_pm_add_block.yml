@@ -1,0 +1,26 @@
+uuid: aa577f21-c4f3-4c55-a01e-3a4acd80199b
+langcode: en
+status: true
+dependencies:
+  module:
+    - social_private_message
+    - system
+  theme:
+    - talawa
+id: talawa_pm_add_block
+theme: talawa
+region: complementary_top
+weight: -49
+provider: null
+plugin: pm_add_block
+settings:
+  id: pm_add_block
+  label: 'Private Message add block'
+  provider: social_private_message
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: /user/inbox
+    negate: false
+    context_mapping: {  }

@@ -1,0 +1,15 @@
+uuid: 02566cf2-0562-4e0d-bcde-82de508cd45a
+langcode: en
+status: true
+dependencies: {  }
+name: sidebar_image_size
+label: 'Sidebar Image Size'
+effects:
+  20bf2129-5995-40ae-98d0-539faf9157e1:
+    uuid: 20bf2129-5995-40ae-98d0-539faf9157e1
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 69
+      height: 111
+      anchor: center-center

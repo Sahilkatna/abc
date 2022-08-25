@@ -1,0 +1,98 @@
+uuid: cd83817a-3032-44dc-9f48-dfb4fa92ce2d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.section_cwb.field_background_image
+    - field.field.paragraph.section_cwb.field_caption_bg_color
+    - field.field.paragraph.section_cwb.field_description
+    - field.field.paragraph.section_cwb.field_heading_color
+    - field.field.paragraph.section_cwb.field_link
+    - field.field.paragraph.section_cwb.field_second_title
+    - field.field.paragraph.section_cwb.field_section_heading
+    - field.field.paragraph.section_cwb.field_title
+    - image.style.thumbnail
+    - paragraphs.paragraphs_type.section_cwb
+  module:
+    - color_field
+    - image
+    - link_class
+    - text
+id: paragraph.section_cwb.default
+targetEntityType: paragraph
+bundle: section_cwb
+mode: default
+content:
+  field_background_image:
+    weight: 4
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_caption_bg_color:
+    weight: 5
+    settings:
+      placeholder_color: ''
+      placeholder_opacity: ''
+    third_party_settings: {  }
+    type: color_field_widget_default
+    region: content
+  field_description:
+    weight: 6
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea_with_summary
+    region: content
+  field_heading_color:
+    weight: 1
+    settings:
+      placeholder_color: ''
+      placeholder_opacity: ''
+    third_party_settings: {  }
+    type: color_field_widget_default
+    region: content
+  field_link:
+    weight: 7
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+      link_class_mode: select_class
+      link_class_force: ''
+      link_class_select: "btn btn-lg btn-orange|Big Button Orange \nbtn btn-lg btn-blue|Big Button Blue\nbtn btn-lg btn-green|Big Button Green"
+    third_party_settings: {  }
+    type: link_class_field_widget
+    region: content
+  field_second_title:
+    weight: 3
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_section_heading:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_title:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  moderation_state: true
+  status: true
+  uid: true

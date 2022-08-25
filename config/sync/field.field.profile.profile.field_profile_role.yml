@@ -1,0 +1,25 @@
+uuid: 60fff510-6b0d-4798-a4b1-e72e1ef884a5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.profile.field_profile_role
+    - profile.type.profile
+  module:
+    - options
+    - profile
+third_party_settings:
+  profile:
+    profile_private: true
+id: profile.profile.field_profile_role
+field_name: field_profile_role
+entity_type: profile
+bundle: profile
+label: profile_role
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -1,0 +1,15 @@
+uuid: 4d7dd1a1-0f36-41c5-b673-b135175e676a
+langcode: en
+status: true
+dependencies: {  }
+name: gallary_image_size
+label: 'gallary image size'
+effects:
+  8bdbdd37-ba0b-430a-834c-65e6b855a64c:
+    uuid: 8bdbdd37-ba0b-430a-834c-65e6b855a64c
+    id: image_scale
+    weight: 1
+    data:
+      width: null
+      height: 172
+      upscale: false

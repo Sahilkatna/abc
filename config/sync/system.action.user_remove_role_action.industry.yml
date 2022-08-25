@@ -1,0 +1,14 @@
+uuid: 1aaa0add-aac1-45e3-8abd-74b10763313c
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.industry
+  module:
+    - user
+id: user_remove_role_action.industry
+label: 'Remove the Industry role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: industry

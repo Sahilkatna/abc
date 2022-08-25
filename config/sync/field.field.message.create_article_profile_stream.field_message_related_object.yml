@@ -1,0 +1,154 @@
+uuid: 458325a7-c0a9-4e1a-83a3-e7e8c45d2ac0
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.hero_an
+    - field.storage.message.field_message_related_object
+    - flag.flag.follow_content
+    - message.template.create_article_profile_stream
+    - node.type.article
+    - social_post.post_type.photo
+    - votingapi.vote_type.dislike
+    - votingapi.vote_type.like
+    - webform.webform.template_user_profile
+  module:
+    - talawa_profile
+id: message.create_article_profile_stream.field_message_related_object
+field_name: field_message_related_object
+entity_type: message
+bundle: create_article_profile_stream
+label: 'Related object'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  node:
+    handler: 'default:node'
+    handler_settings:
+      target_bundles:
+        article: article
+      sort:
+        field: _none
+      auto_create: false
+      auto_create_bundle: ''
+  content_moderation_state:
+    handler: 'default:content_moderation_state'
+    handler_settings:
+      target_bundles: null
+      sort:
+        field: _none
+      auto_create: false
+  crop:
+    handler: 'default:crop'
+    handler_settings:
+      target_bundles:
+        hero_an: hero_an
+      sort:
+        field: _none
+      auto_create: false
+      auto_create_bundle: ''
+  flagging:
+    handler: 'default:flagging'
+    handler_settings:
+      target_bundles:
+        follow_content: follow_content
+      sort:
+        field: _none
+      auto_create: false
+      auto_create_bundle: ''
+  font:
+    handler: 'default:font'
+    handler_settings:
+      target_bundles: null
+      sort:
+        field: _none
+      auto_create: false
+  mentions:
+    handler: 'default:mentions'
+    handler_settings:
+      target_bundles: null
+      sort:
+        field: _none
+      auto_create: false
+  post:
+    handler: 'default:post'
+    handler_settings:
+      target_bundles:
+        photo: photo
+      sort:
+        field: _none
+      auto_create: false
+      auto_create_bundle: ''
+  search_api_task:
+    handler: 'default:search_api_task'
+    handler_settings:
+      target_bundles: null
+      sort:
+        field: _none
+      auto_create: false
+  vote:
+    handler: 'default:vote'
+    handler_settings:
+      target_bundles:
+        dislike: dislike
+        like: like
+      sort:
+        field: _none
+      auto_create: false
+      auto_create_bundle: ''
+  vote_result:
+    handler: 'default:vote_result'
+    handler_settings:
+      target_bundles: null
+      sort:
+        field: _none
+      auto_create: false
+  webform_submission:
+    handler: 'default:webform_submission'
+    handler_settings:
+      target_bundles:
+        template_user_profile: template_user_profile
+      sort:
+        field: _none
+      auto_create: false
+      auto_create_bundle: ''
+  activity:
+    handler: 'default:activity'
+    handler_settings: {  }
+  comment:
+    handler: 'default:comment'
+    handler_settings: {  }
+  block_content:
+    handler: 'default:block_content'
+    handler_settings: {  }
+  menu_link_content:
+    handler: 'default:menu_link_content'
+    handler_settings: {  }
+  event_enrollment:
+    handler: 'default:event_enrollment'
+    handler_settings: {  }
+  file:
+    handler: 'default:file'
+    handler_settings: {  }
+  group:
+    handler: 'default:group'
+    handler_settings: {  }
+  group_content:
+    handler: 'default:group_content'
+    handler_settings: {  }
+  message:
+    handler: 'default:message'
+    handler_settings: {  }
+  profile:
+    handler: 'default:profile'
+    handler_settings: {  }
+  taxonomy_term:
+    handler: 'default:taxonomy_term'
+    handler_settings: {  }
+  user:
+    handler: 'default:user'
+    handler_settings: {  }
+field_type: dynamic_entity_reference

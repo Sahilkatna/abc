@@ -1,0 +1,23 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a multi file form widget.
+ *
+ * Available variables:
+ * - table: Table of previously uploaded files.
+ * - element: The form element for uploading another file.
+ *
+ * @see template_preprocess_file_widget_multiple()
+ *
+ * @ingroup themeable
+ */
+#}
+<div class="gallery-upload">
+    {% if image_type %}
+        {% set classes = ['gallery-upload-items'] %}
+        {% set element_classes = ['gallery-upload-element'] %}
+    {% endif %}
+    <div {{ attributes.addClass(classes) }}>{{ table }}</div>
+    <div {{ attributes.addClass(element_classes) }}>{{ element }}</div>
+
+</div>

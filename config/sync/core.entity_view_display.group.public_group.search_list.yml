@@ -1,0 +1,89 @@
+uuid: 6d58a150-ec0a-4b79-9e64-01e75ce8f748
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.group.search_list
+    - field.field.group.public_group.field_group_address
+    - field.field.group.public_group.field_group_description
+    - field.field.group.public_group.field_group_image
+    - field.field.group.public_group.field_group_location
+    - field.field.group.public_group.field_group_sticky_top_of_lists
+    - field.field.group.public_group.field_promoted_to_landing_page
+    - field.field.group.public_group.field_view_mode
+    - group.type.public_group
+    - image.style.search_list
+  module:
+    - image
+    - options
+    - talawa_profile
+_core:
+  default_config_hash: RqB8IuKU9M9iX44p8DChYYwVXaWlsXxg1zSzi3jk41s
+id: group.public_group.search_list
+targetEntityType: group
+bundle: public_group
+mode: search_list
+content:
+  field_group_description:
+    type: text_expander
+    weight: 1
+    label: hidden
+    settings:
+      expandText: 'Expand »'
+      expandPrefix: ...
+      collapseTimer: false
+      slicePoint: 50
+      userCollapseText: Collapse
+      userCollapsePrefix: ''
+    third_party_settings: {  }
+    region: content
+  field_group_image:
+    type: image
+    weight: 5
+    region: content
+    label: above
+    settings:
+      image_style: search_list
+      image_link: ''
+    third_party_settings: {  }
+  field_group_sticky_top_of_lists:
+    weight: 4
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_promoted_to_landing_page:
+    weight: 3
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_view_mode:
+    weight: 2
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  label:
+    type: string
+    weight: 0
+    region: content
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+hidden:
+  changed: true
+  created: true
+  field_group_address: true
+  field_group_location: true
+  uid: true

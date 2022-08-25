@@ -1,0 +1,29 @@
+uuid: cd6f3213-0b3d-4bbe-90d5-1706aaf6e59c
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.group_articles
+  module:
+    - system
+    - views
+  theme:
+    - talawa
+id: exposedformgroup_articlespage_group_articles
+theme: talawa
+region: complementary_top
+weight: -57
+provider: null
+plugin: 'views_exposed_filter_block:group_articles-page_group_articles'
+settings:
+  id: 'views_exposed_filter_block:group_articles-page_group_articles'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: Filter
+visibility:
+  request_path:
+    id: request_path
+    pages: '/group/*/articles'
+    negate: false
+    context_mapping: {  }

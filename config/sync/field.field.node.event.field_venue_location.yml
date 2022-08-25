@@ -1,0 +1,21 @@
+uuid: 63d9b1ed-c781-408a-8b4b-569515ef322c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_venue_location
+    - node.type.event
+  module:
+    - geolocation
+id: node.event.field_venue_location
+field_name: field_venue_location
+entity_type: node
+bundle: event
+label: 'Venue & Location'
+description: 'To help visitors locate your event, please enter the venue postcode in the top left corner of the map and select the correct suggestion from the drop down list '
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: geolocation

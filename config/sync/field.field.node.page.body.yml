@@ -1,0 +1,24 @@
+uuid: db78dd56-d474-4344-ad3e-3d5ac5e1819b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.page
+  module:
+    - text
+_core:
+  default_config_hash: YqTLY16HlbKkePuAIBfan9dOaXbB-k2Vw3PdReMyYVc
+id: node.page.body
+field_name: body
+entity_type: node
+bundle: page
+label: Description
+description: 'Enter here the main copy for your page.'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+field_type: text_with_summary

@@ -1,0 +1,47 @@
+# The Basic Style of theme "base" is loaded first.
+talawa-brand:
+  css:
+    theme:
+      assets/css/brand.css: { weight: 500}
+      assets/css/cards.css: { weight: 500}
+      assets/css/breadcrumb.css: { weight: 500}
+      assets/css/layout.css: { weight: 500}
+
+talawa-style:
+  css:
+    theme:
+      assets/css/bootstrap-grid.css: {}
+      assets/select2/dist/css/select2.min.css: {}
+      assets/css/font-awesome.min.css: {}
+      assets/css/article-page-view.css: { weight: 500}
+      assets/css/article-page-view-2.css: { weight: 500}
+      assets/css/article-page-view-overwrides.css: { weight: 500}
+      assets/css/style.css: {}
+      assets/css/recroitre.css: {}
+      assets/css/lightbox.css: {}
+      assets/css/phinestsol.css: {}
+      assets/css/custom.css: {}
+      
+  js:
+    assets/js/talawa.js: {}
+    assets/js/footer.js: {}
+    assets/js/lightgallery-all.min.js: { scope: footer }
+    assets/js/jquery.mousewheel.min.js: { scope: footer }
+    
+talawa-carousel:
+  js:
+    assets/js/carousel.js: {}
+    assets/js/theme-carousel.js: {}
+    
+    
+talawa-owl:
+  css:
+    theme:
+      assets/css/owl/owl.carousel.css: {}
+      assets/css/owl/owl.theme.default.css: {}
+  js:
+    assets/js/owl/owl.carousel.js: {}
+
+talawa-equal-hights:
+  js:
+      assets/js/jquery.matchHeight.js: { weight: -2}

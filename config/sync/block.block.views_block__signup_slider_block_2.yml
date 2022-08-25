@@ -1,0 +1,38 @@
+uuid: fa70619b-ef5a-4559-a270-729a6b037044
+langcode: en
+status: false
+dependencies:
+  config:
+    - views.view.signup_slider
+  module:
+    - system
+    - user
+    - views
+  theme:
+    - talawa
+id: views_block__signup_slider_block_2
+theme: talawa
+region: header_slider
+weight: 0
+provider: null
+plugin: 'views_block:signup_slider-block_2'
+settings:
+  id: 'views_block:signup_slider-block_2'
+  label: 'Signup Slider anonymous'
+  provider: views
+  label_display: '0'
+  views_label: 'Signup Slider anonymous'
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    pages: /home-page
+    negate: false
+    context_mapping: {  }
+  user_role:
+    id: user_role
+    roles:
+      anonymous: anonymous
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'

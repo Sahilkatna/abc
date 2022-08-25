@@ -1,0 +1,10 @@
+uuid: 25f4d2c9-a29d-424c-b672-779248e2b460
+langcode: en
+status: true
+dependencies:
+  module:
+    - group
+id: group.portrait_shape
+label: 'Portrait Shape'
+targetEntityType: group
+cache: true

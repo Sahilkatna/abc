@@ -1,0 +1,65 @@
+uuid: 188f21d4-7b66-4c79-950e-dc93ab3a7d8f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.featured.field_featured_description
+    - field.field.paragraph.featured.field_featured_items
+    - field.field.paragraph.featured.field_featured_link
+    - field.field.paragraph.featured.field_featured_title
+    - paragraphs.paragraphs_type.featured
+  module:
+    - content_moderation
+    - dynamic_entity_reference
+    - link
+    - text
+_core:
+  default_config_hash: PObJDVbtXrHhqkvrfL3Iv7fXFFsKnh_BfvI6464Ljbs
+id: paragraph.featured.default
+targetEntityType: paragraph
+bundle: featured
+mode: default
+content:
+  field_featured_description:
+    weight: 1
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_featured_items:
+    weight: 2
+    settings:
+      match_operator: CONTAINS
+      size: 40
+      placeholder: ''
+    third_party_settings: {  }
+    type: dynamic_entity_reference_default
+    region: content
+  field_featured_link:
+    weight: 3
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_featured_title:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  moderation_state:
+    type: moderation_state_default
+    weight: 100
+    settings: {  }
+    region: content
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true
+  uid: true

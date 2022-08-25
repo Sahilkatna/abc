@@ -1,0 +1,26 @@
+uuid: ae17a754-f44c-4d19-acec-b569e939efe9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_video2
+    - node.type.sign_up_landing_page
+  module:
+    - video
+id: node.sign_up_landing_page.field_video2
+field_name: field_video2
+entity_type: node
+bundle: sign_up_landing_page
+label: video2
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_extensions: ''
+  file_directory: 'videos/[date:custom:Y]-[date:custom:m]'
+  max_filesize: ''
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: video

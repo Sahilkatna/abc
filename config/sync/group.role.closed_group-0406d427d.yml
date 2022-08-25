@@ -1,0 +1,17 @@
+uuid: a05ac268-f5f3-4e31-9362-ac0f3c357d2a
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.closed_group
+  enforced:
+    config:
+      - user.role.industry
+id: closed_group-0406d427d
+label: Industry
+weight: 5
+internal: true
+audience: outsider
+group_type: closed_group
+permissions_ui: false
+permissions: {  }

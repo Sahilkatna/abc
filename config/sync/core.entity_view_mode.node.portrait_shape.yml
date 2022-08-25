@@ -1,0 +1,10 @@
+uuid: 4d06799b-9b67-4078-a58e-255c5f13a790
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.portrait_shape
+label: 'Portrait Shape'
+targetEntityType: node
+cache: true

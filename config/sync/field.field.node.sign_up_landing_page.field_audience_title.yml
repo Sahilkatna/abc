@@ -1,0 +1,19 @@
+uuid: 55c0026b-f21a-46d5-bcf6-8e9789d2f458
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_audience_title
+    - node.type.sign_up_landing_page
+id: node.sign_up_landing_page.field_audience_title
+field_name: field_audience_title
+entity_type: node
+bundle: sign_up_landing_page
+label: 'Audience Title'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

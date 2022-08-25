@@ -1,0 +1,75 @@
+uuid: 11aa2565-958f-47a5-afde-4f3e51e3e449
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_section
+    - node.type.talawa_landing_page
+    - paragraphs.paragraphs_type.faq_block
+    - paragraphs.paragraphs_type.section_cwb
+    - paragraphs.paragraphs_type.section_grid
+    - paragraphs.paragraphs_type.talawa_block
+    - paragraphs.paragraphs_type.two_column
+  module:
+    - entity_reference_revisions
+id: node.talawa_landing_page.field_section
+field_name: field_section
+entity_type: node
+bundle: talawa_landing_page
+label: Section
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      faq_block: faq_block
+      two_column: two_column
+      talawa_block: talawa_block
+      section_cwb: section_cwb
+      section_grid: section_grid
+    target_bundles_drag_drop:
+      block:
+        weight: 9
+        enabled: false
+      button:
+        weight: 10
+        enabled: false
+      faq_block:
+        enabled: true
+        weight: 10
+      carousel:
+        weight: 11
+        enabled: false
+      featured:
+        weight: 12
+        enabled: false
+      hero:
+        weight: 13
+        enabled: false
+      two_column:
+        enabled: true
+        weight: 14
+      introduction:
+        weight: 14
+        enabled: false
+      section:
+        weight: 15
+        enabled: false
+      talawa_block:
+        enabled: true
+        weight: 16
+      section_cwb:
+        enabled: true
+        weight: 21
+      section_grid:
+        enabled: true
+        weight: 22
+      section_with_four_column:
+        weight: 23
+        enabled: false
+field_type: entity_reference_revisions

@@ -1,0 +1,63 @@
+uuid: c3107cab-52b3-4c15-8ac0-44ef074e8e69
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.faq_discover_make.field_faq_discover_description
+    - field.field.node.faq_discover_make.field_faq_discover_topics
+    - node.type.faq_discover_make
+  module:
+    - user
+id: node.faq_discover_make.teaser
+targetEntityType: node
+bundle: faq_discover_make
+mode: teaser
+content:
+  flag_follow_content:
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  groups:
+    label: above
+    weight: -5
+    region: content
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  groups_type_closed_group:
+    label: above
+    weight: -5
+    region: content
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  groups_type_open_group:
+    label: above
+    weight: -5
+    region: content
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  groups_type_public_group:
+    label: above
+    weight: -5
+    region: content
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  links:
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  addtoany: true
+  field_faq_discover_description: true
+  field_faq_discover_topics: true
+  private_message_link: true

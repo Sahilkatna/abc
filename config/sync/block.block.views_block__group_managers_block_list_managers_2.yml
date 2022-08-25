@@ -1,0 +1,31 @@
+uuid: 04a9aa7c-dc55-4f47-bf00-d4a5379608e2
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.group_managers
+  module:
+    - system
+    - views
+  theme:
+    - talawa
+id: views_block__group_managers_block_list_managers_2
+theme: talawa
+region: sidebar_first
+weight: -48
+provider: null
+plugin: 'views_block:group_managers-block_list_managers'
+settings:
+  id: 'views_block:group_managers-block_list_managers'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+  context_mapping: {  }
+visibility:
+  request_path:
+    id: request_path
+    pages: "/group/add/open_group\r\n/group/add/closed_group"
+    negate: true
+    context_mapping: {  }

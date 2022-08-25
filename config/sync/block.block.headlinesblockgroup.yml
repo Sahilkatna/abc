@@ -1,0 +1,28 @@
+uuid: fddb14dc-e725-4dff-9b82-b25a0ada3eea
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - talawa
+id: headlinesblockgroup
+theme: talawa
+region: header_node_edit
+weight: -51
+provider: null
+plugin: 'block_content:e22612c7-441e-4eb6-840b-440dec42baef'
+settings:
+  id: 'block_content:e22612c7-441e-4eb6-840b-440dec42baef'
+  label: 'Headlines Block group'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: "/group/*/content/create/group_node/*\r\n/group/*/content/create/*"
+    negate: false
+    context_mapping: {  }

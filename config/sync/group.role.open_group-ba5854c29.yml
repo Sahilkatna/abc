@@ -1,0 +1,75 @@
+uuid: 1aedd055-4011-4b43-92eb-7ecee6147371
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.open_group
+  enforced:
+    config:
+      - user.role.sitemanager
+_core:
+  default_config_hash: dBeHwyLNYm6UJ80soFbHcJMohkyMLMuvZm80_mOsEUY
+id: open_group-ba5854c29
+label: 'Site manager'
+weight: 4
+internal: true
+audience: outsider
+group_type: open_group
+permissions_ui: false
+permissions:
+  0: 'access content overview'
+  1: 'administer group'
+  2: 'delete group'
+  3: 'edit group'
+  4: 'administer members'
+  5: 'join group'
+  6: 'view group_membership content'
+  7: 'view group'
+  8: 'administer comments'
+  9: 'edit own comments'
+  10: 'post comments'
+  11: 'access comments'
+  12: 'access group_node overview'
+  13: 'create group_node:event entity'
+  14: 'delete any group_node:event entity'
+  15: 'delete own group_node:event entity'
+  16: 'update any group_node:event entity'
+  17: 'update own group_node:event entity'
+  18: 'view group_node:event entity'
+  19: 'view unpublished group_node:event entity'
+  20: 'create group_node:event content'
+  21: 'delete any group_node:event content'
+  22: 'delete own group_node:event content'
+  23: 'update any group_node:event content'
+  24: 'update own group_node:event content'
+  25: 'view group_node:event content'
+  26: 'create group_node:topic entity'
+  27: 'delete any group_node:topic entity'
+  28: 'delete own group_node:topic entity'
+  29: 'update any group_node:topic entity'
+  30: 'update own group_node:topic entity'
+  31: 'view group_node:topic entity'
+  32: 'view unpublished group_node:topic entity'
+  33: 'create group_node:topic content'
+  34: 'delete any group_node:topic content'
+  35: 'delete own group_node:topic content'
+  36: 'update any group_node:topic content'
+  37: 'update own group_node:topic content'
+  38: 'view group_node:topic content'
+  39: 'enroll to events in groups'
+  40: 'access posts in group'
+  41: 'add post entities in group'
+  42: 'view group stream page'
+  56: 'create group_node:article entity'
+  57: 'delete any group_node:article entity'
+  58: 'delete own group_node:article entity'
+  59: 'update any group_node:article entity'
+  60: 'update own group_node:article entity'
+  61: 'view group_node:article entity'
+  62: 'view unpublished group_node:article entity'
+  63: 'create group_node:article content'
+  64: 'delete any group_node:article content'
+  65: 'delete own group_node:article content'
+  66: 'update any group_node:article content'
+  67: 'update own group_node:article content'
+  68: 'view group_node:article content'

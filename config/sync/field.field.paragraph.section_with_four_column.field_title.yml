@@ -1,0 +1,19 @@
+uuid: f7774c61-ab2c-4cad-a975-58da878f1d78
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_title
+    - paragraphs.paragraphs_type.section_with_four_column
+id: paragraph.section_with_four_column.field_title
+field_name: field_title
+entity_type: paragraph
+bundle: section_with_four_column
+label: Title
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

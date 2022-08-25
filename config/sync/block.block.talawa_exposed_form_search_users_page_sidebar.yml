@@ -1,0 +1,29 @@
+uuid: 686cfe09-c621-4fbb-81bf-b02a3ec2f5f5
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.search_users
+  module:
+    - system
+    - views
+  theme:
+    - talawa
+id: talawa_exposed_form_search_users_page_sidebar
+theme: talawa
+region: sidebar_second
+weight: -57
+provider: null
+plugin: 'views_exposed_filter_block:search_users-page'
+settings:
+  id: 'views_exposed_filter_block:search_users-page'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: Filter
+visibility:
+  request_path:
+    id: request_path
+    pages: "/search/users\r\n/search/users/*"
+    negate: false
+    context_mapping: {  }

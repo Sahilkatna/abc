@@ -1,0 +1,20 @@
+uuid: 0a9b0a71-c8f9-4d93-83be-b2ba90847b90
+langcode: en
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - talawa
+id: talawa_help
+theme: talawa
+region: content
+weight: -58
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  provider: help
+  label_display: '0'
+visibility: {  }

@@ -1,0 +1,26 @@
+uuid: 875aa154-c481-424c-a289-ad2800eff5a3
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+    - talawa_tweaks
+  theme:
+    - talawa
+id: articleaddblock
+theme: talawa
+region: complementary_top
+weight: -62
+provider: null
+plugin: article_add_block
+settings:
+  id: article_add_block
+  label: 'Article add block'
+  provider: talawa_tweaks
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: '/user/*/articles'
+    negate: false
+    context_mapping: {  }

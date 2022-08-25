@@ -1,0 +1,21 @@
+uuid: 7b7673ad-94ba-4824-90f2-e82352340e33
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_account_subs_forum
+  module:
+    - options
+    - user
+id: user.user.field_account_subs_forum
+field_name: field_account_subs_forum
+entity_type: user
+bundle: user
+label: Forum
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -1,0 +1,31 @@
+uuid: b845f404-597c-44fa-87b1-976ab37b8533
+langcode: en
+status: false
+dependencies:
+  config:
+    - views.view.faq_topics_sidebar
+  module:
+    - system
+    - views
+  theme:
+    - talawa
+id: views_block__faq_topics_sidebar_block_1
+theme: talawa
+region: sidebar_second
+weight: -59
+provider: null
+plugin: 'views_block:faq_topics_sidebar-block_1'
+settings:
+  id: 'views_block:faq_topics_sidebar-block_1'
+  label: 'FAQs: other topics'
+  provider: views
+  label_display: visible
+  views_label: 'FAQs: other topics'
+  items_per_page: '40'
+  context_mapping: {  }
+visibility:
+  request_path:
+    id: request_path
+    pages: '/taxonomy/term/*'
+    negate: false
+    context_mapping: {  }

@@ -1,0 +1,124 @@
+uuid: 764d4856-fd4d-46c6-ba9b-e363641cb98e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.lead_slider.field_crop_position
+    - field.field.node.lead_slider.field_logout_view
+    - field.field.node.lead_slider.field_slide_desc
+    - field.field.node.lead_slider.field_slide_image
+    - field.field.node.lead_slider.field_testimonial
+    - field.field.node.lead_slider.field_weight
+    - image.style.2600x1070
+    - node.type.lead_slider
+  module:
+    - link
+    - options
+    - user
+    - wes_module
+id: node.lead_slider.default
+targetEntityType: node
+bundle: lead_slider
+mode: default
+content:
+  field_crop_position:
+    weight: 105
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_logout_view:
+    weight: 104
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_slide_desc:
+    weight: 101
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_slide_image:
+    weight: 102
+    label: above
+    settings:
+      image_style: 2600x1070
+      image_style_small: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: carousel_background_image
+    region: content
+  field_testimonial:
+    weight: 103
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_weight:
+    weight: 106
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  flag_follow_content:
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  groups:
+    label: above
+    weight: -5
+    region: content
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  groups_type_closed_group:
+    label: above
+    weight: -5
+    region: content
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  groups_type_open_group:
+    label: above
+    weight: -5
+    region: content
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  groups_type_public_group:
+    label: above
+    weight: -5
+    region: content
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  links:
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  addtoany: true
+  private_message_link: true

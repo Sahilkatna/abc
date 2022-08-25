@@ -1,0 +1,21 @@
+uuid: e8c25ad0-2047-4fb7-ae99-265ce1302694
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_application_deadline_date
+    - node.type.job_opportunities
+  module:
+    - datetime
+id: node.job_opportunities.field_application_deadline_date
+field_name: field_application_deadline_date
+entity_type: node
+bundle: job_opportunities
+label: 'Application deadline date'
+description: 'Set a date and time for the application deadline date.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

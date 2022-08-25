@@ -1,0 +1,34 @@
+uuid: 1cde8eba-b7ed-49cf-a0f2-6d6a4ab96ad7
+langcode: en
+status: true
+dependencies:
+  module:
+    - dropdown
+    - social_post
+_core:
+  default_config_hash: 9IChKT1xRW3I7-oWdWMhAXoRYjpyJzG7PIVhkHaOlzU
+id: post.field_visibility
+field_name: field_visibility
+entity_type: post
+type: dropdown
+settings:
+  allowed_values:
+    1:
+      value: '1'
+      label: Public
+      description: 'Visible to all visitors of the site'
+    2:
+      value: '2'
+      label: Community
+      description: 'Visible only to members who are logged in'
+    3:
+      value: '3'
+      label: 'Group members'
+      description: 'Visible only to group members'
+module: dropdown
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

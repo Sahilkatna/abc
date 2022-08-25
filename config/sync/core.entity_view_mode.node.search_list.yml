@@ -1,0 +1,10 @@
+uuid: 8eaa3772-df07-43ff-855f-51c831141b6d
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.search_list
+label: 'Search List'
+targetEntityType: node
+cache: true

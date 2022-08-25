@@ -1,0 +1,23 @@
+uuid: 02f12f77-1fd6-470b-96e1-a288f2a0b413
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_float_lat
+    - node.type.job_opportunities
+id: node.job_opportunities.field_float_lat
+field_name: field_float_lat
+entity_type: node
+bundle: job_opportunities
+label: 'Float Lat'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: float

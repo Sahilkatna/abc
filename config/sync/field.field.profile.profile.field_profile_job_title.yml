@@ -1,0 +1,19 @@
+uuid: b50a3c22-3876-4452-9834-97c2aa632d7c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.profile.field_profile_job_title
+    - profile.type.profile
+id: profile.profile.field_profile_job_title
+field_name: field_profile_job_title
+entity_type: profile
+bundle: profile
+label: 'Role (what do you do?)'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

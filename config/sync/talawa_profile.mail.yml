@@ -1,0 +1,11 @@
+register_welcome_message:
+  body: "Hello [user:display-name],\r\n\r\nThank you for registering at [site:name]. To login to your account please click following link [site:login-url], with your username and password.\r\n\r\n--  [site:name] team"
+  subject: 'Account details for [user:display-name] at [site:name]'
+register_mail_verify:
+  body: "<b>Hello [user:display-name]</b>,\r\n\r\n<p>Thanks for signing up to MAKE Online.</p>\r\n<br>\r\n<p>Complete your registration by clicking on the link below, or copying and pasting it into your browser.</p>\r\n<br>\r\n<p><a href=\"[user:email-verify-url]\" class=\"button\">Verify Email Address</a></p>\r\n<br>\r\n<p>PLEASE NOTE: You must complete this stage of registration to use MAKE Online</p>\r\n<br>\r\n<p>Thank you,</p>\r\n<p> All at Talawa Theatre Company </p>"
+  subject: 'Thanks for registering on MAKE Online.'
+register_mail_verify_success:
+  body: "Hello [user:display-name],\r\n\r\nA request to reset the password for your account has been made at [site:name].\r\n\r\nYou may now log in by clicking this link or copying and pasting it into your browser:\r\n\r\n[user:one-time-login-url]\r\n\r\nThis link can only be used once to log in and will lead you to a page where you can set your password. It expires after one day and nothing will happen if it's not used.\r\n\r\n--  [site:name] team"
+  subject: 'Replacement login information for [user:display-name] at [site:name]'
+_core:
+  default_config_hash: C3KRwB6Qolri9OVkKIIbVk_JCckY493-5gOI0V7z8n8

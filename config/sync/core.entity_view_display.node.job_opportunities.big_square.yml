@@ -1,0 +1,86 @@
+uuid: 19c5a4be-91d0-4280-b2d0-c6a0f3a91d88
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.big_square
+    - field.field.node.job_opportunities.body
+    - field.field.node.job_opportunities.field_application_deadline_date
+    - field.field.node.job_opportunities.field_attachments
+    - field.field.node.job_opportunities.field_call_open_until
+    - field.field.node.job_opportunities.field_email
+    - field.field.node.job_opportunities.field_feature_image
+    - field.field.node.job_opportunities.field_hirer
+    - field.field.node.job_opportunities.field_hirer_logo
+    - field.field.node.job_opportunities.field_intro
+    - field.field.node.job_opportunities.field_job_application
+    - field.field.node.job_opportunities.field_job_category
+    - field.field.node.job_opportunities.field_job_tags
+    - field.field.node.job_opportunities.field_link_to_external_site
+    - field.field.node.job_opportunities.field_location
+    - field.field.node.job_opportunities.field_name
+    - field.field.node.job_opportunities.field_phone
+    - field.field.node.job_opportunities.field_promoted_to_landing_page
+    - field.field.node.job_opportunities.field_release_date
+    - field.field.node.job_opportunities.field_type
+    - field.field.node.job_opportunities.field_view_mode
+    - image.style.big_square
+    - node.type.job_opportunities
+  module:
+    - image
+    - user
+id: node.job_opportunities.big_square
+targetEntityType: node
+bundle: job_opportunities
+mode: big_square
+content:
+  field_feature_image:
+    weight: 0
+    label: above
+    settings:
+      image_style: big_square
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_type:
+    type: boolean
+    weight: 1
+    region: content
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+hidden:
+  addtoany: true
+  body: true
+  content_moderation_control: true
+  field_application_deadline_date: true
+  field_attachments: true
+  field_call_open_until: true
+  field_daily: true
+  field_email: true
+  field_hirer: true
+  field_hirer_logo: true
+  field_intro: true
+  field_job_address: true
+  field_job_application: true
+  field_job_category: true
+  field_job_tags: true
+  field_link_to_external_site: true
+  field_location: true
+  field_name: true
+  field_phone: true
+  field_promoted_to_landing_page: true
+  field_release_date: true
+  field_view_mode: true
+  field_weekly: true
+  field_yearly_salary: true
+  flag_follow_content: true
+  groups: true
+  groups_type_closed_group: true
+  groups_type_open_group: true
+  groups_type_public_group: true
+  links: true

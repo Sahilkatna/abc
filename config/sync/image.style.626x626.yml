@@ -1,0 +1,23 @@
+uuid: 504c3f59-a048-435d-9974-76fc938cba42
+langcode: en
+status: true
+dependencies:
+  module:
+    - image_effects
+name: 626x626
+label: 626x626
+effects:
+  df63b439-e931-4df8-8071-c0ac60753c1e:
+    uuid: df63b439-e931-4df8-8071-c0ac60753c1e
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 626
+      height: 626
+      anchor: center-center
+  e87f7665-5348-4f2e-a79a-df579464b5c4:
+    uuid: e87f7665-5348-4f2e-a79a-df579464b5c4
+    id: image_effects_auto_orient
+    weight: 2
+    data:
+      scan_exif: true

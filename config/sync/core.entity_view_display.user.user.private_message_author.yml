@@ -1,0 +1,93 @@
+uuid: c1ec8996-a597-444b-9c32-821296fb95d3
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.user.private_message_author
+    - field.field.user.user.field_account_cultural_bkg
+    - field.field.user.user.field_account_dob
+    - field.field.user.user.field_account_gender
+    - field.field.user.user.field_account_organisation
+    - field.field.user.user.field_account_profile_public
+    - field.field.user.user.field_account_public_loc_map
+    - field.field.user.user.field_account_subs_forum
+    - field.field.user.user.field_account_subs_message
+    - field.field.user.user.field_account_subs_profile
+    - field.field.user.user.field_float_lat
+    - field.field.user.user.field_float_lng
+    - field.field.user.user.field_lat
+    - field.field.user.user.field_lng
+    - field.field.user.user.field_promoted_to_landing_page
+    - field.field.user.user.field_sticky_top_of_lists
+    - field.field.user.user.field_view_mode
+  module:
+    - user
+_core:
+  default_config_hash: 5VkjdDDe_kM-giLC61z36ACn6Z2eMjaH63Rh6adWWpw
+id: user.user.private_message_author
+targetEntityType: user
+bundle: user
+mode: private_message_author
+content:
+  flag_follow_user:
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  groups:
+    label: above
+    weight: -5
+    region: content
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  groups_type_closed_group:
+    label: above
+    weight: -5
+    region: content
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  groups_type_open_group:
+    label: above
+    weight: -5
+    region: content
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  groups_type_public_group:
+    label: above
+    weight: -5
+    region: content
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  linked_username:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_account_cultural_bkg: true
+  field_account_dob: true
+  field_account_gender: true
+  field_account_organisation: true
+  field_account_profile_public: true
+  field_account_public_loc_map: true
+  field_account_subs_forum: true
+  field_account_subs_message: true
+  field_account_subs_profile: true
+  field_float_lat: true
+  field_float_lng: true
+  field_lat: true
+  field_lng: true
+  field_promoted_to_landing_page: true
+  field_sticky_top_of_lists: true
+  field_view_mode: true
+  member_for: true
+  private_message_link: true
+  profile_profile: true

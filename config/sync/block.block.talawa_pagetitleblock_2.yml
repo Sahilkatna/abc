@@ -1,0 +1,26 @@
+uuid: 0ec27ad5-c8f5-45d0-9a75-5572f17bebea
+langcode: en
+status: true
+dependencies:
+  module:
+    - social_core
+    - system
+  theme:
+    - talawa
+id: talawa_pagetitleblock_2
+theme: talawa
+region: hero
+weight: -62
+provider: null
+plugin: social_page_title_block
+settings:
+  id: social_page_title_block
+  label: 'Page title for enrollments'
+  provider: social_core
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: "*/enrollments\r\n*/managers"
+    negate: false
+    context_mapping: {  }

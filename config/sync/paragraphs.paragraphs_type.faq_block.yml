@@ -1,0 +1,9 @@
+uuid: 4552748b-4793-4ae8-bc5b-f5a5284e6d56
+langcode: en
+status: true
+dependencies: {  }
+id: faq_block
+label: 'Faq Block'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

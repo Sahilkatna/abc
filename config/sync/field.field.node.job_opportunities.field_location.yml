@@ -1,0 +1,30 @@
+uuid: 3208f9d2-4b12-4e10-a27c-271e00fa5988
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_location
+    - node.type.job_opportunities
+  module:
+    - geolocation
+id: node.job_opportunities.field_location
+field_name: field_location
+entity_type: node
+bundle: job_opportunities
+label: Location
+description: 'Enter a postcode in the field and click on the magnifying glass to locate where this position is based.'
+required: false
+translatable: false
+default_value:
+  -
+    controls:
+      location: 'London, UK'
+    lat: '51.5073509'
+    lng: '-0.12775829999998223'
+    lat_sin: null
+    lat_cos: null
+    lng_rad: null
+    data: null
+default_value_callback: ''
+settings: {  }
+field_type: geolocation

@@ -1,0 +1,15 @@
+uuid: 54701705-e1e7-459a-867b-f7863c433e97
+langcode: en
+status: true
+dependencies: {  }
+name: 2600x1070_crop_center
+label: '2600X1070 Crop Center'
+effects:
+  071e390c-9b39-47f9-b101-6715ec791b81:
+    uuid: 071e390c-9b39-47f9-b101-6715ec791b81
+    id: image_crop
+    weight: 1
+    data:
+      width: 2600
+      height: 1070
+      anchor: center-center

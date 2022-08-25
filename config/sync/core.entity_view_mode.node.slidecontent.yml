@@ -1,0 +1,10 @@
+uuid: fa39d2cb-783a-4804-8638-fd7d5dc5c3e7
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.slidecontent
+label: SlideContent
+targetEntityType: node
+cache: true

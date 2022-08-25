@@ -1,0 +1,24 @@
+uuid: b487cbac-5f0c-42cc-b529-7b5a43caaeb9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_sticky_top_of_lists
+  module:
+    - user
+id: user.user.field_sticky_top_of_lists
+field_name: field_sticky_top_of_lists
+entity_type: user
+bundle: user
+label: 'Sticky top of lists'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'Yes'
+  off_label: 'No'
+field_type: boolean

@@ -1,0 +1,29 @@
+uuid: 741bc12a-d842-4204-be9e-a4a6c17084e7
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.job_opportunities_profile
+  module:
+    - system
+    - views
+  theme:
+    - talawa
+id: exposed_form_job_opportunities_overview
+theme: talawa
+region: complementary_top
+weight: -53
+provider: null
+plugin: 'views_exposed_filter_block:job_opportunities_profile-job_opportunities_overview'
+settings:
+  id: 'views_exposed_filter_block:job_opportunities_profile-job_opportunities_overview'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+visibility:
+  request_path:
+    id: request_path
+    pages: '/user/*/job-opportunities'
+    negate: false
+    context_mapping: {  }

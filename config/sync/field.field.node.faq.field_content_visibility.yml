@@ -1,0 +1,23 @@
+uuid: 4d0df353-e4e4-489b-89d9-69db90b3afde
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_content_visibility
+    - node.type.faq
+  module:
+    - entity_access_by_field
+id: node.faq.field_content_visibility
+field_name: field_content_visibility
+entity_type: node
+bundle: faq
+label: Visibility
+description: ''
+required: true
+translatable: true
+default_value:
+  -
+    value: community
+default_value_callback: ''
+settings: {  }
+field_type: entity_access_field

@@ -1,0 +1,28 @@
+uuid: c309cbd7-93d9-47e7-a753-f535deb143f9
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.public_group
+  enforced:
+    config:
+      - user.role.artist
+id: public_group-9018f9f3a
+label: Artist
+weight: 6
+internal: true
+audience: outsider
+group_type: public_group
+permissions_ui: false
+permissions:
+  - 'view group'
+  - 'join group'
+  - 'view group_membership content'
+  - 'access comments'
+  - 'update own group_node:event entity'
+  - 'view group_node:event entity'
+  - 'view group_node:event content'
+  - 'update own group_node:topic entity'
+  - 'view group_node:topic entity'
+  - 'view group_node:topic content'
+  - 'access posts in group'

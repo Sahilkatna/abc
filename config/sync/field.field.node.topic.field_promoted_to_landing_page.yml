@@ -1,0 +1,23 @@
+uuid: 2752f9c2-39a3-4b5a-97fd-78a82718e4c7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_promoted_to_landing_page
+    - node.type.topic
+id: node.topic.field_promoted_to_landing_page
+field_name: field_promoted_to_landing_page
+entity_type: node
+bundle: topic
+label: 'Promoted to landing page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

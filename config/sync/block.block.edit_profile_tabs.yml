@@ -1,0 +1,22 @@
+uuid: 43f65aa3-24d9-4d6b-a628-96f6c7bd8cac
+langcode: en
+status: true
+dependencies:
+  module:
+    - talawa_profile
+  theme:
+    - talawa
+id: edit_profile_tabs
+theme: talawa
+region: user_edit_tab
+weight: 0
+provider: null
+plugin: edit_profile_tabs_block
+settings:
+  id: edit_profile_tabs_block
+  label: 'Talawa edit user/profile tabs block'
+  provider: talawa_profile
+  label_display: '0'
+  context_mapping:
+    user: '@social_user.user_route_context:user'
+visibility: {  }

@@ -1,0 +1,10 @@
+uuid: 55bd52d0-8e24-4f44-be40-a17e23caa06c
+langcode: en
+status: true
+dependencies:
+  module:
+    - profile
+id: profile.group_members
+label: 'Group members'
+targetEntityType: profile
+cache: true

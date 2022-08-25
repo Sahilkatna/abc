@@ -1,0 +1,20 @@
+uuid: 95c51cd1-fe00-4584-9ecc-a6b01a5e63c9
+langcode: en
+status: true
+dependencies:
+  module:
+    - wes_module
+  theme:
+    - talawa
+id: faqcontentblock
+theme: talawa
+region: content
+weight: 0
+provider: null
+plugin: faq_content_block
+settings:
+  id: faq_content_block
+  label: 'Faq content block'
+  provider: wes_module
+  label_display: '0'
+visibility: {  }

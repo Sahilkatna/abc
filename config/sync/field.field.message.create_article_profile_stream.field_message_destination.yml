@@ -1,0 +1,21 @@
+uuid: f8b69346-19fe-4a4f-9928-d5b9ea519552
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.message.field_message_destination
+    - message.template.create_article_profile_stream
+  module:
+    - options
+id: message.create_article_profile_stream.field_message_destination
+field_name: field_message_destination
+entity_type: message
+bundle: create_article_profile_stream
+label: Destinations
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -1,0 +1,20 @@
+uuid: 7fa29482-5124-47b4-9618-4dfa3d1c6030
+langcode: en
+status: true
+dependencies:
+  module:
+    - datetime
+    - user
+id: user.field_account_dob
+field_name: field_account_dob
+entity_type: user
+type: datetime
+settings:
+  datetime_type: date
+module: datetime
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

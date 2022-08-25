@@ -1,0 +1,15 @@
+uuid: e9158b11-a7fa-4183-9ee4-4cfe18dcb2aa
+langcode: en
+status: true
+dependencies: {  }
+name: profile_image
+label: 'Profile Image (150x150)'
+effects:
+  9bdf226f-5260-44e2-82ab-025cee216bd6:
+    uuid: 9bdf226f-5260-44e2-82ab-025cee216bd6
+    id: image_scale
+    weight: 1
+    data:
+      width: 150
+      height: 150
+      upscale: false

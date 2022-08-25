@@ -1,0 +1,10 @@
+uuid: 87305f3b-5f67-4a4f-b7dd-4a22cdde603c
+langcode: en
+status: true
+dependencies:
+  module:
+    - group
+id: group.small_square
+label: 'Small Square'
+targetEntityType: group
+cache: true

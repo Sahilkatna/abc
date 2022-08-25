@@ -1,0 +1,22 @@
+uuid: 72f01dbc-e1c1-43e1-aa52-2d26dfa75e5b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_caption_bg_color
+    - paragraphs.paragraphs_type.section_with_four_column
+  module:
+    - color_field
+id: paragraph.section_with_four_column.field_caption_bg_color
+field_name: field_caption_bg_color
+entity_type: paragraph
+bundle: section_with_four_column
+label: 'Caption Bg Color'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  opacity: 1
+field_type: color_field_type

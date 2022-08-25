@@ -1,0 +1,19 @@
+uuid: 43a8aaf9-320c-4a95-90ab-71ab33109037
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_yearly_salary
+    - node.type.job_opportunities
+id: node.job_opportunities.field_yearly_salary
+field_name: field_yearly_salary
+entity_type: node
+bundle: job_opportunities
+label: 'Yearly Salary'
+description: "Enter the salary offered for this position. You can enter a daily, weekly or yearly salary \r\nAll fees are based on an 8 hour working day \r\nKeep in mind that the London living wage at £10.20 equates to £21,216 per year.\r\nPlease note, some roles or projects should be paid at a higher rate.  For industry recommended minimums check this link:  https://www.itc-arts.org/rates-of-pay"
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

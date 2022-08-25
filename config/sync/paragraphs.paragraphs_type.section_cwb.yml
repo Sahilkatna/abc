@@ -1,0 +1,9 @@
+uuid: e790ec42-c607-40be-be73-10d48b6329de
+langcode: en
+status: true
+dependencies: {  }
+id: section_cwb
+label: 'Section column with button'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

@@ -1,0 +1,34 @@
+uuid: 8a137334-82e8-4746-bad8-01119b95b8e7
+langcode: en
+status: true
+dependencies:
+  module:
+    - activity_logger
+third_party_settings:
+  activity_logger:
+    activity_bundle_entities:
+      node-article: node-article
+    activity_action: create_entitiy_action
+    activity_context: group_activity_context
+    activity_destinations:
+      stream_home: stream_home
+      notifications: notifications
+      stream_explore: stream_explore
+      stream_profile: stream_profile
+      stream_group: stream_group
+    activity_create_direct: 1
+    activity_aggregate: 0
+    activity_entity_condition: ''
+template: create_article_group
+label: 'Create article in group'
+description: 'A user created an article in a group'
+text:
+  -
+    value: "<p>[message:author:display-name] created an article&nbsp;in [message:gtitle]</p>\r\n"
+    format: full_html
+settings:
+  'token options':
+    clear: false
+    'token replace': true
+  purge_override: false
+  purge_methods: {  }

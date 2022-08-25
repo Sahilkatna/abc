@@ -1,0 +1,33 @@
+enable: 1
+rid_anonymous:
+  weigth: '0'
+  path: ''
+rid_authenticated:
+  enabled: '1'
+  weigth: '0'
+  path: /home-page
+rid_administrator:
+  enabled: '1'
+  weigth: '0'
+  path: /home-page
+rid_contentmanager:
+  enabled: '1'
+  weigth: '0'
+  path: /home-page
+rid_sitemanager:
+  enabled: '1'
+  weigth: '0'
+  path: /home-page
+home_link_path: ''
+rid_industry:
+  enabled: '1'
+  weigth: '0'
+  path: /home-page
+rid_artist:
+  enabled: '1'
+  weigth: '0'
+  path: /home-page
+rid_premium:
+  enabled: '1'
+  weigth: '0'
+  path: /home-page

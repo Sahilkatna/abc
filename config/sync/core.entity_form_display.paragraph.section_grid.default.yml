@@ -1,0 +1,70 @@
+uuid: bd104970-2d30-4791-9b1b-5d13a34b777a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.section_grid.field_background_image
+    - field.field.paragraph.section_grid.field_color
+    - field.field.paragraph.section_grid.field_heading_color
+    - field.field.paragraph.section_grid.field_section_heading
+    - field.field.paragraph.section_grid.field_section_wfc
+    - image.style.thumbnail
+    - paragraphs.paragraphs_type.section_grid
+  module:
+    - color_field
+    - image
+    - paragraphs
+id: paragraph.section_grid.default
+targetEntityType: paragraph
+bundle: section_grid
+mode: default
+content:
+  field_background_image:
+    weight: 2
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_color:
+    weight: 3
+    settings:
+      placeholder_color: ''
+      placeholder_opacity: ''
+    third_party_settings: {  }
+    type: color_field_widget_default
+    region: content
+  field_heading_color:
+    weight: 1
+    settings:
+      placeholder_color: ''
+      placeholder_opacity: ''
+    third_party_settings: {  }
+    type: color_field_widget_default
+    region: content
+  field_section_heading:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_section_wfc:
+    type: entity_reference_paragraphs
+    weight: 4
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+hidden:
+  created: true
+  moderation_state: true
+  status: true
+  uid: true

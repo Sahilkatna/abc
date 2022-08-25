@@ -1,0 +1,30 @@
+uuid: 453e261a-eeed-4fdd-8e2d-8193e3e83e50
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.upcoming_events
+  module:
+    - system
+    - views
+  theme:
+    - talawa
+id: talawa_views_block__upcoming_events_block_community_events
+theme: talawa
+region: complementary_bottom
+weight: -64
+provider: null
+plugin: 'views_block:upcoming_events-block_community_events'
+settings:
+  id: 'views_block:upcoming_events-block_community_events'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    pages: "/stream\r\n/explore"
+    negate: false
+    context_mapping: {  }

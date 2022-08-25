@@ -1,0 +1,23 @@
+uuid: 101fb97f-4f9c-4176-b3c8-0dc3c833c95d
+langcode: en
+status: true
+dependencies:
+  module:
+    - image_effects
+name: social_profile_banner
+label: 'social profile banner (2600×918)'
+effects:
+  7e3c7b74-1816-4bf0-955b-afbeb7a8f33d:
+    uuid: 7e3c7b74-1816-4bf0-955b-afbeb7a8f33d
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 2600
+      height: 918
+      anchor: center-center
+  bba01fd0-6c26-4cf7-bb70-4ded49beb4df:
+    uuid: bba01fd0-6c26-4cf7-bb70-4ded49beb4df
+    id: image_effects_auto_orient
+    weight: 2
+    data:
+      scan_exif: true

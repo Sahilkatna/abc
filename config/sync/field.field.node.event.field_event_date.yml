@@ -1,0 +1,23 @@
+uuid: 71b126d6-29fc-45a9-9989-d0592132c55c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_event_date
+    - node.type.event
+  module:
+    - datetime
+_core:
+  default_config_hash: pPHPELeLXbiNq458ZjX_PF5-6oEJjCG6vowOqiVjA4g
+id: node.event.field_event_date
+field_name: field_event_date
+entity_type: node
+bundle: event
+label: Start
+description: 'Use the calendar and clock devices to select the exact end time of your event'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

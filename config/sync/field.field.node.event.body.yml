@@ -1,0 +1,24 @@
+uuid: 38ae2763-e7ea-42f7-8032-3d6fe100fcfa
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.event
+  module:
+    - text
+_core:
+  default_config_hash: D5SYDe0gQVqiM9ZlIMfhAP7eRCT4g4ceCnzuAJoVbTs
+id: node.event.body
+field_name: body
+entity_type: node
+bundle: event
+label: Description
+description: 'Enter the main body text here, as well as any extra images you may require (adhering to the size specifications mentioned above). Use integrated the text editor to appropriately format your content; you can embed videos from the web, insert hyperlinks within the text, etc.…'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+field_type: text_with_summary

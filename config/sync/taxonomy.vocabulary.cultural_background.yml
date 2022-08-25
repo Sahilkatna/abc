@@ -1,0 +1,9 @@
+uuid: 7424a958-aeb3-4b50-9c46-f43e06fd098e
+langcode: en
+status: true
+dependencies: {  }
+name: 'Cultural background'
+vid: cultural_background
+description: 'Cultural background'
+hierarchy: 1
+weight: 0

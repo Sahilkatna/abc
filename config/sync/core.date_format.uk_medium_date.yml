@@ -1,0 +1,8 @@
+uuid: f55269bc-3680-4bd7-9906-cbcdba7304b2
+langcode: en
+status: true
+dependencies: {  }
+id: uk_medium_date
+label: 'UK medium date'
+locked: false
+pattern: 'D, d/m/Y - H:i'

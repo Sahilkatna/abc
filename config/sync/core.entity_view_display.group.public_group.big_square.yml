@@ -1,0 +1,57 @@
+uuid: bc8d940d-f23a-41f7-8943-0339885063a7
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.group.big_square
+    - field.field.group.public_group.field_group_address
+    - field.field.group.public_group.field_group_description
+    - field.field.group.public_group.field_group_image
+    - field.field.group.public_group.field_group_location
+    - field.field.group.public_group.field_view_mode
+    - group.type.public_group
+  module:
+    - address
+    - talawa_profile
+_core:
+  default_config_hash: RqB8IuKU9M9iX44p8DChYYwVXaWlsXxg1zSzi3jk41s
+id: group.public_group.big_square
+targetEntityType: group
+bundle: public_group
+mode: big_square
+content:
+  field_group_address:
+    type: address_default
+    weight: 2
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+  field_group_description:
+    type: text_expander
+    weight: 1
+    label: hidden
+    settings:
+      expandText: 'Expand »'
+      expandPrefix: ...
+      collapseTimer: false
+      slicePoint: 50
+      userCollapseText: Collapse
+      userCollapsePrefix: ''
+    third_party_settings: {  }
+    region: content
+  label:
+    type: string
+    weight: 0
+    region: content
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+hidden:
+  changed: true
+  created: true
+  field_group_image: true
+  field_group_location: true
+  field_view_mode: true
+  uid: true

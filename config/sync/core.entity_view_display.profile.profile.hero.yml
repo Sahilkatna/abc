@@ -1,0 +1,116 @@
+uuid: 0a547460-890f-41f0-b99b-1ca90dd38e1f
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.profile.hero
+    - field.field.profile.profile.field_profile_address
+    - field.field.profile.profile.field_profile_backstage_tech
+    - field.field.profile.profile.field_profile_banner_image
+    - field.field.profile.profile.field_profile_community_ptcp
+    - field.field.profile.profile.field_profile_completed
+    - field.field.profile.profile.field_profile_cv
+    - field.field.profile.profile.field_profile_dance_movement
+    - field.field.profile.profile.field_profile_expertise
+    - field.field.profile.profile.field_profile_first_name
+    - field.field.profile.profile.field_profile_function
+    - field.field.profile.profile.field_profile_image
+    - field.field.profile.profile.field_profile_interests
+    - field.field.profile.profile.field_profile_job_title
+    - field.field.profile.profile.field_profile_last_name
+    - field.field.profile.profile.field_profile_literary
+    - field.field.profile.profile.field_profile_looking
+    - field.field.profile.profile.field_profile_looking_others
+    - field.field.profile.profile.field_profile_music
+    - field.field.profile.profile.field_profile_offer
+    - field.field.profile.profile.field_profile_offer_others
+    - field.field.profile.profile.field_profile_organization
+    - field.field.profile.profile.field_profile_phone_number
+    - field.field.profile.profile.field_profile_producing_admin
+    - field.field.profile.profile.field_profile_profile_tag
+    - field.field.profile.profile.field_profile_role
+    - field.field.profile.profile.field_profile_self_introduction
+    - field.field.profile.profile.field_profile_show_email
+    - field.field.profile.profile.field_profile_social_share
+    - field.field.profile.profile.field_profile_theatre_prfm
+    - field.field.profile.profile.field_profile_who_ru
+    - field.field.profile.profile.field_promoted_to_landing_page
+    - image.style.social_profile_image
+    - profile.type.profile
+  module:
+    - image
+_core:
+  default_config_hash: 36YBcEJOfzRmcrxHHk5Hr64CxaYaaknucEukhTeIBQU
+id: profile.profile.hero
+targetEntityType: profile
+bundle: profile
+mode: hero
+content:
+  field_profile_first_name:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_profile_function:
+    type: string
+    weight: 3
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    region: content
+  field_profile_image:
+    weight: 2
+    label: hidden
+    settings:
+      image_style: social_profile_image
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_profile_last_name:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_profile_organization:
+    type: string
+    weight: 4
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_profile_address: true
+  field_profile_backstage_tech: true
+  field_profile_banner_image: true
+  field_profile_community_ptcp: true
+  field_profile_completed: true
+  field_profile_cv: true
+  field_profile_dance_movement: true
+  field_profile_expertise: true
+  field_profile_interests: true
+  field_profile_job_title: true
+  field_profile_literary: true
+  field_profile_looking: true
+  field_profile_looking_others: true
+  field_profile_music: true
+  field_profile_offer: true
+  field_profile_offer_others: true
+  field_profile_phone_number: true
+  field_profile_producing_admin: true
+  field_profile_profile_tag: true
+  field_profile_role: true
+  field_profile_self_introduction: true
+  field_profile_show_email: true
+  field_profile_social_share: true
+  field_profile_theatre_prfm: true
+  field_profile_who_ru: true
+  field_promoted_to_landing_page: true

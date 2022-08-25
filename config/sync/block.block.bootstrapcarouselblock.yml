@@ -1,0 +1,26 @@
+uuid: 61716887-337d-450b-b753-635b85f41de4
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+    - wes_module
+  theme:
+    - talawa
+id: bootstrapcarouselblock
+theme: talawa
+region: header_slider
+weight: 0
+provider: null
+plugin: bootstrap_carousel_block
+settings:
+  id: bootstrap_carousel_block
+  label: 'Bootstrap Carousel Block'
+  provider: wes_module
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: "<front>\r\n/home-page\r\n/whatson-page"
+    negate: false
+    context_mapping: {  }

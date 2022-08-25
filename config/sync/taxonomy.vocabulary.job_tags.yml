@@ -1,0 +1,9 @@
+uuid: 477da3af-5423-4905-8fe5-190213e3b608
+langcode: en
+status: true
+dependencies: {  }
+name: 'Job Tags'
+vid: job_tags
+description: ''
+hierarchy: 0
+weight: 0

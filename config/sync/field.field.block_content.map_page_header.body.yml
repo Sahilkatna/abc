@@ -1,0 +1,22 @@
+uuid: 532e22ff-fea5-4db4-9617-e3921a98580d
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.map_page_header
+    - field.storage.block_content.body
+  module:
+    - text
+id: block_content.map_page_header.body
+field_name: body
+entity_type: block_content
+bundle: map_page_header
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+field_type: text_with_summary

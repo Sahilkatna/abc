@@ -1,0 +1,331 @@
+uuid: 5f69b975-2329-4563-b4d5-d299540c458c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.profile.profile.field_profile_address
+    - field.field.profile.profile.field_profile_backstage_tech
+    - field.field.profile.profile.field_profile_banner_image
+    - field.field.profile.profile.field_profile_community_ptcp
+    - field.field.profile.profile.field_profile_completed
+    - field.field.profile.profile.field_profile_cv
+    - field.field.profile.profile.field_profile_dance_movement
+    - field.field.profile.profile.field_profile_expertise
+    - field.field.profile.profile.field_profile_first_name
+    - field.field.profile.profile.field_profile_function
+    - field.field.profile.profile.field_profile_image
+    - field.field.profile.profile.field_profile_interests
+    - field.field.profile.profile.field_profile_job_title
+    - field.field.profile.profile.field_profile_last_name
+    - field.field.profile.profile.field_profile_literary
+    - field.field.profile.profile.field_profile_looking
+    - field.field.profile.profile.field_profile_looking_others
+    - field.field.profile.profile.field_profile_music
+    - field.field.profile.profile.field_profile_offer
+    - field.field.profile.profile.field_profile_offer_others
+    - field.field.profile.profile.field_profile_organization
+    - field.field.profile.profile.field_profile_phone_number
+    - field.field.profile.profile.field_profile_producing_admin
+    - field.field.profile.profile.field_profile_profile_tag
+    - field.field.profile.profile.field_profile_role
+    - field.field.profile.profile.field_profile_self_introduction
+    - field.field.profile.profile.field_profile_show_email
+    - field.field.profile.profile.field_profile_social_share
+    - field.field.profile.profile.field_profile_theatre_prfm
+    - field.field.profile.profile.field_profile_who_ru
+    - field.field.profile.profile.field_promoted_to_landing_page
+    - image.style.profile_image
+    - profile.type.profile
+  module:
+    - content_moderation
+    - dynamic_entity_reference
+    - field_group
+    - file
+    - image
+    - social_media_links_field
+    - text
+third_party_settings:
+  field_group:
+    group_profile_your_profile:
+      children: {  }
+      parent_name: ''
+      weight: 35
+      format_type: fieldset
+      format_settings:
+        label: 'Your Profile'
+        description: 'This section allows you to edit basic information about your profile. Upload and crop your profile picture, enter your main job title and select your interests.'
+        required_fields: true
+        id: ''
+        classes: ''
+      label: 'Your Profile'
+      region: hidden
+    group_profile_your_work:
+      children: {  }
+      parent_name: ''
+      weight: 41
+      format_type: fieldset
+      format_settings:
+        label: 'What do you do?'
+        description: 'Tick the relevant boxes that apply to your skills and experience below. Tell us how long you have been doing this for using the dropdown on the top right corner of this section.'
+        required_fields: true
+        id: ''
+        classes: ''
+      label: 'What do you do?'
+      region: hidden
+    group_profile_bio_cv:
+      children: {  }
+      parent_name: ''
+      weight: 42
+      format_type: fieldset
+      format_settings:
+        label: 'Bio & cv'
+        description: 'Use the free typing field below to introduce yourself. Upload a CV on your profile using the upload button.'
+        required_fields: true
+        id: ''
+        classes: ''
+      label: 'Bio & cv'
+      region: hidden
+    group_profile_looking:
+      children: {  }
+      parent_name: ''
+      weight: 36
+      format_type: fieldset
+      format_settings:
+        label: 'I''m Looking for'
+        description: 'Tell us what you are looking for on MAKE by ticking the relevant boxes below.'
+        required_fields: true
+        id: ''
+        classes: ''
+      label: 'I''m Looking for'
+      region: hidden
+    group_profile_offer:
+      children: {  }
+      parent_name: ''
+      weight: 37
+      format_type: fieldset
+      format_settings:
+        label: 'I can offer'
+        description: 'Tell us what you can offer to other MAKE users by ticking the relevant boxes below.'
+        required_fields: true
+        id: ''
+        classes: ''
+      label: 'I can offer'
+      region: hidden
+    group_profile_cover_image:
+      children: {  }
+      parent_name: ''
+      weight: 38
+      format_type: fieldset
+      format_settings:
+        label: 'Cover Image'
+        description: 'Upload a cover image here. The cover image must be less than 8MB in size and at least 1,000 pixel wide, though we encourage an optimal width of 2,000 pixel. Allowed images types are png, gif, jpg, jpeg. Please note that your cover image must be larger than 1000x700 pixels.'
+        required_fields: true
+        id: ''
+        classes: ''
+      label: 'Cover Image'
+      region: hidden
+    group_profile_web_social:
+      children: {  }
+      parent_name: ''
+      weight: 39
+      format_type: fieldset
+      format_settings:
+        label: 'Web & Social'
+        description: 'Use the fields below to enter your relevant social media handles.'
+        required_fields: true
+        id: ''
+        classes: ''
+      label: 'Web & Social'
+      region: hidden
+    group_profile_industry_bio:
+      children: {  }
+      parent_name: ''
+      weight: 40
+      format_type: fieldset
+      format_settings:
+        label: Profile
+        description: 'Start filling in your profile by uploading a picture of yourself and tell us more about your interests.'
+        required_fields: true
+        id: ''
+        classes: ''
+      label: Profile
+      region: hidden
+    group_profile_confimation:
+      children: {  }
+      parent_name: ''
+      weight: 34
+      format_type: fieldset
+      format_settings:
+        label: 'Thank you for registering with Talawa Make'
+        description: "The validation e-mail has been sent to your e-mail address. Please follow the indications in the message to complete your registration.\n\nYour e-mail verification is pending. If you didn’t receive the verification e-mail, click on the link below to re-send the validation e-mail."
+        id: ''
+        classes: ''
+        required_fields: false
+      label: 'Thank you for registering with Talawa Make'
+      region: hidden
+_core:
+  default_config_hash: 3m__rlpNdR6CGyglD-I4hlW473gTbE285B3wmm-vk78
+id: profile.profile.default
+targetEntityType: profile
+bundle: profile
+mode: default
+content:
+  field_profile_backstage_tech:
+    weight: 14
+    settings: {  }
+    third_party_settings: {  }
+    type: dynamic_entity_reference_options_buttons
+    region: content
+  field_profile_banner_image:
+    weight: 3
+    settings:
+      preview_image_style: profile_cover_image
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_profile_community_ptcp:
+    weight: 17
+    settings: {  }
+    third_party_settings: {  }
+    type: dynamic_entity_reference_options_buttons
+    region: content
+  field_profile_cv:
+    weight: 8
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: file_generic
+    region: content
+  field_profile_dance_movement:
+    weight: 12
+    settings: {  }
+    third_party_settings: {  }
+    type: dynamic_entity_reference_options_buttons
+    region: content
+  field_profile_expertise:
+    type: options_select
+    weight: 19
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_profile_image:
+    weight: 0
+    settings:
+      preview_image_style: profile_image
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_profile_interests:
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_profile_job_title:
+    weight: 10
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_profile_literary:
+    weight: 15
+    settings: {  }
+    third_party_settings: {  }
+    type: dynamic_entity_reference_options_buttons
+    region: content
+  field_profile_looking:
+    type: options_buttons
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_profile_looking_others:
+    type: string_textfield
+    weight: 5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_profile_music:
+    weight: 16
+    settings: {  }
+    third_party_settings: {  }
+    type: dynamic_entity_reference_options_buttons
+    region: content
+  field_profile_offer:
+    type: options_buttons
+    weight: 6
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_profile_offer_others:
+    type: string_textfield
+    weight: 7
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_profile_producing_admin:
+    weight: 18
+    settings: {  }
+    third_party_settings: {  }
+    type: dynamic_entity_reference_options_buttons
+    region: content
+  field_profile_self_introduction:
+    weight: 1
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_profile_social_share:
+    weight: 11
+    settings: {  }
+    third_party_settings: {  }
+    type: social_media_links_field_default
+    region: content
+  field_profile_theatre_prfm:
+    weight: 13
+    settings: {  }
+    third_party_settings: {  }
+    type: dynamic_entity_reference_options_buttons
+    region: content
+  field_profile_who_ru:
+    weight: 9
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_promoted_to_landing_page:
+    weight: 21
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  moderation_state:
+    type: moderation_state_default
+    weight: 20
+    settings: {  }
+    region: content
+    third_party_settings: {  }
+hidden:
+  field_profile_address: true
+  field_profile_completed: true
+  field_profile_first_name: true
+  field_profile_function: true
+  field_profile_last_name: true
+  field_profile_organization: true
+  field_profile_phone_number: true
+  field_profile_profile_tag: true
+  field_profile_role: true
+  field_profile_show_email: true

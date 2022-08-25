@@ -1,0 +1,23 @@
+uuid: 6934cdd1-c65e-474f-97a0-04dc84b63469
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.group_content.teaser
+    - group.content_type.open_group-group_node-article
+id: group_content.open_group-group_node-article.teaser
+targetEntityType: group_content
+bundle: open_group-group_node-article
+mode: teaser
+content:
+  entity_id:
+    type: entity_reference_entity_view
+    weight: 0
+    region: content
+    label: above
+    settings:
+      view_mode: teaser
+      link: false
+    third_party_settings: {  }
+hidden:
+  uid: true

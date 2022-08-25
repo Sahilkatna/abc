@@ -1,0 +1,22 @@
+uuid: 6fb07097-9aaa-4b2b-bd6a-7bf48d4760e4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.article
+  module:
+    - text
+id: node.article.body
+field_name: body
+entity_type: node
+bundle: article
+label: Content
+description: 'Enter the main body text here, as well as any extra images you may require (adhering to the size specifications mentioned above). Use integrated the text editor to appropriately format your content; you can embed videos from the web, insert hyperlinks within the text, etc.…'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+field_type: text_with_summary

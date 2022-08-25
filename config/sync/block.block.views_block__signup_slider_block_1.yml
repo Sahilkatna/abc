@@ -1,0 +1,30 @@
+uuid: d118dff1-28f9-46a8-bae4-fe9d407504bd
+langcode: en
+status: false
+dependencies:
+  config:
+    - views.view.signup_slider
+  module:
+    - system
+    - views
+  theme:
+    - talawa
+id: views_block__signup_slider_block_1
+theme: talawa
+region: header_slider
+weight: 0
+provider: null
+plugin: 'views_block:signup_slider-block_1'
+settings:
+  id: 'views_block:signup_slider-block_1'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    pages: "/home-page\r\n/whatson-page"
+    negate: false
+    context_mapping: {  }

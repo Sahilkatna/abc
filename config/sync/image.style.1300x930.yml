@@ -1,0 +1,23 @@
+uuid: 3f789557-ab9e-4bf0-a1e7-d5ea4b15dbd6
+langcode: en
+status: true
+dependencies:
+  module:
+    - image_effects
+name: 1300x930
+label: 1300X930
+effects:
+  fcedf316-a7e5-4ac4-8f7d-8cdf48654251:
+    uuid: fcedf316-a7e5-4ac4-8f7d-8cdf48654251
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 1300
+      height: 930
+      anchor: center-center
+  82d981ff-a4da-4960-bfd0-451c423fb27c:
+    uuid: 82d981ff-a4da-4960-bfd0-451c423fb27c
+    id: image_effects_auto_orient
+    weight: 2
+    data:
+      scan_exif: true

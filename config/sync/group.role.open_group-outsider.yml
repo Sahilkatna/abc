@@ -1,0 +1,16 @@
+uuid: c3d03a31-302f-4821-b63c-fb1feb196942
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.open_group
+_core:
+  default_config_hash: VCNzjzReKVlVPpmVrmQzMn97xLiRwIatpY_WZiuHD-k
+id: open_group-outsider
+label: Outsider
+weight: -101
+internal: true
+audience: outsider
+group_type: open_group
+permissions_ui: true
+permissions: {  }

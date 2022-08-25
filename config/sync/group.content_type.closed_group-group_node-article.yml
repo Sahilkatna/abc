@@ -1,0 +1,20 @@
+uuid: 96aa33d2-6466-461b-a2be-bde43ae2ed0f
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.closed_group
+    - node.type.article
+  module:
+    - gnode
+    - node
+id: closed_group-group_node-article
+label: 'Closed group: Group node (Article)'
+description: 'Adds <em class="placeholder">Article</em> content to groups both publicly and privately.'
+group_type: closed_group
+content_plugin: 'group_node:article'
+plugin_config:
+  group_cardinality: 1
+  entity_cardinality: 1
+  use_creation_wizard: false
+  admin_access: ''

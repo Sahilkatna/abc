@@ -1,0 +1,23 @@
+uuid: 99ac33b3-2099-489a-afbd-b58cafc09a79
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_field
+    - field_permissions
+    - paragraphs
+third_party_settings:
+  field_permissions:
+    permission_type: public
+id: paragraph.field_talawa_block
+field_name: field_talawa_block
+entity_type: paragraph
+type: block_field
+settings: {  }
+module: block_field
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

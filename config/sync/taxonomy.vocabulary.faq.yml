@@ -1,0 +1,9 @@
+uuid: ac5df4d9-1ffd-414a-9bc2-a53c0685725e
+langcode: en
+status: true
+dependencies: {  }
+name: FAQ
+vid: faq
+description: 'Learn more about Make and its functionalities'
+hierarchy: 0
+weight: 0

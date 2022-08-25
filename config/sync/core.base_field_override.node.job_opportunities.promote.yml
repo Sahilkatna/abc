@@ -1,0 +1,22 @@
+uuid: 9c677b71-048c-4492-98a2-74d832968c8e
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.job_opportunities
+id: node.job_opportunities.promote
+field_name: promote
+entity_type: node
+bundle: job_opportunities
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

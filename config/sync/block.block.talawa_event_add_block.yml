@@ -1,0 +1,26 @@
+uuid: 666ae78f-1b29-437f-aff6-d6e1ce0f92f9
+langcode: en
+status: true
+dependencies:
+  module:
+    - social_event
+    - system
+  theme:
+    - talawa
+id: talawa_event_add_block
+theme: talawa
+region: hidden
+weight: -35
+provider: null
+plugin: event_add_block
+settings:
+  id: event_add_block
+  label: 'Event add block'
+  provider: social_event
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: '/user/*/events'
+    negate: false
+    context_mapping: {  }

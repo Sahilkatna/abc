@@ -1,0 +1,271 @@
+uuid: f23bcf57-b724-4eb5-8d21-749c6f6c5f6f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.user.user.field_account_cultural_bkg
+    - field.field.user.user.field_account_dob
+    - field.field.user.user.field_account_gender
+    - field.field.user.user.field_account_organisation
+    - field.field.user.user.field_account_profile_public
+    - field.field.user.user.field_account_public_loc_map
+    - field.field.user.user.field_account_subs_forum
+    - field.field.user.user.field_account_subs_message
+    - field.field.user.user.field_account_subs_profile
+    - field.field.user.user.field_float_lat
+    - field.field.user.user.field_float_lng
+    - field.field.user.user.field_lat
+    - field.field.user.user.field_lng
+    - field.field.user.user.field_promoted_to_landing_page
+    - field.field.user.user.field_sticky_top_of_lists
+    - field.field.user.user.field_view_mode
+  module:
+    - field_group
+    - talawa_profile
+    - user
+third_party_settings:
+  field_group:
+    group_locale_settings:
+      children: {  }
+      parent_name: ''
+      weight: 5
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: true
+      label: 'Locale settings'
+      region: hidden
+    group_account_your_details:
+      children: {  }
+      parent_name: ''
+      weight: 20
+      format_type: fieldset
+      format_settings:
+        label: 'Your Details'
+        description: 'Enter or edit your personal details below.'
+        required_fields: true
+        id: ''
+        classes: ''
+      label: 'Your Details'
+      region: hidden
+    group_account_your_credentials:
+      children: {  }
+      parent_name: ''
+      weight: 20
+      format_type: fieldset
+      format_settings:
+        label: 'Your Credentials'
+        description: 'You can change the email address you used to register on MAKE and your password using the fields below. '
+        required_fields: true
+        id: ''
+        classes: ''
+      label: 'Your Credentials'
+      region: hidden
+    group_account_postcode:
+      children: {  }
+      parent_name: ''
+      weight: 20
+      format_type: fieldset
+      format_settings:
+        label: 'Your Postcode'
+        description: 'We need your postal address to help us to show you opportunities and collaborators in your area. We never sell or rent your data. Check our Privacy Policy from the link in the footer.'
+        required_fields: true
+        id: ''
+        classes: ''
+      label: 'Your Postcode'
+      region: hidden
+    group_account_subs_notify:
+      children: {  }
+      parent_name: ''
+      weight: 20
+      format_type: fieldset
+      format_settings:
+        label: Notifications
+        description: 'Tick the boxes below to let us know when you would like to receive notifications from MAKE.'
+        required_fields: true
+        id: ''
+        classes: ''
+      label: Notifications
+      region: hidden
+    group_account_questions:
+      children: {  }
+      parent_name: ''
+      weight: 20
+      format_type: fieldset
+      format_settings:
+        label: Questions
+        description: 'Fill in the fields below to let us know a bit more about yourself.'
+        required_fields: true
+        id: ''
+        classes: ''
+      label: Questions
+      region: hidden
+    group_account_address_details:
+      children: {  }
+      parent_name: ''
+      weight: 20
+      format_type: fieldset
+      format_settings:
+        label: 'Address Details'
+        description: 'We need your postal address to help us to show you opportunities and collaborators in your area. We never sell or rent your data. Check our Privacy Policy from the link in the footer.'
+        required_fields: true
+        id: ''
+        classes: ''
+      label: 'Address Details'
+      region: hidden
+    group_account_vis_prof_loc:
+      children: {  }
+      parent_name: ''
+      weight: 20
+      format_type: fieldset
+      format_settings:
+        label: 'Visibility profile and location'
+        description: 'We use the first part of your postcode to place you on the map. We never sell or rent your data, and we will never publish your postcode. Check our Privacy Policy from the link in the footer.'
+        required_fields: true
+        id: ''
+        classes: ''
+      label: 'Visibility profile and location'
+      region: hidden
+_core:
+  default_config_hash: r24VaSY_JpCq4Rv4qAh58FyXNtJTdTxNqnVeSoy3wu4
+id: user.user.default
+targetEntityType: user
+bundle: user
+mode: default
+content:
+  account:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_account_cultural_bkg:
+    weight: 9
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_account_dob:
+    weight: 21
+    settings:
+      hour_format: 24h
+      allow_times: '15'
+      disable_days: {  }
+      exclude_date: ''
+      inline: false
+      datetimepicker_theme: default
+      min_date: ''
+      max_date: ''
+      year_start: ''
+      year_end: ''
+    third_party_settings: {  }
+    type: talawa_date_time_widget
+    region: content
+  field_account_gender:
+    weight: 8
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_account_organisation:
+    weight: 22
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_account_profile_public:
+    weight: 23
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_account_public_loc_map:
+    weight: 24
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_account_subs_forum:
+    weight: 17
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_account_subs_message:
+    weight: 15
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_account_subs_profile:
+    weight: 16
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_float_lat:
+    weight: 30
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_float_lng:
+    weight: 31
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_lat:
+    weight: 27
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_lng:
+    weight: 28
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_promoted_to_landing_page:
+    weight: 25
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_sticky_top_of_lists:
+    weight: 32
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_view_mode:
+    weight: 26
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  private_messages:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  contact: true
+  groups: true
+  language: true
+  path: true
+  timezone: true

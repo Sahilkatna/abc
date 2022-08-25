@@ -1,0 +1,31 @@
+uuid: e6a4c012-1eef-4ef2-8f53-aa2851906ecc
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:landing_page_header:a2673068-ae22-48bc-9456-7239f817d543'
+  module:
+    - block_content
+    - system
+  theme:
+    - talawa
+id: makeonlinegroups
+theme: talawa
+region: hero
+weight: 0
+provider: null
+plugin: 'block_content:a2673068-ae22-48bc-9456-7239f817d543'
+settings:
+  id: 'block_content:a2673068-ae22-48bc-9456-7239f817d543'
+  label: 'MAKE Online groups'
+  provider: block_content
+  label_display: visible
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: /group-landing-page
+    negate: false
+    context_mapping: {  }

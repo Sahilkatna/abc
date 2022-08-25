@@ -1,0 +1,33 @@
+uuid: 22d7a78f-135d-4c61-ae15-7710f56b2b1c
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.venue
+  module:
+    - node
+    - views
+  theme:
+    - talawa
+id: views_block__venue_block_1
+theme: talawa
+region: sidebar_second
+weight: -67
+provider: null
+plugin: 'views_block:venue-block_1'
+settings:
+  id: 'views_block:venue-block_1'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+  context_mapping: {  }
+visibility:
+  node_type:
+    id: node_type
+    bundles:
+      event: event
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

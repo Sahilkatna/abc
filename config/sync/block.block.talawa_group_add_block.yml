@@ -1,0 +1,34 @@
+uuid: 05b7598a-50f1-448e-9567-4f653c186483
+langcode: en
+status: true
+dependencies:
+  module:
+    - social_group
+    - system
+    - user
+  theme:
+    - talawa
+id: talawa_group_add_block
+theme: talawa
+region: complementary_top
+weight: -66
+provider: null
+plugin: group_add_block
+settings:
+  id: group_add_block
+  label: 'Group add block'
+  provider: social_group
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: '/user/*/groups'
+    negate: false
+    context_mapping: {  }
+  user_role:
+    id: user_role
+    roles:
+      artist: artist
+    negate: false
+    context_mapping:
+      user: '@social_user.user_route_context:user'

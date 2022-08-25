@@ -1,0 +1,13 @@
+uuid: a6e67ac1-4ac6-452d-989c-9b247fab5051
+langcode: en
+status: true
+dependencies:
+  module:
+    - flag
+id: flag_action.follow_content.flag
+label: 'Follow content'
+type: node
+plugin: 'flag_action:follow_content.flag'
+configuration:
+  flag_id: follow_content
+  flag_action: flag

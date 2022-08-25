@@ -1,0 +1,23 @@
+uuid: 11c64ef3-69b5-4746-9f08-2b8827d8996f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.message.create_article_profile_stream.field_message_context
+    - field.field.message.create_article_profile_stream.field_message_destination
+    - field.field.message.create_article_profile_stream.field_message_related_object
+    - message.template.create_article_profile_stream
+id: message.create_article_profile_stream.default
+targetEntityType: message
+bundle: create_article_profile_stream
+mode: default
+content:
+  partial_0:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_message_context: true
+  field_message_destination: true
+  field_message_related_object: true

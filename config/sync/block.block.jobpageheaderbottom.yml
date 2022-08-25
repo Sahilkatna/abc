@@ -1,0 +1,26 @@
+uuid: 2b8537a2-ddc4-44e2-9d06-6a63ca2744f4
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+    - talawa_landing_pages
+  theme:
+    - talawa
+id: jobpageheaderbottom
+theme: talawa
+region: hero_bottom
+weight: 0
+provider: null
+plugin: job_page_header_bottom
+settings:
+  id: job_page_header_bottom
+  label: 'Job page header bottom'
+  provider: talawa_landing_pages
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: /job-landing-page
+    negate: false
+    context_mapping: {  }

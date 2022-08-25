@@ -1,0 +1,9 @@
+uuid: 0f596ad9-2c7f-4e74-b5a8-d0fb940f50c4
+langcode: en
+status: true
+dependencies: {  }
+name: 'Literary (Script & Poetry)'
+vid: literary_script_poetry
+description: 'Profile Reference Field'
+hierarchy: 0
+weight: 0

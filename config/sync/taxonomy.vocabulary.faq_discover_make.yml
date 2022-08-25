@@ -1,0 +1,9 @@
+uuid: c5d5e44b-b5bc-41f1-b4ca-672d81fe5173
+langcode: en
+status: true
+dependencies: {  }
+name: 'Faq Discover Make'
+vid: faq_discover_make
+description: ''
+hierarchy: 0
+weight: 0

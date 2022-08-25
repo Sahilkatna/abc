@@ -1,0 +1,9 @@
+uuid: cb0ee50a-da95-4d1a-9aeb-e6223bb3eaf3
+langcode: en
+status: true
+dependencies: {  }
+name: Offer
+vid: offer
+description: 'I can offer'
+hierarchy: 0
+weight: 0

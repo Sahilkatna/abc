@@ -1,0 +1,19 @@
+uuid: 4a9c62d1-1ad2-41c8-91cb-9d21e1a1fd5c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_intro
+    - node.type.job_opportunities
+id: node.job_opportunities.field_intro
+field_name: field_intro
+entity_type: node
+bundle: job_opportunities
+label: Intro
+description: 'You can enter here the introduction text for your ad, which quickly explains at a glance who you are looking for and for which position for example.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

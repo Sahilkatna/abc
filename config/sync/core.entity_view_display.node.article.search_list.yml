@@ -1,0 +1,61 @@
+uuid: 6604d673-6a66-4064-af41-d3614bd1ca3b
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.search_list
+    - field.field.node.article.body
+    - field.field.node.article.field_article_comments
+    - field.field.node.article.field_content_visibility
+    - field.field.node.article.field_crop_position
+    - field.field.node.article.field_except
+    - field.field.node.article.field_feature_image
+    - field.field.node.article.field_group
+    - field.field.node.article.field_image_gallery
+    - field.field.node.article.field_promoted_to_landing_page
+    - field.field.node.article.field_promoted_to_landing_slide
+    - field.field.node.article.field_sticky_top_of_lists
+    - field.field.node.article.field_tags
+    - field.field.node.article.field_type_of_content
+    - field.field.node.article.field_view_mode
+    - image.style.search_list
+    - node.type.article
+  module:
+    - image
+    - user
+id: node.article.search_list
+targetEntityType: node
+bundle: article
+mode: search_list
+content:
+  field_feature_image:
+    weight: 9
+    label: above
+    settings:
+      image_style: search_list
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+hidden:
+  addtoany: true
+  body: true
+  field_article_comments: true
+  field_content_visibility: true
+  field_crop_position: true
+  field_except: true
+  field_group: true
+  field_image_gallery: true
+  field_promoted_to_landing_page: true
+  field_promoted_to_landing_slide: true
+  field_sticky_top_of_lists: true
+  field_tags: true
+  field_type_of_content: true
+  field_view_mode: true
+  flag_follow_content: true
+  groups: true
+  groups_type_closed_group: true
+  groups_type_open_group: true
+  groups_type_public_group: true
+  links: true
+  private_message_link: true

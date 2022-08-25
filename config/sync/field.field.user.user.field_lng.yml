@@ -1,0 +1,20 @@
+uuid: 0a60fac3-d1f0-4db1-9893-44503f88df2a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_lng
+  module:
+    - user
+id: user.user.field_lng
+field_name: field_lng
+entity_type: user
+bundle: user
+label: Lng
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

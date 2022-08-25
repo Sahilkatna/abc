@@ -1,0 +1,25 @@
+uuid: 304066e5-6373-4ae4-a809-6bee2a3df178
+langcode: en
+status: true
+dependencies:
+  module:
+    - address
+    - field_permissions
+    - group
+third_party_settings:
+  field_permissions:
+    permission_type: public
+_core:
+  default_config_hash: SThhVdsoT2cGEl1WixzKDeTriPp9zTmXWBNcUrUwIgs
+id: group.field_group_address
+field_name: field_group_address
+entity_type: group
+type: address
+settings: {  }
+module: address
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

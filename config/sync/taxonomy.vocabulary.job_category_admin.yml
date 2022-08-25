@@ -1,0 +1,9 @@
+uuid: 9ff73a11-e3a4-47a2-8b43-61199dd395cc
+langcode: en
+status: true
+dependencies: {  }
+name: 'Job Category Admin'
+vid: job_category_admin
+description: ''
+hierarchy: 0
+weight: 0

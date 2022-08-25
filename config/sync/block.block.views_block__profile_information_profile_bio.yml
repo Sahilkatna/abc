@@ -1,0 +1,25 @@
+uuid: 6b2e4a8c-795b-4110-b3ae-249188e3d28e
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.profile_information
+  module:
+    - views
+  theme:
+    - talawa
+id: views_block__profile_information_profile_bio
+theme: talawa
+region: sidebar_first
+weight: -54
+provider: null
+plugin: 'views_block:profile_information-profile_bio'
+settings:
+  id: 'views_block:profile_information-profile_bio'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+  context_mapping: {  }
+visibility: {  }

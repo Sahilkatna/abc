@@ -1,0 +1,31 @@
+uuid: 56da5eab-3b98-4316-b0ac-ef9831972789
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.newest_groups
+  module:
+    - system
+    - views
+  theme:
+    - talawa
+_core:
+  default_config_hash: 2pIi1KbMaKhE051d8bsREZj0FQG1Hw0HYRY7T7w7uUw
+id: talawa_exposed_form_newest_groups_page_all_groups
+theme: talawa
+region: complementary_top
+weight: -51
+provider: null
+plugin: 'views_exposed_filter_block:newest_groups-page_all_groups'
+settings:
+  id: 'views_exposed_filter_block:newest_groups-page_all_groups'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: Filter
+visibility:
+  request_path:
+    id: request_path
+    pages: /all-groups
+    negate: false
+    context_mapping: {  }

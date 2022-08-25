@@ -1,0 +1,31 @@
+uuid: 96db54bf-7765-4145-9937-460912e50477
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:landing_page_header:362aac99-60ee-4b1e-a082-c127986054f3'
+  module:
+    - block_content
+    - system
+  theme:
+    - talawa
+id: notifications
+theme: talawa
+region: hero
+weight: 0
+provider: null
+plugin: 'block_content:362aac99-60ee-4b1e-a082-c127986054f3'
+settings:
+  id: 'block_content:362aac99-60ee-4b1e-a082-c127986054f3'
+  label: notifications
+  provider: block_content
+  label_display: visible
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: /notifications
+    negate: false
+    context_mapping: {  }

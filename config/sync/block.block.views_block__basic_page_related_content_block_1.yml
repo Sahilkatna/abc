@@ -1,0 +1,32 @@
+uuid: 2cd95f26-517b-4696-9a06-0e27bcd04f88
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.basic_page_related_content
+  module:
+    - node
+    - views
+  theme:
+    - talawa
+id: views_block__basic_page_related_content_block_1
+theme: talawa
+region: sidebar_second
+weight: -66
+provider: null
+plugin: 'views_block:basic_page_related_content-block_1'
+settings:
+  id: 'views_block:basic_page_related_content-block_1'
+  label: ' Related Content'
+  provider: views
+  label_display: visible
+  views_label: ' Related Content'
+  items_per_page: none
+visibility:
+  node_type:
+    id: node_type
+    bundles:
+      page: page
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

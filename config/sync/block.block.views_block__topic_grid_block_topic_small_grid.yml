@@ -1,0 +1,33 @@
+uuid: 57d597bb-b9f4-42c3-8cd2-00fdfdf1ec83
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.topic_grid_block
+  module:
+    - node
+    - views
+  theme:
+    - talawa
+id: views_block__topic_grid_block_topic_small_grid
+theme: talawa
+region: sidebar_second
+weight: -62
+provider: null
+plugin: 'views_block:topic_grid_block-topic_small_grid'
+settings:
+  id: 'views_block:topic_grid_block-topic_small_grid'
+  label: Latest
+  provider: views
+  label_display: visible
+  views_label: Latest
+  items_per_page: none
+  context_mapping: {  }
+visibility:
+  node_type:
+    id: node_type
+    bundles:
+      topic: topic
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

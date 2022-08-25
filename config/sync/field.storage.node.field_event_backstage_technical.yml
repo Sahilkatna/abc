@@ -1,0 +1,27 @@
+uuid: 2c84499d-ed20-427c-b544-b7e7b34b7d7b
+langcode: en
+status: true
+dependencies:
+  module:
+    - dynamic_entity_reference
+    - field_permissions
+    - node
+    - taxonomy
+third_party_settings:
+  field_permissions:
+    permission_type: public
+id: node.field_event_backstage_technical
+field_name: field_event_backstage_technical
+entity_type: node
+type: dynamic_entity_reference
+settings:
+  exclude_entity_types: false
+  entity_type_ids:
+    taxonomy_term: taxonomy_term
+module: dynamic_entity_reference
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

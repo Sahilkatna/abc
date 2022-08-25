@@ -1,0 +1,19 @@
+uuid: 334dbdb1-d083-489a-8ef4-f9d067f93b05
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_job_address
+    - node.type.job_opportunities
+id: node.job_opportunities.field_job_address
+field_name: field_job_address
+entity_type: node
+bundle: job_opportunities
+label: 'Job Address'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

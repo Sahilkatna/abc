@@ -1,0 +1,23 @@
+uuid: 419fa8af-3eaa-44ec-a4ed-fa37dd643f19
+langcode: en
+status: true
+dependencies:
+  module:
+    - talawa_profile
+  theme:
+    - talawa
+id: talawa_edit_user_profile_header_block
+theme: talawa
+region: header_user_edit
+weight: 0
+provider: null
+plugin: edit_profile_header_block
+settings:
+  id: edit_profile_header_block
+  label: 'Talawa edit user/profile header block'
+  provider: talawa_profile
+  label_display: '0'
+  edit_profile_excerpt: 'Change or update your information settings'
+  context_mapping:
+    user: '@social_user.user_route_context:user'
+visibility: {  }

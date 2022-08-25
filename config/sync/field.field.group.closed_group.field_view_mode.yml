@@ -1,0 +1,21 @@
+uuid: e34b6608-2ef4-4274-b977-d1c106626b84
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.group.field_view_mode
+    - group.type.closed_group
+  module:
+    - options
+id: group.closed_group.field_view_mode
+field_name: field_view_mode
+entity_type: group
+bundle: closed_group
+label: 'View Mode'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

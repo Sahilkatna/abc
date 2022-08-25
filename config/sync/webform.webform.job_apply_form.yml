@@ -1,0 +1,219 @@
+uuid: b54feb5d-cb00-4302-8c5f-1b23de30f3e3
+langcode: en
+status: open
+dependencies:
+  module:
+    - wes_module
+open: null
+close: null
+weight: 0
+uid: 1
+template: false
+archive: false
+id: job_apply_form
+title: 'Job Apply Form'
+description: ''
+category: ''
+elements: "source_entity_id:\n  '#type': hidden\n  '#title': 'Job ID'\n  '#prepopulate': true\nname:\n  '#type': textfield\n  '#title': Name\n  '#default_value': '[current-user:account-name]'\n  '#wrapper_attributes':\n    class:\n      - col-md-6\ndate_of_birth:\n  '#type': date\n  '#title': 'Date Of Birth'\n  '#wrapper_attributes':\n    class:\n      - col-md-6\naddress:\n  '#type': webform_address\n  '#title': Address\n  '#default_value':\n    address: ''\n    address_2: ''\n    city: ''\n    state_province: ''\n    postal_code: ''\n    country: GB\n  '#wrapper_attributes':\n    class:\n      - col-md-12\n  '#state_province__required': true\n  '#state_province__type': webform_select_other\n  '#state_province__options': state_province_codes\n  '#country__required': true\n  '#country__type': webform_select_other\n  '#country__options': country_codes\nemail:\n  '#type': email\n  '#title': Email\n  '#default_value': '[current-user:mail]'\n  '#wrapper_attributes':\n    class:\n      - col-md-6\nphone_number:\n  '#type': textfield\n  '#title': 'Phone Number'\n  '#wrapper_attributes':\n    class:\n      - col-md-6\nmake_interview_dates:\n  '#type': radios\n  '#title': 'Make Interview dates'\n  '#options': yes_no\n  '#wrapper_attributes':\n    class:\n      - col-md-6\nare_you_a_tick_a_many_as_apply:\n  '#type': checkboxes\n  '#title': 'Are You A...?(tick a many as apply)'\n  '#options':\n    Perform: Perform\n    'Stage Manager': 'Stage Manager'\n    Designer: Designer\n    Technician: Technician\n    Writer: Writer\n  '#options_display': side_by_side\n  '#wrapper_attributes':\n    class:\n      - col-md-6\nsomething_else_:\n  '#type': textfield\n  '#title': 'Something Else?'\n  '#wrapper_attributes':\n    class:\n      - col-md-6\ndoing_now:\n  '#type': textarea\n  '#title': 'What have you done and what are you doing now?'\n  '#wrapper_attributes':\n    class:\n      - col-md-6\nwhat_would_you_like_to_do_in_the_future_:\n  '#type': textarea\n  '#title': 'What would you like to do in the future?'\n  '#wrapper_attributes':\n    class:\n      - col-md-6\nyou_bring:\n  '#type': textarea\n  '#title': 'What would you bring to TYPT:17'\n  '#wrapper_attributes':\n    class:\n      - col-md-6\nactions:\n  '#type': webform_actions\n  '#title': 'Submit button(s)'\n  '#attributes':\n    class:\n      - col-md-12"
+css: ''
+javascript: ''
+settings:
+  ajax: false
+  ajax_scroll_top: form
+  page: true
+  page_submit_path: ''
+  page_confirm_path: ''
+  form_title: both
+  form_submit_once: false
+  form_exception_message: ''
+  form_open_message: ''
+  form_close_message: ''
+  form_previous_submissions: true
+  form_confidential: false
+  form_confidential_message: ''
+  form_remote_addr: true
+  form_convert_anonymous: false
+  form_prepopulate: false
+  form_prepopulate_source_entity: false
+  form_prepopulate_source_entity_required: false
+  form_prepopulate_source_entity_type: ''
+  form_reset: false
+  form_disable_autocomplete: false
+  form_novalidate: false
+  form_disable_inline_errors: false
+  form_required: false
+  form_unsaved: false
+  form_disable_back: false
+  form_submit_back: false
+  form_autofocus: false
+  form_details_toggle: false
+  form_access_denied: default
+  form_access_denied_title: ''
+  form_access_denied_message: ''
+  form_access_denied_attributes: {  }
+  form_file_limit: ''
+  submission_label: ''
+  submission_log: false
+  submission_views: {  }
+  submission_views_replace: {  }
+  submission_user_columns: {  }
+  submission_user_duplicate: false
+  submission_access_denied: default
+  submission_access_denied_title: ''
+  submission_access_denied_message: ''
+  submission_access_denied_attributes: {  }
+  submission_exception_message: ''
+  submission_locked_message: ''
+  submission_excluded_elements: {  }
+  submission_exclude_empty: false
+  submission_exclude_empty_checkbox: false
+  previous_submission_message: ''
+  previous_submissions_message: ''
+  autofill: false
+  autofill_message: ''
+  autofill_excluded_elements: {  }
+  wizard_progress_bar: true
+  wizard_progress_pages: false
+  wizard_progress_percentage: false
+  wizard_progress_link: false
+  wizard_start_label: ''
+  wizard_preview_link: false
+  wizard_confirmation: true
+  wizard_confirmation_label: ''
+  wizard_track: ''
+  preview: 0
+  preview_label: ''
+  preview_title: ''
+  preview_message: ''
+  preview_attributes: {  }
+  preview_excluded_elements: {  }
+  preview_exclude_empty: true
+  preview_exclude_empty_checkbox: false
+  draft: none
+  draft_multiple: false
+  draft_auto_save: false
+  draft_saved_message: ''
+  draft_loaded_message: ''
+  confirmation_type: page
+  confirmation_title: ''
+  confirmation_message: ''
+  confirmation_url: ''
+  confirmation_attributes: {  }
+  confirmation_back: true
+  confirmation_back_label: ''
+  confirmation_back_attributes: {  }
+  confirmation_exclude_query: false
+  confirmation_exclude_token: false
+  limit_total: null
+  limit_total_interval: null
+  limit_total_message: ''
+  limit_total_unique: false
+  limit_user: null
+  limit_user_interval: null
+  limit_user_message: ''
+  limit_user_unique: false
+  entity_limit_total: null
+  entity_limit_total_interval: null
+  entity_limit_user: null
+  entity_limit_user_interval: null
+  purge: none
+  purge_days: null
+  results_disabled: false
+  results_disabled_ignore: false
+  token_update: false
+access:
+  create:
+    roles:
+      - anonymous
+      - authenticated
+    users: {  }
+    permissions: {  }
+  view_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  purge_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  view_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  administer:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  test:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  configuration:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+handlers:
+  wes_job_apply_notify:
+    id: wes_job
+    label: 'Wes Job Apply Notify'
+    handler_id: wes_job_apply_notify
+    status: true
+    conditions: {  }
+    weight: 0
+    settings:
+      states:
+        completed: completed
+        draft: 0
+        converted: 0
+        updated: 0
+        deleted: 0
+        locked: 0
+      to_mail: _default
+      to_options: {  }
+      cc_mail: ''
+      cc_options: {  }
+      bcc_mail: ''
+      bcc_options: {  }
+      from_mail: _default
+      from_options: {  }
+      from_name: _default
+      subject: _default
+      body: _default
+      excluded_elements: {  }
+      ignore_access: 0
+      exclude_empty: true
+      exclude_empty_checkbox: 0
+      html: true
+      attachments: false
+      twig: false
+      debug: 0
+      reply_to: ''
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
+      theme_name: ''
+      amount: ''
+      stripe_element: ''
+      quantity: ''
+      currency: usd
+      description: ''
+      email: ''
+      metadata: ''
+      stripe_customer_create: ''
+      stripe_charge_create: ''

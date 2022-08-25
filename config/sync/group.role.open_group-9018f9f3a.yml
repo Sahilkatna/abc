@@ -1,0 +1,32 @@
+uuid: c5d8ea61-921c-4400-9055-5e4fb96b1a96
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.open_group
+  enforced:
+    config:
+      - user.role.artist
+id: open_group-9018f9f3a
+label: Artist
+weight: 6
+internal: true
+audience: outsider
+group_type: open_group
+permissions_ui: false
+permissions:
+  0: 'view group'
+  1: 'join group'
+  2: 'view group_membership content'
+  3: 'access comments'
+  4: 'update own group_node:event entity'
+  5: 'view group_node:event entity'
+  6: 'view group_node:event content'
+  7: 'view group_node:topic content'
+  8: 'access posts in group'
+  9: 'view group stream page'
+  14: 'update own group_node:article entity'
+  15: 'view group_node:article entity'
+  16: 'view group_node:article content'
+  20: 'update own group_node:topic entity'
+  21: 'view group_node:topic entity'

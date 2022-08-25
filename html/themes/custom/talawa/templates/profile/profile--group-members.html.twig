@@ -1,0 +1,54 @@
+{#
+/**
+ * @file
+ *
+ * Default theme implementation for profiles.
+ *
+ * Available variables:
+ * - content: Items for the content of the profile.
+ *   Use 'content' to print them all, or print a subset such as
+ *   'content.title'. Use the following code to exclude the
+ *   printing of a given child element:
+ *   @code
+ *   {{ content|without('title') }}
+ *   @endcode
+ * - attributes: HTML attributes for the wrapper.
+ * - profile: The profile object.
+ * - url: The profile URL.
+ *
+ * @ingroup themeable
+ */
+#}
+{{ attach_library('socialbase/teaser')}}
+<div class="talawa-follow-details">
+    <div class="views-field views-field-field-profile-image">
+        <a href="{{ profile_stream_url }}">
+            {% if content.field_profile_image %}
+                {{ content.field_profile_image }}
+            {% endif %}
+        </a>
+    </div>
+    <div class="talawa-follow-title">
+        <div class="views-field views-field-name">
+            <a href="{{ profile_stream_url }}">
+                {{ profile_name|render }}
+            </a>
+        </div>
+    </div>
+</div>
+<div class="talawa-follow-social">
+    <div class="views-field">
+        <a href="{{ profile_contact_url }}">
+            {% if profile_contact_label == 'private_message' %}
+                {% trans %}Private message{% endtrans %}
+            {% else %}
+                {% trans %}View profile{% endtrans %}
+            {% endif %}
+        </a>
+    </div>
+    <div class="views-field">
+        <a href="{{ profile_stream_url }}" class="hidden-for-phone-only">
+            {% trans %}View activities{% endtrans %}
+        </a>
+    </div>
+</div>

@@ -1,0 +1,15 @@
+uuid: b48f64cc-decd-492c-8cb0-0f1bfecd7f9e
+langcode: en
+status: true
+dependencies: {  }
+name: 2600x1070_crop_top_left
+label: '2600X1070 Crop Top Left'
+effects:
+  e24b0dde-d725-41d5-9227-4e896ec5aef6:
+    uuid: e24b0dde-d725-41d5-9227-4e896ec5aef6
+    id: image_crop
+    weight: 1
+    data:
+      width: 2600
+      height: 1070
+      anchor: left-top

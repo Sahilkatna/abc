@@ -1,0 +1,10 @@
+uuid: fee8b5c0-96fd-49bb-b082-b7bcdd29c442
+langcode: en
+status: true
+dependencies:
+  module:
+    - group
+id: group.big_square
+label: 'Big Square'
+targetEntityType: group
+cache: true

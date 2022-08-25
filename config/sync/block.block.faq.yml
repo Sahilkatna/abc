@@ -1,0 +1,31 @@
+uuid: 28c2514f-7eee-4539-ae43-8f921e425d5f
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:landing_page_header:82684998-dde7-4524-b797-75c71c902b35'
+  module:
+    - block_content
+    - system
+  theme:
+    - talawa
+id: faq
+theme: talawa
+region: hero
+weight: 0
+provider: null
+plugin: 'block_content:82684998-dde7-4524-b797-75c71c902b35'
+settings:
+  id: 'block_content:82684998-dde7-4524-b797-75c71c902b35'
+  label: Faq
+  provider: block_content
+  label_display: visible
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: "/node/353\r\n/node/355\r\n"
+    negate: false
+    context_mapping: {  }

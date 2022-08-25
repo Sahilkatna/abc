@@ -1,0 +1,20 @@
+uuid: 69f32ef4-0c2d-468a-89d6-6de1ff7acc31
+langcode: en
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - socialbase
+id: socialbase_help
+theme: socialbase
+region: content
+weight: -16
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  provider: help
+  label_display: '0'
+visibility: {  }

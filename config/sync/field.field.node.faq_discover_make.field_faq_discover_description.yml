@@ -1,0 +1,21 @@
+uuid: c43bfae7-5243-4c38-8c80-bf79600d0394
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_faq_discover_description
+    - node.type.faq_discover_make
+  module:
+    - text
+id: node.faq_discover_make.field_faq_discover_description
+field_name: field_faq_discover_description
+entity_type: node
+bundle: faq_discover_make
+label: Description
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -1,0 +1,12 @@
+uuid: 4aa4c721-90b0-4608-b4e7-b81a63859a70
+langcode: en
+status: true
+dependencies:
+  module:
+    - profile
+_core:
+  default_config_hash: iuhrMzkLSMPc2jzBNgV46bUo5s0AHugdbchDlUQoxHA
+id: profile.compact_private_message
+label: 'Compact Private Message'
+targetEntityType: profile
+cache: true

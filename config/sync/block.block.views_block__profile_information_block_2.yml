@@ -1,0 +1,25 @@
+uuid: 3db80846-ff12-4944-9276-67901f72ee20
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.profile_information
+  module:
+    - views
+  theme:
+    - talawa
+id: views_block__profile_information_block_2
+theme: talawa
+region: sidebar_first
+weight: -52
+provider: null
+plugin: 'views_block:profile_information-block_2'
+settings:
+  id: 'views_block:profile_information-block_2'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+  context_mapping: {  }
+visibility: {  }

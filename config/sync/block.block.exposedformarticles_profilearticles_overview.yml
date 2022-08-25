@@ -1,0 +1,29 @@
+uuid: 3df75e14-fc9b-4d36-abb7-73980fe5f924
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.articles_profile
+  module:
+    - system
+    - views
+  theme:
+    - talawa
+id: exposedformarticles_profilearticles_overview
+theme: talawa
+region: complementary_top
+weight: -54
+provider: null
+plugin: 'views_exposed_filter_block:articles_profile-articles_overview'
+settings:
+  id: 'views_exposed_filter_block:articles_profile-articles_overview'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: Filter
+visibility:
+  request_path:
+    id: request_path
+    pages: '/user/*/articles'
+    negate: false
+    context_mapping: {  }

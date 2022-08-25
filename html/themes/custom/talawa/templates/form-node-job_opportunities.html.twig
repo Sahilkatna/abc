@@ -1,0 +1,427 @@
+{#
+/**
+ * @file
+ * Default theme implementation for a node edit form.
+ *
+ * Two column template for the node add/edit form.
+ *
+ * This template will be used when a node edit form specifies 'node_edit_form'
+ * as its #theme callback.  Otherwise, by default, node add/edit forms will be
+ * themed by form.html.twig.
+ *
+ * Available variables:
+ * - form: The node add/edit form.
+ *
+ * @see seven_form_node_form_alter()
+ *
+ * @ingroup themeable
+ */
+#}
+{{ form.form_build_id }}
+{{ form.form_token }}
+{{ form.form_id }}
+
+<div class="add-article">
+    <section class="row-0 article-row">
+		<div class="row">
+            <div class="col-md-3">
+                <div class="border-top border-mg-right">
+                    {#{{ vardumper(form.field_type) }}#}
+                    <h4>{{ form.field_type.widget['#title'] }}</h4>
+                    <p><small>{{ form.field_type.widget['#description'] }}</small></p>
+                </div>
+            </div>
+            <div class="col-md-9">
+			    <div class="row">
+            <div class="col-sm-12 opportunity-msg" style="display: none;">We notice that you are offering a lower fee than the recommended minimums therefore this will feature as a paid opportunity.</div>
+        </div>
+               <div class="field-checkboxes field-checkboxes-type"> {{ form.field_type.widget }} </div>
+            </div>
+        </div>
+		
+		
+		{% if form.admin_access is not empty  %}
+			<div class="row article-row">
+                <div class="col-md-3 ">
+                    <div class="border-top border-mg-right">
+                        {#{{ vardumper(form.field_job) }}#}
+                        <h4>{{ form.field_job.widget['#title'] }}</h4>
+                        <p><small>{{ form.field_job.widget['#description'] }}</small></p>
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    {{ form.field_job.widget }}
+                </div>
+            </div>
+		
+			{% endif %}   
+			
+		<div class="row article-row">
+                <div class="col-md-3 ">
+                    <div class="border-top border-mg-right">
+                        {#{{ vardumper(form.field_job_category) }}#}
+                        <h4>{{ form.field_job_category.widget['#title'] }}</h4>
+                        <p><small>{{ form.field_job_category.widget['#description'] }}</small></p>
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    {{ form.field_job_category.widget }}
+                </div>
+            </div>
+			
+			
+        <div class="row">
+            <div class="col-md-3 ">
+                <div class="border-top border-mg-right">
+                    {#{{ vardumper(form.title) }}#}
+                    <h4>{{ form.title.widget['#title'] }}</h4>
+                    <p><small>{{ form.title.widget['#description'] }}</small></p>
+                </div>
+            </div>
+            <div class="col-md-9">
+                {{ form.title.widget }}
+            </div>
+        </div>
+    </section>
+
+	<section class="row-1 article-row add_job row">
+		<div class="col-md-3"><div class="border-top border-mg-right"><h4>Salary</h4>
+		<p><small>{{ form.field_daily.widget[0]['#description'] }}</small></p>
+		</div></div>
+		<div class="col-md-9">
+            <div class="row">
+				<div class="col-sm-4 daily_input">			
+						<h4>{{ form.field_daily.widget['#title'] }}</h4>
+						{{ form.field_daily.widget }}					
+				</div>
+
+				<div class="col-sm-4 weekly_input">
+						<h4>{{ form.field_weekly.widget['#title'] }}</h4>
+						{{ form.field_weekly.widget }}
+				</div>
+
+				<div class="col-sm-4 yearly_input">
+						<h4>{{ form.field_yearly_salary.widget['#title'] }}</h4>
+						{{ form.field_yearly_salary.widget }}
+				</div>				
+			</div>
+		</div>
+	</section>
+
+    <div class="row article-row">
+        <div class="col-md-3 ">
+            <div class="border-top border-mg-right">
+                {#{{ vardumper(form.field_intro) }}#}
+                <h4>{{ form.field_intro.widget['#title'] }}</h4>
+                <p><small>{{ form.field_intro.widget['#description'] }}</small></p>
+            </div>
+        </div>
+        <div class="col-md-9">
+            {{ form.field_intro.widget }}
+        </div>
+    </div>
+
+    <div class="row article-row">
+        <div class="col-md-3 ">
+            <div class="border-top border-mg-right">
+                {#{{ vardumper(form.body) }}#}
+                <h4>{{ form.body.widget['#title'] }}</h4>
+                <p><small>{{ form.body.widget['#description'] }}</small></p>
+            </div>
+        </div>
+        <div class="col-md-9">
+            {{ form.body.widget }}
+        </div>
+    </div>
+
+    <div class="row article-row">
+        <div class="col-md-3 ">
+            <div class="border-top border-mg-right">
+                {#{{ vardumper(form.field_job_tags) }}#}
+                <h4>{{ form.field_job_tags.widget['#title'] }}</h4>
+                <p><small>{{ form.field_job_tags.widget['#description'] }}</small></p>
+            </div>
+        </div>
+        <div class="col-md-9">
+            {{ form.field_job_tags.widget }}
+        </div>
+    </div>
+
+    <div class="row article-row">
+        <div class="col-md-3 ">
+            <div class="border-top border-mg-right">
+                {#{{ vardumper(form.field_hirer) }}#}
+                <h4>{{ form.field_hirer.widget['#title'] }}</h4>
+                <p><small>{{ form.field_hirer.widget['#description'] }}</small></p>
+            </div>
+        </div>
+        <div class="col-md-9">
+            <div class="row">
+                <div class="col-sm-6">{{ form.field_hirer.widget }}</div>
+                <div class="col-sm-6">
+                    <div class="row">
+                        <div class="col-sm-6">{{ form.field_hirer_logo.widget[0]['#title'] }}</div>
+                        <div class="col-sm-6 hirer_logo">{{ form.field_hirer_logo.widget }}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row article-row">
+        <div class="col-md-3 ">
+            <div class="border-top border-mg-right">
+                {#{{ vardumper(form.field_name) }}#}
+                <h4>{{ form.field_name.widget['#title'] }}</h4>
+                <p><small>{{ form.field_name.widget['#description'] }}</small></p>
+            </div>
+        </div>
+        <div class="col-md-9">
+            {{ form.field_name.widget }}
+        </div>
+    </div>
+
+    <div class="row article-row">
+        <div class="col-md-3 ">
+            <div class="border-top border-mg-right">
+                {#{{ vardumper(form.field_email) }}#}
+                <h4>{{ form.field_email.widget['#title'] }}</h4>
+                <p><small>{{ form.field_email.widget['#description'] }}</small></p>
+            </div>
+        </div>
+        <div class="col-md-9">
+            {{ form.field_email.widget }}
+        </div>
+    </div>
+
+    <div class="row article-row">
+        <div class="col-md-3 ">
+            <div class="border-top border-mg-right">
+                {#{{ vardumper(form.field_phone) }}#}
+                <h4>{{ form.field_phone.widget['#title'] }}</h4>
+                <p><small>{{ form.field_phone.widget['#description'] }}</small></p>
+            </div>
+        </div>
+        <div class="col-md-9">
+            {{ form.field_phone.widget }}
+        </div>
+    </div>
+	
+    <div class="row article-row">
+        <div class="col-md-3 ">
+            <div class="border-top border-mg-right">
+                {#{{ vardumper(form.field_link_to_external_site) }}#}
+                <h4>Job Application</h4>
+                <p><small>{{ form.field_job_application.widget['#description'] }}</small></p>
+            </div>
+        </div>
+        <div class="col-md-9 job-application">
+            {{ form.field_link_to_external_site.widget }}
+        </div>
+    </div>
+
+    <div class="row article-row">
+        <div class="col-md-3 ">
+            <div class="border-top border-mg-right">
+                {#{{ vardumper(form.field_attachments) }}#}
+                <h4>{{ form.field_attachments.widget[0]['#title'] }}</h4>
+                <p><small>{{ form.field_attachments.widget[0]['#description'] }}</small></p>
+            </div>
+        </div>
+        <div class="col-md-9">
+            {{ form.field_attachments.widget }}
+        </div>
+    </div>
+
+    <div class="row article-row feature-image">
+        <div class="col-md-3 ">
+            <div class="border-top border-mg-right">
+                {#{{ vardumper(form.field_feature_image) }}#}
+                <h4>{{ form.field_feature_image.widget[0]['#title'] }}</h4>
+                <p><small>{{ form.field_feature_image.widget[0]['#description'] }}</small></p>
+            </div>
+        </div>
+        <div class="col-md-9 feature-image-edit">
+            {{ form.field_feature_image.widget }}
+        </div>
+    </div>
+        
+    <section class="row-2 job_specific">
+        <div class="row article-row">
+            <div class="col-md-3">
+                <div class="border-top border-mg-right">
+                    {#{{ vardumper(form.field_release_date) }}#}
+                    <h4>{{ form.field_release_date.widget['#title'] }}</h4>
+                    <p><small>{{ form.field_release_date.widget['#description'] }}</small></p>
+                </div>
+            </div>
+            <div class="col-md-9 field-date-time">
+                {{ form.field_release_date.widget }}
+            </div>
+        </div>
+        <div class="row article-row">
+            <div class="col-md-3 ">
+                <div class="border-top border-mg-right">
+                    {#{{ vardumper(form.field_application_deadline_date) }}#}
+                    <h4>{{ form.field_application_deadline_date.widget['#title'] }}</h4>
+                    <p><small>{{ form.field_application_deadline_date.widget['#description'] }}</small></p>
+                </div>
+            </div>
+            <div class="col-md-9 field-date-time">
+                {{ form.field_application_deadline_date.widget }}
+            </div>
+        </div>
+    </section>
+
+    <section class="row-3 opportunity_specific" style="display: none;">
+        <div class="row article-row">
+            <div class="col-md-3 ">
+                <div class="border-top border-mg-right">
+                    {#{{ vardumper(form.field_call_open_until) }}#}
+                    <h4>{{ form.field_call_open_until.widget['#title'] }}</h4>
+                    <p><small>{{ form.field_call_open_until.widget['#description'] }}</small></p>
+                </div>
+            </div>
+            <div class="col-md-9">
+                {{ form.field_call_open_until.widget }}
+            </div>
+        </div>	
+    </section>
+
+	<section class="row-4 admin-area job-form-group">
+        <div class="row article-row">
+            <div class="col-md-3 ">
+                <div class="border-top border-mg-right">
+                    {#{{ vardumper(form.field_group) }}#}
+                    <h4>{{ form.field_group.widget['#title'] }}</h4>
+                    <p><small>{{ form.field_group.widget['#description'] }}</small></p>
+                </div>
+            </div>
+            <div class="col-md-9">
+                {{ form.field_group.widget }}
+            </div>
+        </div>	
+    </section>
+	
+	
+    <section class="row-5 article-row">
+        <div class="row article-row">
+            <div class="col-md-3 ">
+                <div class="border-top border-mg-right">
+                    {#{{ vardumper(form.field_location) }}#}
+                    <h4>{{ form.field_location.widget['#title'] }}</h4>
+                    <p><small>{{ form.field_location.widget['#description'] }}</small></p>
+                </div>
+            </div>
+            <div class="col-md-9">
+                {{ form.field_location.widget }}
+            </div>
+        </div>
+		<div class="row article-row">
+            <div class="col-md-3 ">
+                <div class="border-top border-mg-right">
+                    {#{{ vardumper(form.moderation_state) }}#}
+                    <h4>{{ form.moderation_state.widget['#title'] }}</h4>
+                    <p><small>{{ form.moderation_state.widget['#description'] }}</small></p>
+                </div>
+            </div>
+            <div class="col-md-9">
+                {{ form.moderation_state.widget }}
+            </div>
+        </div>
+    </section>
+	<section class="hide">
+	{{ form.field_job_address }}
+	</section>
+	<div class="row article-row admin-area">
+        <div class="col-md-3">
+            <div class="border-top border-mg-right">
+                <h4>{{ form.field_content_visibility.widget['#title'] }}</h4>
+                <p><small>{{ form.field_content_visibility.widget['#description'] }}</small></p>
+            </div>
+        </div>
+        <div class="col-md-9 field-checkboxes-visibility">
+            {{ form.field_content_visibility.widget }}
+        </div>
+    </div>
+
+
+	
+	{% if form.admin_access is not empty  %}
+		<section class="row article-row">
+			<div class="col-md-3">
+				<div class="border-top border-mg-right">
+					{#{{ vardumper(form.field_promoted_to_landing_page) }}#}
+					<h4>{{ form.field_promoted_to_landing_page.widget['#title'] }}</h4>
+					<p><small>{{ form.field_promoted_to_landing_page.widget['#description'] }}</small></p>
+				</div>
+			</div>
+			<div class="col-md-9 field-checkboxes field-checkboxes-visibility">
+				{{ form.field_promoted_to_landing_page.widget }}
+			</div>
+		</section>
+	{% endif %} 
+    
+{% if form.admin_access is not empty  %}
+		<section class="row article-row">
+			<div class="col-md-3">
+				<div class="border-top border-mg-right">
+					{#{{ vardumper(form.field_view_mode) }}#}
+					<h4>{{ form.field_view_mode.widget['#title'] }}</h4>
+					<p><small>{{ form.field_view_mode.widget['#description'] }}</small></p>
+				</div>
+			</div>
+			<div class="col-md-9 field-checkboxes field-checkboxes-visibility">
+				{{ form.field_view_mode.widget }}
+			</div>
+		</section>
+	{% endif %}  
+
+        <div class="row article-row path-auto">
+            <div class="col-md-3">
+                <div class="border-top border-mg-right">
+                    <h4>{{ form.path.widget['#title'] }}</h4>
+                    <p><small>{{ form.path.widget['#description'] }}</small></p>
+                </div>
+            </div>
+            <div class="col-md-9 field-checkboxes-visibility">
+				{{ form.path.widget.0.pathauto }}			
+                {{ form.path.widget.0.alias }}              
+            </div>
+        </div>
+
+
+    {% if form.admin_access is not empty  %}
+        <div class="row article-row">
+            <div class="col-md-3">
+                <div class="border-top border-mg-right">
+                    {#{{ vardumper(form.field_view_mode) }}#}
+                    <h4>{{ form.field_sticky_top_of_lists.widget['#title'] }}</h4>
+                    <p><small>{{ form.field_sticky_top_of_lists.widget['#description'] }}</small></p>
+                </div>
+            </div>
+            <div class="col-md-9 field-checkboxes field-checkboxes-visibility">
+                {{ form.field_sticky_top_of_lists.widget }}
+            </div>
+        </div>
+
+    {% endif %}
+	
+	<section class="hide">
+		{{ form.field_float_lat.widget }}
+		{{ form.field_float_lng.widget }}
+	</section>
+	
+    <section class="row-6 article-row">
+        <div class="row">
+            <div class="col-md-3 hidden-xs">
+            </div>
+            <div class="col-md-9">
+                <div class="form-butns jobs-form-btn">
+					
+                    {{ form.actions }}
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

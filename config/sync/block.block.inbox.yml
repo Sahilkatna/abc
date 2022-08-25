@@ -1,0 +1,31 @@
+uuid: 2c25d451-d955-46c0-a34e-8c6e106dbd09
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:landing_page_header:a34db3d5-a0ab-4b63-b9e6-7d84d35a3012'
+  module:
+    - block_content
+    - system
+  theme:
+    - talawa
+id: inbox
+theme: talawa
+region: hero
+weight: 0
+provider: null
+plugin: 'block_content:a34db3d5-a0ab-4b63-b9e6-7d84d35a3012'
+settings:
+  id: 'block_content:a34db3d5-a0ab-4b63-b9e6-7d84d35a3012'
+  label: Inbox
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: /user/inbox
+    negate: false
+    context_mapping: {  }

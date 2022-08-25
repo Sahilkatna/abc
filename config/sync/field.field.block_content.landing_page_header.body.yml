@@ -1,0 +1,22 @@
+uuid: f3687e91-1e75-408a-9a6f-f7daf0c3033a
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.landing_page_header
+    - field.storage.block_content.body
+  module:
+    - text
+id: block_content.landing_page_header.body
+field_name: body
+entity_type: block_content
+bundle: landing_page_header
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+field_type: text_with_summary

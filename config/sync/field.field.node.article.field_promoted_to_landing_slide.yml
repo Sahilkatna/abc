@@ -1,0 +1,23 @@
+uuid: 6aad520b-0e47-483b-881c-a631818a5bd3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_promoted_to_landing_slide
+    - node.type.article
+id: node.article.field_promoted_to_landing_slide
+field_name: field_promoted_to_landing_slide
+entity_type: node
+bundle: article
+label: 'Promoted to Landing Slide'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

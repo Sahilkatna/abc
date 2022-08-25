@@ -1,0 +1,33 @@
+uuid: b218770f-a49e-406f-9246-fc7dc2d3100f
+langcode: en
+status: true
+dependencies:
+  module:
+    - activity_logger
+third_party_settings:
+  activity_logger:
+    activity_bundle_entities:
+      mentions-mentions: mentions-mentions
+    activity_action: create_entitiy_action
+    activity_context: mention_activity_context
+    activity_destinations:
+      notifications: notifications
+      email: email
+    activity_create_direct: 1
+    activity_aggregate: 0
+    activity_entity_condition: mention_post
+_core:
+  default_config_hash: iSRgdrUGGEfHKBqekWU4rg0oa-IFhdlawNsVcOEY_Nw
+template: create_mention_post_stream
+label: 'Create mention in a post (stream: profile)'
+description: 'A person mentioned me in a post (stream: profile)'
+text:
+  -
+    value: "<p>[message:author:display-name] mentioned [social_mentions:mentioned_user] in a post</p>\r\n"
+    format: full_html
+settings:
+  'token options':
+    clear: false
+    'token replace': true
+  purge_override: false
+  purge_methods: {  }

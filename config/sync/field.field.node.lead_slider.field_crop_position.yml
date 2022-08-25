@@ -1,0 +1,21 @@
+uuid: 16686237-c63d-45fa-b697-437896b85273
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_crop_position
+    - node.type.lead_slider
+  module:
+    - options
+id: node.lead_slider.field_crop_position
+field_name: field_crop_position
+entity_type: node
+bundle: lead_slider
+label: 'Crop Position'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

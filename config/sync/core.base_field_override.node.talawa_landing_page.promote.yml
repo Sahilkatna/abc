@@ -1,0 +1,22 @@
+uuid: a0311895-d08e-499a-a6c1-fa1575be5a58
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.talawa_landing_page
+id: node.talawa_landing_page.promote
+field_name: promote
+entity_type: node
+bundle: talawa_landing_page
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

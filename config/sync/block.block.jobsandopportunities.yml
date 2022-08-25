@@ -1,0 +1,31 @@
+uuid: 8b559472-9324-48f8-b8f9-da5b23f9728f
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:landing_page_header:ac2be2a4-c4ac-4d31-95bf-bda5457d1332'
+  module:
+    - block_content
+    - system
+  theme:
+    - talawa
+id: jobsandopportunities
+theme: talawa
+region: hero
+weight: 0
+provider: null
+plugin: 'block_content:ac2be2a4-c4ac-4d31-95bf-bda5457d1332'
+settings:
+  id: 'block_content:ac2be2a4-c4ac-4d31-95bf-bda5457d1332'
+  label: 'Jobs & Opportunities'
+  provider: block_content
+  label_display: visible
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: /job-landing-page
+    negate: false
+    context_mapping: {  }

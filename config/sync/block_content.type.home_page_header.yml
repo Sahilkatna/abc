@@ -1,0 +1,8 @@
+uuid: 0707cf39-e238-4c2d-bff3-4453f80485a3
+langcode: en
+status: true
+dependencies: {  }
+id: home_page_header
+label: 'Home Page Header'
+revision: 1
+description: 'Home Page Header'

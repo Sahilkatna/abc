@@ -1,0 +1,33 @@
+uuid: c9913398-2cb0-4a23-bf6e-99d7ae305093
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.job_related_content
+  module:
+    - node
+    - views
+  theme:
+    - talawa
+id: views_block__job_related_content_block_2
+theme: talawa
+region: sidebar_second
+weight: -65
+provider: null
+plugin: 'views_block:job_related_content-block_2'
+settings:
+  id: 'views_block:job_related_content-block_2'
+  label: Latest
+  provider: views
+  label_display: visible
+  views_label: Latest
+  items_per_page: none
+  context_mapping: {  }
+visibility:
+  node_type:
+    id: node_type
+    bundles:
+      job_opportunities: job_opportunities
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

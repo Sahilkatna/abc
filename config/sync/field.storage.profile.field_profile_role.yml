@@ -1,0 +1,27 @@
+uuid: 872df91d-0f92-48b0-9d62-1014762fda1c
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - profile
+id: profile.field_profile_role
+field_name: field_profile_role
+entity_type: profile
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: artist
+      label: artist
+    -
+      value: industry
+      label: industry
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

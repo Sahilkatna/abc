@@ -1,0 +1,26 @@
+uuid: c0442218-0fb2-4b28-b9b8-e63d584944a3
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+    - wes_module
+  theme:
+    - talawa
+id: groupaddarticleblock
+theme: talawa
+region: complementary_top
+weight: -58
+provider: null
+plugin: group_add_article_block
+settings:
+  id: group_add_article_block
+  label: 'Group add article block'
+  provider: wes_module
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: '/group/*/articles'
+    negate: false
+    context_mapping: {  }

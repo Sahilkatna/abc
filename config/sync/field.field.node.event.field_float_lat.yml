@@ -1,0 +1,23 @@
+uuid: fc213442-5f43-4153-a59b-1b00b90bd72e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_float_lat
+    - node.type.event
+id: node.event.field_float_lat
+field_name: field_float_lat
+entity_type: node
+bundle: event
+label: 'Float Lat'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: float

@@ -1,0 +1,21 @@
+uuid: da4a461f-dd96-437c-898c-9c210812fed3
+langcode: en
+status: true
+dependencies:
+  module:
+    - private_message
+    - social_private_message
+_core:
+  default_config_hash: FFQL_MzQnoXJV8QgWtU3l5rtv788-mP2gY8MBj8G0LQ
+id: private_message_thread.private_message_thread.default
+targetEntityType: private_message_thread
+bundle: private_message_thread
+mode: default
+content:
+  members:
+    type: social_private_message_thread_member_widget
+    settings: {  }
+    weight: -3
+    region: content
+    third_party_settings: {  }
+hidden: {  }

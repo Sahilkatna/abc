@@ -1,0 +1,8 @@
+uuid: fe179e79-ad57-4468-849a-d1f373916a2e
+langcode: en
+status: true
+dependencies: {  }
+id: landing_page_header
+label: 'Landing Page Header'
+revision: 1
+description: 'Landing Page Header'

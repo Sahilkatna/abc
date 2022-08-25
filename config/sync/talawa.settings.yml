@@ -1,0 +1,48 @@
+favicon:
+  mimetype: image/vnd.microsoft.icon
+  path: ''
+  url: 'http://talawa2.development.winonaesolutions.net/themes/custom/talawa/favicon.ico'
+  use_default: 1
+schemas:
+  bootstrap: 8000
+  socialbase: 8000
+  socialblue: 8000
+  talawa: 8000
+region_wells:
+  hidden: ''
+  header: ''
+  headlights: ''
+  header_node_edit: ''
+  breadcrumb: ''
+  content_title: ''
+  hero: ''
+  header_user_edit: ''
+  user_edit_tab: ''
+  secondary_navigation: ''
+  content_top: ''
+  status_region: ''
+  title: ''
+  content: ''
+  complementary_top: ''
+  complementary_bottom: ''
+  content_bottom: ''
+  sidebar_first: ''
+  sidebar_second: ''
+  header_slider: ''
+  footer: ''
+table_responsive: '-1'
+table: ''
+card_radius: ''
+form_control_radius: ''
+button_radius: ''
+font_primary: '1'
+email_logo: {  }
+features:
+  comment_user_picture: true
+  comment_user_verification: 1
+  favicon: 1
+  node_user_picture: true
+logo:
+  path: ''
+  url: ''
+  use_default: 1

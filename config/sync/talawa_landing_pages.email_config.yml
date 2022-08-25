@@ -1,0 +1,7 @@
+talawa_landing_pages:
+  admin_template: "Dear Admin\r\nOWNER_NAME has submitted a Job/Opportunity. Please review and publish it.\r\nJOB_URL\r\n\r\nThanks\r\nTalawa Team"
+  admin_template_subject: 'Talawa New Job/Opportunity submitted'
+  owner_template: "Dear OWNER_NAME\r\n\r\nYour post's status on Talawa is updated from CURRENT_STATUS to NEW_STATUS \r\nJOB_URL\r\n\r\nThanks\r\nTalawa Team"
+  owner_template_subject: 'Talawa Job/opportunity status updated'
+  decline_owner_template: "Dear OWNER_NAME\r\n\r\nYour post's status on Talawa is updated from CURRENT_STATUS to NEW_STATUS \r\nJOB_URL\r\n\r\nThanks\r\nTalawa Team"
+  decline_owner_template_subject: 'Talawa Job/opportunity status updated'

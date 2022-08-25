@@ -1,0 +1,23 @@
+uuid: e5f6f844-e246-49b8-aec2-915e43ff0387
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_book_link
+    - node.type.event
+  module:
+    - link
+id: node.event.field_book_link
+field_name: field_book_link
+entity_type: node
+bundle: event
+label: 'Book Link'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 16
+  title: 0
+field_type: link

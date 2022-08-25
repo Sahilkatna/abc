@@ -1,0 +1,19 @@
+uuid: 5b97ae10-4c2e-4b49-a545-33133a548ce0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_lead_description
+    - node.type.sign_up_landing_page
+id: node.sign_up_landing_page.field_lead_description
+field_name: field_lead_description
+entity_type: node
+bundle: sign_up_landing_page
+label: 'Lead Description'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

@@ -1,0 +1,20 @@
+uuid: 358f4431-8a63-4219-b96d-75071b3814d7
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.public_group
+    - node.type.article
+  module:
+    - gnode
+    - node
+id: public_group-group_node-article
+label: 'Public group: Group node (Article)'
+description: 'Adds <em class="placeholder">Article</em> content to groups both publicly and privately.'
+group_type: public_group
+content_plugin: 'group_node:article'
+plugin_config:
+  group_cardinality: 1
+  entity_cardinality: 1
+  use_creation_wizard: false
+  admin_access: ''

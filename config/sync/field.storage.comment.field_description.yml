@@ -1,0 +1,23 @@
+uuid: 3bffa0a6-c141-4c3d-ae0f-de3aee83a03a
+langcode: en
+status: true
+dependencies:
+  module:
+    - comment
+    - field_permissions
+third_party_settings:
+  field_permissions:
+    permission_type: public
+id: comment.field_description
+field_name: field_description
+entity_type: comment
+type: string_long
+settings:
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

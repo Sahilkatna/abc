@@ -1,0 +1,467 @@
+{#
+/**
+ * @file
+ * The default template file for e-mails.
+ *
+ * Available variables:
+ * - subject: The subject.
+ * - body: The message content.
+ * - message: The $message array created and used in the mail building
+ *   procedure. Its content varies between cases, but typically contains at
+ *   least the following elements:
+ *   - id: The message identifier.
+ *   - module: The module that handles the building of the message.
+ *   - key: The key of the message.
+ *   - to: The recipient email address.
+ *   - from: The email address of the sender.
+ *   - langcode: The langcode to use to compose the e-mail.
+ *   - params: The message parameters.
+ *
+ * This template may be overriden by module and/or mail key, using any of the
+ * following template names:
+ * - swiftmailer.html.twig: global, used by default.
+ * - swiftmailer--mymodule.html.twig: only emails sent by the module "mymodule".
+ * - swiftmailer--mymodule--test.html.twig: only emails by the module
+ *   "mymodule" with key "test".
+ *
+ * @see template_preprocess()
+ * @see template_preprocess_swiftmailer()
+ *
+ * @ingroup themeable
+ */
+#}
+<!doctype html>
+<html lang="en">
+<head>
+    <title>
+        {{ subject }}
+    </title>
+    <style type="text/css">
+        * {
+            font-family: arial, Arial, sans-serif;
+        }
+
+        @media only screen and (max-device-width: 480px) {
+            body.suppress-border-on-mobile {
+                margin: 0 !important;
+                border: 0 !important;
+                padding: 0 !important;
+            }
+
+            table.suppress-on-mobile, td.suppress-on-mobile, div.suppress-on-mobile, img.suppress-on-mobile, span.suppress-on-mobile {
+                display: none !important;
+                width: 0px !important;
+                height: 0px !important;
+                line-height: 0px !important;
+                margin: 0 !important;
+                border: 0 !important;
+                padding: 0 !important;
+            }
+
+            table.outer-container-width, td.outer-container-width {
+                width: 640px !important;
+            }
+
+            td.outer-container-padding-width {
+                width: 20px !important;
+            }
+
+            table.inner-container-width, td.inner-container-width {
+                width: 600px !important;
+            }
+
+            table.header-container-width {
+                width: 600px !important;
+                height: 100px !important;
+            }
+
+            td.header_left_padding_width {
+                width: 25px !important;
+            }
+
+            td.logo_container_size {
+                width: 575px !important;
+                height: 100px !important;
+            }
+
+            img.header_logo_size {
+                width: 125px !important;
+                height: 50px !important;
+            }
+
+            table.footer-padding-width, td.footer-padding-width {
+                width: 30px !important;
+            }
+
+            table.footer-width, td.footer-width {
+                width: 540px !important;
+            }
+
+            td.footer-font, div.footer-font {
+                font-size: 18px !important;
+                line-height: 24px !important;
+            }
+
+            table.footer-content-padding-height, td.footer-content-padding-height {
+                height: 30px !important;
+            }
+
+            table.large-section-padding-height, td.large-section-padding-height {
+                height: 30px !important;
+            }
+
+            table.small-section-padding-height, td.small-section-padding-height {
+                height: 20px !important;
+            }
+
+            table.content-container-padding-width, td.content-container-padding-width {
+                width: 30px !important;
+            }
+
+            table.content-container-padding-height, td.content-container-padding-height {
+                height: 30px !important;
+            }
+
+            table.content-container-width, td.content-container-width {
+                width: 540px !important;
+            }
+
+            span.video-title-font-class, a.video-link-font-class, div.video-link-font-class, div.greeting-font, td.greeting-font {
+                font-size: 30px !important;
+                line-height: 36px !important;
+            }
+
+            span.meta-data-font, div.meta-data-font, a.meta-data-font, td.meta-data-font {
+                display: block !important;
+                font-size: 30px !important;
+                line-height: 36px !important;
+            }
+
+            td.small-meta-data-font {
+                font-size: 25px !important;
+                line-height: 30px !important;
+            }
+
+            table.video-content-padding-height, td.video-content-padding-height {
+                height: 45px !important;
+            }
+
+            td.avatar-size, img.avatar-size {
+                width: 40px !important;
+                height: 40px !important;
+            }
+
+            img.large-avatar-size {
+                width: 70px !important;
+                height: 70px !important;
+            }
+
+            img.channel-avatar-size {
+                width: 80px !important;
+                height: 80px !important;
+            }
+
+            table.more-videos-size {
+                height: 100px !important;
+            }
+
+            div.more-videos-font, td.more-videos-font {
+                font-size: 24px !important;
+                line-height: 27px !important;
+            }
+
+            table.more-videos-button-size {
+                width: 230px !important;
+                height: 60px !important;
+            }
+
+            td.more-videos-button-width {
+                width: 250px !important;
+            }
+
+            td.more-videos-text-width {
+                width: 270px !important;
+            }
+
+            table.video-spotlight-width {
+                width: 600px !important;
+            }
+
+            td.video-spotlight-size, img.video-spotlight-size {
+                width: 600px !important;
+                height: 332px !important;
+            }
+
+            table.regular-button-height {
+                height: 60px !important;
+            }
+
+            td.regular-button-padding-width {
+                width: 20px !important;
+            }
+
+            td.regular-button-font {
+                font-size: 27.5px !important;
+                line-height: 27.5px !important;
+            }
+
+            img.play-button-img-size {
+                width: 20px !important;
+                height: 20px !important;
+            }
+
+            table.large-button-size {
+                width: 600px !important;
+                height: 70px !important;
+            }
+
+            table.video-2col-size {
+                width: 600px !important;
+                height: 600px !important;
+            }
+
+            table.video-2col-width, td.video-2col-width {
+                width: 600px !important;
+            }
+
+            img.video-2col-thumb-size {
+                width: 600px !important;
+                height: 332px !important;
+            }
+
+            table.video-2col-outer-container-size, td.video-2col-outer-container-size {
+                width: 600px !important;
+                height: 268px !important;
+            }
+
+            table.video-2col-inner-container-size, td.video-2col-inner-container-size {
+                width: 540px !important;
+                height: 268px !important;
+            }
+
+            table.video-2col-inner-container-width, td.video-2col-inner-container-width {
+                width: 540px !important;
+            }
+
+            div.section-title-font, td.section-title-font {
+                font-size: 35px !important;
+                line-height: 35px !important;
+            }
+
+            div.section-subtitle-font, td.section-subtitle-font {
+                font-size: 25px !important;
+                line-height: 25px !important;
+            }
+
+            table.video-3col-padding-height, td.video-3col-padding-height {
+                height: 55px !important;
+            }
+
+            img.video-3col-thumb-size, table.video-3col-thumb-size {
+                width: 600px !important;
+                height: 332px !important;
+            }
+
+            table.video-3col-width, td.video-3col-width {
+                width: 600px !important;
+            }
+
+            table.inner-3col-content-container-width, td.inner-3col-content-container-width {
+                width: 600px !important;
+            }
+
+            td.small-pad-width {
+                width: 20px !important;
+            }
+
+            img.channel-avatar-size {
+                width: 80px !important;
+                height: 80px !important;
+            }
+
+            span.follow-and-subs-font {
+                display: block !important;
+                font-size: 24px !important;
+                line-height: 27px !important;
+                max-height: 30px !important;
+            }
+
+            td.social-logo-padding-width {
+                width: 12px !important;
+            }
+
+            table.channel-owner-block-content-width, td.channel-owner-block-content-width {
+                width: 420px !important;
+            }
+
+            td.show-only-on-mobile {
+                display: block !important;
+                width: 100% !important;
+                max-height: 100% !important;
+                overflow: visible !important;
+            }
+
+            .button {
+                display: block;
+                background: #ffde43;
+                text-align: center;
+                font-weight: bold;
+                text-transform: uppercase;
+                border-radius: 5px;
+                color: #000000;
+                padding: .5em;
+                text-decoration: none;
+            }
+
+        }
+    </style>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body class="suppress-border-on-mobile">
+<span
+        style="display: none !important; visibility: hidden; width: 0; height: 0; opacity: 0; color: transparent;">
+<!--  Title -->
+</span>
+<table class="outer-container-width" width="680" bgcolor="#f0f0f0"
+       align="center" valign="top" cellspacing="0" cellpadding="0" border="0">
+    <tr>
+        <td class="outer-container-padding-width" width='40'></td>
+        <td class="inner-container-width" width='600'>
+            <table class="inner-container-width" width='600' align="center"
+                   cellspacing="0" cellpadding="0" border="0">
+                <tr>
+                    <td>
+                        <table class="header-container-width" width='640' height="40"
+                               align=="center" valign="center" bgcolor="#ffffff"
+                               cellspacing="0" cellpadding="0" border="0">
+                            <tr>
+                                <td class="header_left_padding_width" width="16"></td>
+                                <td class="logo_container_size" width="640" height="40"
+                                    valign="center">
+                                    <!-- Logo -->
+                                    <div class="logo">
+                                        <a href="{{ site_base_url }}">
+                                            <img src="{{ site_base_url ~ '/' ~ directory }}/images/mail-logo.jpg"
+                                                 alt="Logo"/>
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <table class="inner-container-width" width='640' align="center"
+                               valign="center" cellspacing="0" cellpadding="0" border="0">
+                            <tr>
+                                <td>
+                                    <table class="small-section-padding-height" height="20"
+                                           cellspacing="0" cellpadding="0" border="0">
+                                        <tr>
+                                            <td class="small-section-padding-height" height="20"></td>
+                                        </tr>
+                                    </table>
+                                    <table class="video-spotlight-width" width="640"
+                                           align="center" bgcolor="#FFFFFF"
+                                           style="box-shadow:1px 1px 2px rgba(0, 0, 0, 0.15)"
+                                           cellspacing="0" cellpadding="0" border="0">
+                                        <tr>
+                                            <td class="content-container-padding-width"
+                                                width="20"></td>
+                                            <td>
+                                                <table class="content-container-width" width="560" cellspacing="0"
+                                                       cellpadding="0" border="0" style="table-layout:fixed;">
+                                                    <tr>
+                                                        <td>
+                                                            <table class="content-container-padding-height" height="20"
+                                                                   cellspacing="0" cellpadding="0" border="0">
+                                                                <tr>
+                                                                    <td class="content-container-padding-height"
+                                                                        height="20"></td>
+                                                                </tr>
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="content-container-width" width="560">
+                                                            <div class="video-link-font-class"
+                                                                 style="font-family:arial,Arial,sans-serif; font-size:13px; color:#222222; line-height:15px; display:inline;word-wrap:break-word; -webkit-text-size-adjust:none;">
+                                                                {{ body }}
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <table class="content-container-padding-height" height="20"
+                                                                   cellspacing="0" cellpadding="0" border="0">
+                                                                <tr>
+                                                                    <td class="content-container-padding-height"
+                                                                        height="20"></td>
+                                                                </tr>
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                            <td class="content-container-padding-width" width="20"></td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <table class="large-section-padding-height" height="30"
+                               cellspacing="0" cellpadding="0" border="0">
+                            <tr>
+                                <td class="large-section-padding-height" height="30"></td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <table class="inner-container-width" width="100%" cellspacing="0"
+                               cellpadding="0" border="0">
+                            <tr>
+                                <td class="footer-font"
+                                    style="color: #999999; font-size:13px; line-height:15px; font-family:arial, Arial, sans-serif; letter-spacing:0px;text-decoration:none; -webkit-text-size-adjust:none;">
+                                    &copy; Talawa Theatre Company
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <table class="footer-content-padding-height" height="18" cellspacing="0"
+                                           cellpadding="0" border="0">
+                                        <tr>
+                                            <td class="footer-content-padding-height" height="18"></td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <table class="large-section-padding-height" height="30" cellspacing="0"
+                                           cellpadding="0" border="0">
+                                        <tr>
+                                            <td class="large-section-padding-height" height="30"></td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </td>
+        <td class="outer-container-padding-width" width='40'></td>
+    </tr>
+</table>
+</body>
+</html>
+
+
+

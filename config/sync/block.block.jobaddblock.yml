@@ -1,0 +1,26 @@
+uuid: 3048f330-2a6b-4245-8b61-707b8f39fdaf
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+    - talawa_tweaks
+  theme:
+    - talawa
+id: jobaddblock
+theme: talawa
+region: complementary_top
+weight: -61
+provider: null
+plugin: job_add_block
+settings:
+  id: job_add_block
+  label: 'Job add block'
+  provider: talawa_tweaks
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: '/user/*/jobs'
+    negate: false
+    context_mapping: {  }

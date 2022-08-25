@@ -1,0 +1,12 @@
+uuid: 4d15591a-9014-426a-9462-e30a3a0e58fe
+langcode: en
+status: true
+dependencies: {  }
+label: 'Profile Listing'
+id: profile_listing
+description: 'Teaser image in Profile listing pages'
+aspect_ratio: '361:438'
+soft_limit_width: null
+soft_limit_height: null
+hard_limit_width: null
+hard_limit_height: null

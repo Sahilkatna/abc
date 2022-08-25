@@ -1,0 +1,221 @@
+uuid: 9dfa6daf-d943-409a-a26e-46abaaf68dc0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.user.user.field_account_cultural_bkg
+    - field.field.user.user.field_account_dob
+    - field.field.user.user.field_account_gender
+    - field.field.user.user.field_account_organisation
+    - field.field.user.user.field_account_profile_public
+    - field.field.user.user.field_account_public_loc_map
+    - field.field.user.user.field_account_subs_forum
+    - field.field.user.user.field_account_subs_message
+    - field.field.user.user.field_account_subs_profile
+    - field.field.user.user.field_float_lat
+    - field.field.user.user.field_float_lng
+    - field.field.user.user.field_lat
+    - field.field.user.user.field_lng
+    - field.field.user.user.field_promoted_to_landing_page
+    - field.field.user.user.field_sticky_top_of_lists
+    - field.field.user.user.field_view_mode
+  module:
+    - datetime
+    - options
+    - user
+_core:
+  default_config_hash: TTwGbTaqOR9e2rMgGBVpo-s3afaI1JvfQtWCkOI8Rmw
+id: user.user.default
+targetEntityType: user
+bundle: user
+mode: default
+content:
+  field_account_cultural_bkg:
+    weight: 8
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_account_dob:
+    weight: 17
+    label: above
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_account_gender:
+    weight: 7
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_account_organisation:
+    weight: 18
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_account_profile_public:
+    weight: 19
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_account_public_loc_map:
+    weight: 20
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_account_subs_forum:
+    weight: 16
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_account_subs_message:
+    weight: 14
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_account_subs_profile:
+    weight: 15
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_float_lat:
+    weight: 26
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_decimal
+    region: content
+  field_float_lng:
+    weight: 27
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_decimal
+    region: content
+  field_lat:
+    weight: 23
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_lng:
+    weight: 24
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_promoted_to_landing_page:
+    weight: 21
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_sticky_top_of_lists:
+    weight: 28
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_view_mode:
+    weight: 22
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  flag_follow_user:
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  groups:
+    label: above
+    weight: 2
+    region: content
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  groups_type_closed_group:
+    label: above
+    weight: 1
+    region: content
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  groups_type_open_group:
+    label: above
+    weight: 0
+    region: content
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  groups_type_public_group:
+    label: above
+    weight: -5
+    region: content
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  linked_username:
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  profile_profile:
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  member_for: true
+  private_message_link: true
+  profile_main: true

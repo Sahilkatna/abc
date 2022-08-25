@@ -1,0 +1,23 @@
+uuid: 5584640b-8eaf-4dd4-9373-d170c012546c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_promoted_to_landing_page
+    - node.type.article
+id: node.article.field_promoted_to_landing_page
+field_name: field_promoted_to_landing_page
+entity_type: node
+bundle: article
+label: 'Promoted to landing page'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

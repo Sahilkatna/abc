@@ -1,0 +1,122 @@
+{#
+/**
+ * @file
+ *
+ * Default theme implementation for profiles.
+ *
+ * Available variables:
+ * - content: Items for the content of the profile.
+ *   Use 'content' to print them all, or print a subset such as
+ *   'content.title'. Use the following code to exclude the
+ *   printing of a given child element:
+ *   @code
+ *   {{ content|without('title') }}
+ *   @endcode
+ * - attributes: HTML attributes for the wrapper.
+ * - profile: The profile object.
+ * - url: The profile URL.
+ *
+ * @ingroup themeable
+ */
+#}
+
+{{ attach_library('socialbase/hero') }}
+{{ attach_library('talawa_profile/overrides') }}
+
+
+{% set cover_classes = [
+'cover',
+profile_hero_styled_image_url ? 'cover-img cover-img-gradient',
+] %}
+
+<div{{ attributes.addClass(cover_classes) }} {% if profile_hero_styled_image_url %} style="background-image: url('{{ profile_hero_styled_image_url }}');" {% endif %}>
+        <div class="profile-content">
+            <div class="container">
+                {% if profile_edit_url %}
+                    <div class="hero-action-button hidden-xs">
+                        Edit Your Profile
+                        <a href="{{ profile_edit_url }}" title="Edit profile information"
+                           class="btn btn-raised btn-default btn-floating">
+                            <svg class="icon-medium">
+                                <use xlink:href="#icon-edit"></use>
+                            </svg>
+                        </a>
+                    </div>
+                {% endif %}
+
+                <div class="cover-wrap">
+                    <header>
+                        <div class="row">
+                            <div class="col-lg-3 col-md-4">
+                                <div class="mobile_profileimg">
+                                    {{ content.field_profile_image }}
+                                </div>
+                            </div>
+                            <div class="col-lg-9 col-md-8">
+                                <h1 class="page-title">
+                                    {{ profile_name }}
+                                </h1>
+                                {#{% if(mini_desc) %}#}
+                                    <h3>
+                                        {{ mini_desc }}
+                                    </h3>
+                                {#{% endif %}#}
+                                <div class="links">
+                                    {% if(current_user) %}
+                                        <a href="/user/inbox" class="my-messages btn" title="My Messages">My Messages</a>
+                                        <a href="/user/{{ profile_owner_id }}/following" class="my-followers btn" title="User I am following">Following</a>
+                                        <a href="/user/{{ profile_owner_id }}/events" class="my-calendar btn" title="My Calendar">My Calendar</a>
+                                    {% else %}
+                                        <a href="/private_message/create?recipient={{ profile_owner_id }}" class="contact-me btn">Contact User</a>
+                                        {{ render_var(follow_link) }}
+                                    {% endif %}
+                                </div>
+                                <div class="cumbs hidden-xs">
+                                    <ol class="breadcrumb">
+                                        <li>
+                                            <a href="/" class="home">Home</a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ profile_url }}" class="my-profiles">Profiles</a>
+                                        </li>
+                                        <li>
+                                            {{ profile_name }}
+                                        </li>
+                                    </ol>
+                                </div>
+                                {% if(current_user) %}
+                                    <div class="blk-create-content">
+                                        <span class="post-smth">
+                                            <i class="fa fa-pencil-square"
+                                               aria-hidden="true"></i> Post Something...</span>
+                                        <span class="crt-cnt">
+                                            <a href="/node/add/article" title="click to create article" data-toggle="tooltip">
+                                                <i class="fa fa-pencil" aria-hidden="true"></i>
+                                            </a>
+                                        </span>
+                                        <span class="crt-cnt">
+                                            <a href="/node/add/event" title="click to create event" data-toggle="tooltip">
+                                                <i class="fa fa-calendar" aria-hidden="true"></i>
+                                            </a>
+                                        </span>
+                                        <span class="crt-cnt">
+                                            <a href="/node/add/topic" title="click to create topic" data-toggle="tooltip">
+                                                <i class="fa fa-newspaper-o" aria-hidden="true"></i>
+                                            </a>
+                                        </span>
+                                        <span class="crt-cnt">
+                                            <a href="/node/add/job_opportunities" title="click to create job/opportunities" data-toggle="tooltip">
+                                                <i class="fa fa-briefcase" aria-hidden="true"></i>
+                                            </a>
+                                        </span>
+                                    </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </header>
+                    {# render other fields that developers might add #}
+                    {{ content|without('field_profile_first_name', 'field_profile_last_name', 'field_profile_image', 'field_profile_function', 'field_profile_organization') }}
+                </div>
+            </div>
+        </div>
+    </div>

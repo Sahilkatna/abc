@@ -1,0 +1,81 @@
+uuid: c89d6b56-1cd6-4e26-84a4-7c77aaf93ad3
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.sign_up_landing_page.field_audience_description
+    - field.field.node.sign_up_landing_page.field_audience_description2
+    - field.field.node.sign_up_landing_page.field_audience_link_text
+    - field.field.node.sign_up_landing_page.field_audience_link_text2
+    - field.field.node.sign_up_landing_page.field_audience_title
+    - field.field.node.sign_up_landing_page.field_audience_title2
+    - field.field.node.sign_up_landing_page.field_lead_description
+    - field.field.node.sign_up_landing_page.field_text_make_discover
+    - field.field.node.sign_up_landing_page.field_text_what_on
+    - field.field.node.sign_up_landing_page.field_video1
+    - field.field.node.sign_up_landing_page.field_video2
+    - node.type.sign_up_landing_page
+  module:
+    - user
+id: node.sign_up_landing_page.teaser
+targetEntityType: node
+bundle: sign_up_landing_page
+mode: teaser
+content:
+  flag_follow_content:
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  groups:
+    label: above
+    weight: -5
+    region: content
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  groups_type_closed_group:
+    label: above
+    weight: -5
+    region: content
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  groups_type_open_group:
+    label: above
+    weight: -5
+    region: content
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  groups_type_public_group:
+    label: above
+    weight: -5
+    region: content
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  links:
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  addtoany: true
+  field_audience_description: true
+  field_audience_description2: true
+  field_audience_link_text: true
+  field_audience_link_text2: true
+  field_audience_title: true
+  field_audience_title2: true
+  field_lead_description: true
+  field_text_make_discover: true
+  field_text_what_on: true
+  field_video1: true
+  field_video2: true
+  private_message_link: true

@@ -1,0 +1,18 @@
+uuid: 1a488a45-24bb-449b-bd6b-966da9d95587
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.article
+id: node.article.title
+field_name: title
+entity_type: node
+bundle: article
+label: 'Title & Except'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

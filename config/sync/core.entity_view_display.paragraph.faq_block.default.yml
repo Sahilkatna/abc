@@ -1,0 +1,22 @@
+uuid: a92ee49d-4983-461e-9c32-023f6b7452d7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.faq_block.field_faq_block
+    - paragraphs.paragraphs_type.faq_block
+  module:
+    - block_field
+id: paragraph.faq_block.default
+targetEntityType: paragraph
+bundle: faq_block
+mode: default
+content:
+  field_faq_block:
+    weight: 0
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: block_field
+    region: content
+hidden: {  }

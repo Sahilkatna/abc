@@ -1,0 +1,19 @@
+uuid: 5621d64d-bbf3-4c6a-b9fc-702b34b82937
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.profile.field_profile_offer_others
+    - profile.type.profile
+id: profile.profile.field_profile_offer_others
+field_name: field_profile_offer_others
+entity_type: profile
+bundle: profile
+label: profile_offer_others
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

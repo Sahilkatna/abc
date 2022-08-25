@@ -1,0 +1,18 @@
+uuid: 301254ea-8730-4e98-ab3a-62bc01f3a447
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: Faq
+type: faq
+description: ''
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true

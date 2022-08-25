@@ -1,0 +1,12 @@
+{% extends "node--teaser.html.twig" %}
+
+{% block card_body %}
+    <div class="teaser__date">{{ date }}</div>
+    {% if content.group_name %}
+        {% embed "node--teaser__field.html.twig" %}
+            {%- block field_icon -%}{% trans %} group{% endtrans %} {%- endblock -%}
+            {%- block field_value -%} {{ content.group_name }} {%- endblock -%}
+        {% endembed %}
+    {% endif %}
+    {{ content.field_topic_comments }}
+{% endblock %}

@@ -1,0 +1,23 @@
+uuid: 2db78d54-5948-44bb-aa61-6ecd255c24ab
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_carousel_height_small
+    - node.type.talawa_landing_page
+id: node.talawa_landing_page.field_carousel_height_small
+field_name: field_carousel_height_small
+entity_type: node
+bundle: talawa_landing_page
+label: 'Carousel Height Small'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

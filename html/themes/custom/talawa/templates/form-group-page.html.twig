@@ -1,0 +1,141 @@
+{#
+/**
+ * @file
+ * Default theme implementation for a node edit form.
+ *
+ * Two column template for the node add/edit form.
+ *
+ * This template will be used when a node edit form specifies 'node_edit_form'
+ * as its #theme callback.  Otherwise, by default, node add/edit forms will be
+ * themed by form.html.twig.
+ *
+ * Available variables:
+ * - form: The node add/edit form.
+ *
+ * @see seven_form_node_form_alter()
+ *
+ * @ingroup themeable
+ */
+#}
+{{ form.form_build_id }}
+{{ form.form_token }}
+{{ form.form_id }}
+
+
+	<div class="add-article">
+		<div class="row article-row node-type">
+			<div class="col-md-3 ">
+				<div class="border-top border-mg-right">    
+					<h4>{{ form.group_content.label.widget['#title'] }}</h4>
+					<p><small>{{ form.group_content.label.widget['#description'] }}</small></p>
+				</div>
+			</div>
+			<div class="col-md-9">
+				<div class="group-title">
+					{{ form.group_content.label.widget }}
+				</div>
+			</div>
+		</div>
+	
+		<div class="row article-row">
+			<div class="col-md-3 ">
+				<div class="border-top border-mg-right">    
+					<h4>{{ form.group_content.field_group_description.widget['#title'] }}</h4>
+					<p> <small> {{ form.group_content.field_group_description.widget['#description'] }} </small> </p>
+				</div>
+			</div>
+			<div class="col-md-9">
+				{{ form.group_content.field_group_description.widget }}
+			</div>
+		</div>	
+
+		<div class="row article-row">
+			<div class="col-md-3 ">
+				<div class="border-top border-mg-right group-image">    
+					<h4>{{ form.group_content.field_group_image.widget[0]['#title'] }}</h4>
+					<small>Crop your image to select which part of your image to show on display.</small>
+				</div>
+			</div>
+			<div class="col-md-9 feature-image-edit">
+				{{ form.group_content.field_group_image.widget }}
+			</div>
+		</div>
+
+
+		<div class="row article-row">
+			<div class="col-md-3 ">
+				<div class="border-top border-mg-right">    
+					<h4>{{ form.group_location.field_group_location.widget['#title'] }}</h4>
+					<p><small>{{ form.group_location.field_group_location.widget['#description'] }}</small></p>
+				</div>
+			</div>
+			<div class="col-md-9">
+				<div class="field-location">
+					{{ form.group_location.field_group_location.widget }}
+				</div>
+			</div>
+		</div>
+	
+	
+
+		<div class="row article-row">
+			<div class="col-md-3 ">
+				<div class="border-top border-mg-right">    
+					<h4>{{ form.group_location.field_group_address.widget['#title'] }}</h4>
+					<p><small>{{ form.group_location.field_group_address.widget['#description'] }}</small></p>
+				</div>
+			</div>
+			<div class="col-md-9 address-group">
+				{{ form.group_location.field_group_address.widget }}
+			</div>
+		</div>
+
+
+	{% if form.admin_access is not empty  %}
+			<div class="row article-row">
+				<div class="col-md-3 ">
+					<div class="border-top border-mg-right">    
+						<h4>{{ form.field_promoted_to_landing_page.widget['#title'] }}</h4>
+						<p><small>{{ form.field_promoted_to_landing_page.widget['#description'] }}</small></p>
+					</div>
+				</div>
+				<div class="col-md-9">
+					{{ form.field_promoted_to_landing_page.widget }}
+				</div>
+			</div>
+		
+			<div class="row article-row">
+				<div class="col-md-3 ">
+					<div class="border-top border-mg-right">    
+						<h4>{{ form.field_view_mode.widget['#title'] }}</h4>
+						<p><small>{{ form.field_view_mode.widget['#description'] }}</small></p>
+					</div>
+				</div>
+				<div class="col-md-9">
+					{{ form.field_view_mode.widget }}
+				</div>
+			</div>
+
+            <div class="row article-row">
+                <div class="col-md-3 ">
+                    <div class="border-top border-mg-right">
+                        <h4>{{ form.field_group_sticky_top_of_lists.widget['#title'] }}</h4>
+                        <p><small>{{ form.field_group_sticky_top_of_lists.widget['#description'] }}</small></p>
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    {{ form.field_group_sticky_top_of_lists.widget }}
+                </div>
+            </div>
+	{% endif %} 
+	
+		<div class="row article-row">
+				<div class="col-md-3 hidden-xs">
+				</div>
+				<div class="col-md-9">
+					<div class="form-butns">
+						{{ form.actions }}
+					</div>
+				</div>
+		</div>	
+ </div>

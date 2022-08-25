@@ -1,0 +1,25 @@
+uuid: 190da665-a91e-492d-8bd5-2624e3ef6985
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.profile.field_profile_completed
+    - profile.type.profile
+  module:
+    - options
+    - profile
+third_party_settings:
+  profile:
+    profile_private: true
+id: profile.profile.field_profile_completed
+field_name: field_profile_completed
+entity_type: profile
+bundle: profile
+label: profile_completed
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

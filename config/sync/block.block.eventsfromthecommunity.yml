@@ -1,0 +1,31 @@
+uuid: c73ca7b6-350d-45c0-a2c6-5edbdd52acee
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:landing_page_header:e903c6ea-d0bb-490a-8267-538f2438116b'
+  module:
+    - block_content
+    - system
+  theme:
+    - talawa
+id: eventsfromthecommunity
+theme: talawa
+region: hero
+weight: 0
+provider: null
+plugin: 'block_content:e903c6ea-d0bb-490a-8267-538f2438116b'
+settings:
+  id: 'block_content:e903c6ea-d0bb-490a-8267-538f2438116b'
+  label: 'Events from the Community'
+  provider: block_content
+  label_display: visible
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: /event-landing-page
+    negate: false
+    context_mapping: {  }

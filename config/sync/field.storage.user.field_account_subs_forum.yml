@@ -1,0 +1,30 @@
+uuid: 4b51c121-2acf-4645-8d1f-e5554f5c1a5a
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - user
+id: user.field_account_subs_forum
+field_name: field_account_subs_forum
+entity_type: user
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: new_post_u_follow
+      label: 'New posts in threads your are following'
+    -
+      value: new_post_ur_forum
+      label: 'New posts in your forum'
+    -
+      value: upda_ur_post
+      label: 'Update on any thread you post on'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,98 @@
+uuid: 12fd0e0b-fb05-41ae-ad4f-c5d41afa00fe
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.search_list
+    - field.field.node.job_opportunities.body
+    - field.field.node.job_opportunities.field_application_deadline_date
+    - field.field.node.job_opportunities.field_attachments
+    - field.field.node.job_opportunities.field_call_open_until
+    - field.field.node.job_opportunities.field_content_visibility
+    - field.field.node.job_opportunities.field_daily
+    - field.field.node.job_opportunities.field_email
+    - field.field.node.job_opportunities.field_feature_image
+    - field.field.node.job_opportunities.field_float_lat
+    - field.field.node.job_opportunities.field_float_lng
+    - field.field.node.job_opportunities.field_group
+    - field.field.node.job_opportunities.field_hirer
+    - field.field.node.job_opportunities.field_hirer_logo
+    - field.field.node.job_opportunities.field_intro
+    - field.field.node.job_opportunities.field_job
+    - field.field.node.job_opportunities.field_job_address
+    - field.field.node.job_opportunities.field_job_application
+    - field.field.node.job_opportunities.field_job_categories
+    - field.field.node.job_opportunities.field_job_category
+    - field.field.node.job_opportunities.field_job_comments
+    - field.field.node.job_opportunities.field_job_tags
+    - field.field.node.job_opportunities.field_link_to_external_site
+    - field.field.node.job_opportunities.field_location
+    - field.field.node.job_opportunities.field_name
+    - field.field.node.job_opportunities.field_phone
+    - field.field.node.job_opportunities.field_promoted_to_landing_page
+    - field.field.node.job_opportunities.field_release_date
+    - field.field.node.job_opportunities.field_sticky_top_of_lists
+    - field.field.node.job_opportunities.field_type
+    - field.field.node.job_opportunities.field_view_mode
+    - field.field.node.job_opportunities.field_weekly
+    - field.field.node.job_opportunities.field_yearly_salary
+    - image.style.search_list
+    - node.type.job_opportunities
+  module:
+    - image
+    - user
+id: node.job_opportunities.search_list
+targetEntityType: node
+bundle: job_opportunities
+mode: search_list
+content:
+  field_feature_image:
+    weight: 15
+    label: above
+    settings:
+      image_style: search_list
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+hidden:
+  addtoany: true
+  body: true
+  content_moderation_control: true
+  field_application_deadline_date: true
+  field_attachments: true
+  field_call_open_until: true
+  field_content_visibility: true
+  field_daily: true
+  field_email: true
+  field_float_lat: true
+  field_float_lng: true
+  field_group: true
+  field_hirer: true
+  field_hirer_logo: true
+  field_intro: true
+  field_job: true
+  field_job_address: true
+  field_job_application: true
+  field_job_categories: true
+  field_job_category: true
+  field_job_comments: true
+  field_job_tags: true
+  field_link_to_external_site: true
+  field_location: true
+  field_name: true
+  field_phone: true
+  field_promoted_to_landing_page: true
+  field_release_date: true
+  field_sticky_top_of_lists: true
+  field_type: true
+  field_view_mode: true
+  field_weekly: true
+  field_yearly_salary: true
+  flag_follow_content: true
+  groups: true
+  groups_type_closed_group: true
+  groups_type_open_group: true
+  groups_type_public_group: true
+  links: true
+  private_message_link: true

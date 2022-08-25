@@ -1,0 +1,27 @@
+uuid: 5d633d1b-d606-48a0-81c1-6d33510d77fa
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.profile.field_profile_cv
+    - profile.type.profile
+  module:
+    - file
+id: profile.profile.field_profile_cv
+field_name: field_profile_cv
+entity_type: profile
+bundle: profile
+label: CV
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: 'profile_cv/[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'txt pdf docx doc'
+  max_filesize: ''
+  description_field: false
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

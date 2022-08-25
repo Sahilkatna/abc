@@ -1,0 +1,26 @@
+uuid: dc9f5ef2-3cd2-495d-9119-6f63025fe581
+langcode: en
+status: true
+dependencies:
+  module:
+    - social_post
+    - system
+  theme:
+    - talawa
+id: talawa_postongroupblock
+theme: talawa
+region: hidden
+weight: -39
+provider: null
+plugin: post_group_block
+settings:
+  id: post_group_block
+  label: 'Post on group block'
+  provider: social_post
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: '/group/*/stream'
+    negate: false
+    context_mapping: {  }

@@ -1,0 +1,55 @@
+uuid: b25f06bc-8924-425d-bda4-d7517a90979c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_hero_carousel
+    - paragraphs.paragraphs_type.carousel
+    - taxonomy.vocabulary.faq_discover_make
+  module:
+    - entity_reference_revisions
+id: taxonomy_term.faq_discover_make.field_hero_carousel
+field_name: field_hero_carousel
+entity_type: taxonomy_term
+bundle: faq_discover_make
+label: 'Hero Carousel'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      carousel: carousel
+    target_bundles_drag_drop:
+      block:
+        weight: 10
+        enabled: false
+      button:
+        weight: 11
+        enabled: false
+      carousel:
+        enabled: true
+        weight: 12
+      faq_block:
+        weight: 13
+        enabled: false
+      featured:
+        weight: 14
+        enabled: false
+      hero:
+        weight: 15
+        enabled: false
+      introduction:
+        weight: 16
+        enabled: false
+      section:
+        weight: 17
+        enabled: false
+      talawa_block:
+        weight: 18
+        enabled: false
+field_type: entity_reference_revisions

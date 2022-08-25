@@ -1,0 +1,10 @@
+uuid: ffe34c82-ae4b-4f98-b98b-5bfab988738c
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.small_square
+label: 'Small Square'
+targetEntityType: node
+cache: true

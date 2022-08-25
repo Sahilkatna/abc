@@ -1,0 +1,10 @@
+twitter:
+  consumer:
+    key: NaQ6ITVm57K25H3GWsvfqaz0J
+    secret: CdEtwtS5d4bZGLhcn9dNYi1HffMo90zj0rXtQGx6HyvDhqXp8L
+  access:
+    token: 2514907338-wPIIFWyF0ZrkJ8MiMT9MerOjHTVtwMKPnIaDMDy
+    secret: s7btbnxjjUIp6ct3YJgpQkpPIQY1IVCkoKtLzeuWAbG4B
+facebook:
+  app_id: '206720006756905'
+  secret_key: f5b588d1ffa2292b2a763ff2f75ec249

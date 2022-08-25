@@ -1,0 +1,31 @@
+uuid: 8c0d2b91-6654-4d33-9120-ea6ef31a34d7
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.talawa_group_info
+  module:
+    - system
+    - views
+  theme:
+    - talawa
+id: views_block__talawa_group_info_block_1
+theme: talawa
+region: sidebar_first
+weight: -49
+provider: null
+plugin: 'views_block:talawa_group_info-block_1'
+settings:
+  id: 'views_block:talawa_group_info-block_1'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+  context_mapping: {  }
+visibility:
+  request_path:
+    id: request_path
+    pages: 'group/*/about'
+    negate: true
+    context_mapping: {  }

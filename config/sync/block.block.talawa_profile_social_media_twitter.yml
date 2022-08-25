@@ -1,0 +1,29 @@
+uuid: ca9276f6-56f3-43bf-bf04-e73840355b54
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+    - talawa_profile
+  theme:
+    - talawa
+id: talawa_profile_social_media_twitter
+theme: talawa
+region: sidebar_first
+weight: -51
+provider: null
+plugin: profile_social_media_block
+settings:
+  id: profile_social_media_block
+  label: 'Social Media (Twitter)'
+  provider: talawa_profile
+  label_display: '0'
+  social_media_type: twitter
+  context_mapping:
+    user: '@social_user.user_route_context:user'
+visibility:
+  request_path:
+    id: request_path
+    pages: "/user/*/stream\r\n/user/*/events\r\n/user/*/topics\r\n/user/*/articles\r\n/user/*/groups"
+    negate: false
+    context_mapping: {  }

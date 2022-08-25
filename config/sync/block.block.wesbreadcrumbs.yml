@@ -1,0 +1,26 @@
+uuid: 928e4f3a-6666-4831-ad0e-67fedb30f3cf
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+    - wes_module
+  theme:
+    - talawa
+id: wesbreadcrumbs
+theme: talawa
+region: breadcrumb
+weight: 0
+provider: null
+plugin: wes_breadcrumbs_block
+settings:
+  id: wes_breadcrumbs_block
+  label: 'WES: Breadcrumbs'
+  provider: wes_module
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: "/node/*\r\n/taxonomy/term/*"
+    negate: false
+    context_mapping: {  }

@@ -1,0 +1,23 @@
+uuid: 3f186cd8-39b1-44f8-bbf5-46269f75366b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.group.field_promoted_to_landing_page
+    - group.type.public_group
+id: group.public_group.field_promoted_to_landing_page
+field_name: field_promoted_to_landing_page
+entity_type: group
+bundle: public_group
+label: 'Promoted to landing page'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

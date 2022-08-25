@@ -1,0 +1,19 @@
+uuid: e978cdf4-ff6c-43b1-96c5-f2eecc2f521b
+langcode: en
+status: true
+dependencies:
+  module:
+    - geolocation
+    - node
+id: node.field_venue_location
+field_name: field_venue_location
+entity_type: node
+type: geolocation
+settings: {  }
+module: geolocation
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

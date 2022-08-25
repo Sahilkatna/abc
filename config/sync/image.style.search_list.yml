@@ -1,0 +1,23 @@
+uuid: b46aea7a-1e73-42a3-ac28-35b5e26acbfc
+langcode: en
+status: true
+dependencies:
+  module:
+    - image_effects
+name: search_list
+label: 'Search List'
+effects:
+  a7145679-9c20-4fed-96f0-b69b48a8c23a:
+    uuid: a7145679-9c20-4fed-96f0-b69b48a8c23a
+    id: image_effects_auto_orient
+    weight: -9
+    data:
+      scan_exif: true
+  38950066-0ffa-4b16-9579-6ecd4462f878:
+    uuid: 38950066-0ffa-4b16-9579-6ecd4462f878
+    id: image_scale_and_crop
+    weight: -10
+    data:
+      width: 330
+      height: 327
+      anchor: center-center

@@ -1,0 +1,290 @@
+{#
+/**
+ * @file
+ * Theme override to display a node.
+ *
+ * Available variables:
+ * - node: The node entity with limited access to object properties and methods.
+     Only "getter" methods (method names starting with "get", "has", or "is")
+     and a few common methods such as "id" and "label" are available. Calling
+     other methods (such as node.delete) will result in an exception.
+ * - label: The title of the node.
+ * - content: All node items. Use {{ content }} to print them all,
+ *   or print a subset such as {{ content.field_example }}. Use
+ *   {{ content|without('field_example') }} to temporarily suppress the printing
+ *   of a given child element.
+ * - author_picture: The node author user entity, rendered using the "compact"
+ *   view mode.
+ * - metadata: Metadata for this node.
+ * - date: Themed creation date field.
+ * - author_name: Themed author name field.
+ * - url: Direct URL of the current node.
+ * - display_submitted: Whether submission information should be displayed.
+ * - attributes: HTML attributes for the containing element.
+ *   The attributes.class element may contain one or more of the following
+ *   classes:
+ *   - node: The current template type (also known as a "theming hook").
+ *   - node--type-[type]: The current node type. For example, if the node is an
+ *     "Article" it would result in "node--type-article". Note that the machine
+ *     name will often be in a short form of the human readable label.
+ *   - node--view-mode-[view_mode]: The View Mode of the node; for example, a
+ *     teaser would result in: "node--view-mode-teaser", and
+ *     full: "node--view-mode-full".
+ *   The following are controlled through the node publishing options.
+ *   - node--promoted: Appears on nodes promoted to the front page.
+ *   - node--sticky: Appears on nodes ordered above other non-sticky nodes in
+ *     teaser listings.
+ *   - node--unpublished: Appears on unpublished nodes visible only to site
+ *     admins.
+ * - title_attributes: Same as attributes, except applied to the main title
+ *   tag that appears in the template.
+ * - content_attributes: Same as attributes, except applied to the main
+ *   content tag that appears in the template.
+ * - author_attributes: Same as attributes, except applied to the author of
+ *   the node tag that appears in the template.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the main title tag that appears in the template.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the main title tag that appears in the template.
+ * - view_mode: View mode; for example, "teaser" or "full".
+ * - teaser: Flag for the teaser state. Will be true if view_mode is 'teaser'.
+ * - page: Flag for the full page state. Will be true if view_mode is 'full'.
+ * - readmore: Flag for more state. Will be true if the teaser content of the
+ *   node cannot hold the main body content.
+ * - logged_in: Flag for authenticated user status. Will be true when the
+ *   current user is a logged-in member.
+ * - is_admin: Flag for admin user status. Will be true when the current user
+ *   is an administrator.
+ *
+ * @ingroup templates
+ *
+ * @see template_preprocess_node()
+ *
+ * @todo Remove the id attribute (or make it a class), because if that gets
+ *   rendered twice on a page this is invalid CSS for example: two lists
+ *   in different view modes.
+ */
+#}
+{%
+  set classes = [
+    node.bundle|clean_class,
+    node.isPromoted() ? 'is-promoted',
+    node.isSticky() ? 'is-sticky',
+    not node.isPublished() ? 'is-unpublished',
+    view_mode ? view_mode|clean_class,
+    'clearfix',
+  ]
+%}
+
+{{ attach_library('socialbase/page-node')}}
+
+<article{{ attributes.addClass(classes) }}>
+    {{ title_prefix }}
+    {% if not page %}
+        <h2{{ title_attributes }}>
+            <a href="{{ url }}" rel="bookmark">{{ label }}</a>
+        </h2>
+    {% endif %}
+    {{ title_suffix }}
+
+	<section class="row-0">
+		<h4 class="type">Events</h4>
+	</section>
+	<section class="row-1 row article-title">
+        <div class="event-date col-sm-2">
+		<div class="date-section">
+			<span class="month pull-left">{{ created_month }}</span>
+			<span class="day pull-left">{{ created_day }}</span>
+		</div>
+		</div>
+		<div class="col-sm-10 node-title no-padding-left-desktop">
+			<h1 class="page-title">{{ node.label }}</h1>
+		</div>
+
+    </section>
+	
+	    <section class="row-2 article-author">
+        <div class="media-wrapper clearfix">
+            <div class="media">
+                <div class="media-left avatar author-image">
+                    {{ author_picture }}
+                </div>
+                <div class="media-body">
+                    <div class="ttheme-social pull-right">
+							{{ content.addtoany }}
+                    </div>
+                    <div {{ author_attributes.addClass('author') }}>
+                        {% trans %}
+                        <div class="author-name">{{ author_name }} </div>
+                        <div class="publish-date">{{ tdate }}</div>{% endtrans %}
+                        {{ metadata }}
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+	
+	<section class="row-3 venue-time article-info row">
+	<div class="timing col-sm-6">
+		<div class="row">
+			<div class="col-sm-12">
+				{{ content.field_event_date }}
+			</div>
+			<div class="col-sm-12">
+				{{ content.field_event_date_end }}
+			</div>
+			<div class="col-sm-12 event-price">
+				{% if content.field_price|render|trim is not empty %}
+					<strong>Price:</strong><span class="event-underline"> £ {{ content.field_price }}</span>
+				{% endif %}
+			</div>
+			<div class="col-sm-12 event-org-logo hidden-xs">
+				<div class="pull-left org-logo">{{ content.field_organiser_logo }} </div>
+				<div class="pull-left org-name">{{ content.field_organiser }}</div>
+			</div>
+		</div>
+	</div>
+	<div class="venu col-sm-6">
+		<div class="row">
+			<div class="col-sm-12">
+				<span><strong>Venue:</strong> {{ formated_venue }} </span>
+			</div>
+			<div class="col-sm-12">
+				<div><strong>Contact Name :</strong><span class="event-underline">  {{ content.field_name }}</span></div>
+			</div>
+			<div class="col-sm-12">
+				<strong>Contact:</strong><span class="event-underline"> {{ content.field_email }}</span>
+			</div>
+			<div class="col-sm-12">
+				<strong>Phone:</strong><span> {{ content.field_phone }}</span>
+			</div>
+		</div>
+	</div>
+	</section>
+	
+	<section class="row-4 row">
+	<div class="col-sm-12">
+	<div class="book-button">
+		<div class="row">
+					<div class="book-now-button col-lg-9 col-sm-9">
+				{% if book_now %}
+						<div class="btn btn-yellow"><a target="_blank" href="{{ book_now }}">Book Now</a></div>
+              {% endif %}
+					</div>
+					<div class="attending-invite  col-lg-3 col-sm-3">
+							<div class="attending"> {{ attending_count }} {{ event_enrollment }}</div>
+					</div>
+				</div>
+			</div>
+		</div>
+    </section>
+	
+   <section class="row-5">
+	<div class="row visible-xs">
+		<div class="col-12">	
+			{{ venue }}
+		</div>	
+	</div>
+  </section>
+    <section class="row-6">
+		<div class="excert">
+			<p>{{ content.field_except }}</p>
+		</div>
+    </section>
+    <section class="row-7">
+       <!-- {{ content.field_feature_image }}-->
+		{{ content.field_event_image }} 
+    </section>
+    <section class="row-8">
+        {{ content.body }}
+    </section>
+    <section class="row-9">
+        
+    </section>
+    <section class="row-10">
+  <!--      {{ content.field_event_audience }}-->
+    </section>
+    <section class="row-11">
+    <!--    {{ content.field_date }}-->
+    </section>	
+    <section class="row-12">
+
+    </section>	
+	
+    <section class="row-13">
+        
+    </section>	
+	
+    <section class="row-14">
+      
+    </section>	
+	
+    <section class="row-15">
+  <!--      {{ content.field_files }}-->
+    </section>	
+
+   <section class="row-16">
+    </section>	
+   <section class="row-17">
+        
+    </section>	
+   <section class="row-18">
+    </section>	
+   <section class="row-19">
+
+    </section>	
+
+   <section class="row-20">
+
+    </section>		
+
+   <section class="row-21">
+    </section>		
+   <section class="row-22">
+    </section>		
+
+   <section class="row-23">
+        
+    </section>	
+   <section class="row-24">
+    </section>	
+	
+   <section class="row-25 row link-social">
+		<div class="col-sm-9">
+			<div class="event-type clearfix">
+				{{ content.field_event_type }}
+			</div>
+        </div>
+		<div class="col-sm-3 hidden-xs">
+			<div class="ttheme-social pull-right">
+				{{ content.addtoany }}
+            </div>
+		</div>
+    </section>		
+	
+
+    <section class="row-26 article-gallery">
+        <div class="owl-carousel owl-theme">
+            {% for key, item in content.field_image_gallery if key|first != '#' %}
+                <div class="item-{{ key + 1 }} item">{{ item }}</div>
+            {% endfor %}
+        </div>
+    </section>
+    
+    <section class="row-27 article-row ">
+			<div class="article full tag-button clearfix">
+				{{ content.field_tags }}
+			</div>
+    </section>
+   <section class="row-28">
+
+    </section>		
+	
+</article>
+
+{% block nodefull_below_content %}
+  {{ below_content }}
+{% endblock %}
+

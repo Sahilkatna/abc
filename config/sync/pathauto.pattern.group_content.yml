@@ -1,0 +1,38 @@
+uuid: 3e031d3f-0146-456e-8417-ae9f64f50a6a
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - group
+_core:
+  default_config_hash: rk2G0ozgUlKP7ic1RRjMcXUmeZxXUKPV-q-brekIKMc
+id: group_content
+label: 'Group content'
+type: 'canonical_entities:group_content'
+pattern: 'group/[group_content:group:id]/[group_content:pretty-path-key]/[group_content:id]'
+selection_criteria:
+  1c59c270-3aed-4333-a6fb-034e1222063d:
+    id: 'entity_bundle:group_content'
+    bundles:
+      closed_group-group_membership: closed_group-group_membership
+      closed_group-group_node-article: closed_group-group_node-article
+      closed_group-group_node-event: closed_group-group_node-event
+      closed_group-group_node-topic: closed_group-group_node-topic
+      open_group-group_membership: open_group-group_membership
+      open_group-group_node-article: open_group-group_node-article
+      open_group-group_node-event: open_group-group_node-event
+      open_group-group_node-topic: open_group-group_node-topic
+      public_group-group_membership: public_group-group_membership
+      public_group-group_node-article: public_group-group_node-article
+      public_group-group_node-event: public_group-group_node-event
+      public_group-group_node-topic: public_group-group_node-topic
+    negate: false
+    context_mapping:
+      group_content: group_content
+    uuid: 1c59c270-3aed-4333-a6fb-034e1222063d
+selection_logic: and
+weight: -5
+relationships:
+  'group_content:langcode:language':
+    label: Language

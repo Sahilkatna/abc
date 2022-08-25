@@ -1,0 +1,33 @@
+uuid: 476d6cab-0bb4-4f14-8256-8d686e3bac59
+langcode: en
+status: true
+dependencies:
+  module:
+    - activity_logger
+third_party_settings:
+  activity_logger:
+    activity_bundle_entities:
+      node-article: node-article
+    activity_action: create_entitiy_action
+    activity_context: community_activity_context
+    activity_destinations:
+      stream_home: stream_home
+      stream_explore: stream_explore
+      stream_profile: stream_profile
+      stream_group: stream_group
+    activity_create_direct: 1
+    activity_aggregate: 0
+    activity_entity_condition: ''
+template: create_article_profile_stream
+label: 'Create article'
+description: 'A user created Article in the community'
+text:
+  -
+    value: "<p>[message:author:display-name] &nbsp;created a article</p>\r\n"
+    format: full_html
+settings:
+  'token options':
+    clear: false
+    'token replace': true
+  purge_override: false
+  purge_methods: {  }

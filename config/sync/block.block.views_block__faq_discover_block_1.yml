@@ -1,0 +1,31 @@
+uuid: 8671c0b2-c10e-4fe2-8332-d38fe82c895d
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.faq_discover
+  module:
+    - system
+    - views
+  theme:
+    - talawa
+id: views_block__faq_discover_block_1
+theme: talawa
+region: content
+weight: -51
+provider: null
+plugin: 'views_block:faq_discover-block_1'
+settings:
+  id: 'views_block:faq_discover-block_1'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+  context_mapping: {  }
+visibility:
+  request_path:
+    id: request_path
+    pages: '/taxonomy/term/*'
+    negate: false
+    context_mapping: {  }

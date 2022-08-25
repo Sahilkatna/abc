@@ -1,0 +1,1230 @@
+<?php
+/**
+ * @file
+ * The primary PHP file for the Custom theme.
+ */
+
+use Drupal\Core\Url;
+use Drupal\Core\Breadcrumb\Breadcrumb;
+use Drupal\Core\Breadcrumb\BreadcrumbBuilderInterface;
+use Drupal\Core\Link;
+use Drupal\image\Entity\ImageStyle;
+use Drupal\node\Entity\Node;
+use Drupal\Core\Render\Element;
+use Drupal\profile\Entity\ProfileType;
+use Drupal\views\Views;
+use Symfony\Component\HttpFoundation\RedirectResponse;
+
+/**
+ * Implements hook_form_alter
+ *
+ */
+function talawa_preprocess_html(&$variables) {
+  $current_user = \Drupal::currentUser();
+  $roles = $current_user->getRoles();
+
+  if($current_user->isAnonymous()){
+    $variables['attributes']['class'][] = 'anonymous-user';
+  }
+
+  if (in_array('administrator', $roles)) {
+    $variables['attributes']['class'][] = 'admin';
+  }
+
+  if ((!in_array('administrator', $roles) && !in_array('sitemanager', $roles) && !in_array('contentmanager', $roles)) && (in_array('industry', $roles) || in_array('artist', $roles) || in_array('premium', $roles))) {
+    $variables['attributes']['class'][] = 'content-creator';
+  }
+
+  if (in_array('administrator', $roles) || in_array('sitemanager', $roles) || in_array('contentmanager', $roles)){
+    $variables['attributes']['class'][] = 'smgrs';
+  }else{
+    $variables['attributes']['class'][] = 'sauthors';
+  }
+
+  if (in_array('artist', $roles)) {
+    $variables['attributes']['class'][] = 'artist-user';
+  }
+
+  if ($node = \Drupal::routeMatch()->getParameter('node')) {
+    if ($node) {
+      $type = $node->getType();
+      if ($type == 'page') {
+        $variables['attributes']['class'][] = 'page-node-type-basic';
+      }
+    }
+  }
+
+  $route_name = \Drupal::routeMatch()->getRouteName();
+  if($route_name == 'entity.node.canonical'){
+  	$variables['attributes']['class'][] = 'nv-page';
+  }
+  if($route_name == 'entity.taxonomy_term.canonical'){
+  	$variables['attributes']['class'][] = 'tv-page';
+  }
+  if($route_name == 'social_private_message.inbox'){
+    $variables['attributes']['class'][] = 'hidden-title';
+  }
+  if($route_name == 'view.activity_stream_notifications.page_1'){
+    $variables['attributes']['class'][] = 'hidden-title';
+  }
+  
+  //$variables['attributes']['class'][] = 'user-profile';
+
+  // Retrieve an array which contains the path pieces.
+  $current_path = \Drupal::service('path.current')->getPath();
+  $path_args = explode('/', $current_path);
+
+  if (isset($path_args[1]) && isset($path_args[2]) && ($path_args[1] == 'group') && (is_numeric($path_args[2])) && ($path_args[3] != 'stream')) {
+		$variables['attributes']['class'][] = 'path-node';
+  }
+  if (isset($path_args[1]) && isset($path_args[2]) && ($path_args[1] == 'group') && (is_numeric($path_args[2])) && ($path_args[3] == 'delete')) {
+		$variables['attributes']['class'][] = 'user-profile';
+  }
+  if ($path_args[1] == 'user' && $path_args[2] == 'register') {
+    $variables['attributes']['class'][] = 'navbar-default';
+  }
+
+  if ($path_args[1] == 'user' && (isset($path_args[3]) && ($path_args[3] == 'profile' || $path_args[3] == 'edit'))) {
+    $variables['attributes']['class'][] = 'user-edit';
+  }
+
+  $group_pages = [
+    'stream',
+    'join',
+    'leave',
+    'membership',
+    'about',
+    'content'
+  ];
+
+  if (isset($path_args[1]) && isset($path_args[2]) && ($path_args[1] == 'group') && (is_numeric($path_args[2])) && (in_array($path_args[3], $group_pages)) && (!isset($path_args[4]) || (isset($path_args[4]) && $path_args[4] != 'create'))) {
+    $variables['attributes']['class'][] = 'user-profile';
+    if(isset($path_args[3]) && $path_args[3] == 'membership') {
+      $variables['attributes']['class'][] = 'page-talawa-membership';
+    }
+  }
+
+  if (isset($path_args[1]) && isset($path_args[2]) && ($path_args[1] == 'group') && (is_numeric($path_args[2])) && ($path_args[5] == 'group_membership')) {
+    $variables['attributes']['class'][] = 'user-profile';
+  }
+
+  $user_pages = [
+    'stream',
+    'events',
+    'topics',
+    'groups',
+    'members',
+    'articles',
+    'following',
+	  'jobs',
+    'job-opportunities',
+    'cancel',
+  ];
+  $paths = ['user', 'group'];
+  if ((in_array($path_args[1], $paths)) && (isset($path_args[3]) && (in_array($path_args[3], $user_pages)))) {
+    $variables['attributes']['class'][] = 'user-profile';
+  }
+
+  $term = \Drupal::routeMatch()->getParameter('taxonomy_term');
+  if($term){
+    $vid = $term->getVocabularyId();
+    $variables['attributes']['class'][] = 'taxo-' . $vid;
+  }
+
+}
+
+/**
+ * Implements hook_theme().
+ */
+function talawa_theme($existing, $type, $theme, $path) {
+  return [
+    'node_article_form' => [
+      'template' => 'form-node-article',
+      'render element' => 'form',
+    ],
+    'node_article_edit_form' => [
+      'template' => 'form-node-article',
+      'render element' => 'form',
+    ],
+    'node_topic_form' => [
+      'template' => 'form-node-topic',
+      'render element' => 'form',
+    ],
+    'node_topic_edit_form' => [
+      'template' => 'form-node-topic',
+      'render element' => 'form',
+    ],
+    'node_event_form' => [
+      'template' => 'form-node-event',
+      'render element' => 'form',
+    ],
+    'node_event_edit_form' => [
+      'template' => 'form-node-event',
+      'render element' => 'form',
+    ],
+    'node_job_opportunities_form' => [
+      'template' => 'form-node-job_opportunities',
+      'render element' => 'form',
+    ],
+    'node_job_opportunities_edit_form' => [
+      'template' => 'form-node-job_opportunities',
+      'render element' => 'form',
+    ],
+    'node_page_form' => [
+      'template' => 'form-node-page',
+      'render element' => 'form',
+    ],
+    'node_page_edit_form' => [
+      'template' => 'form-node-page',
+      'render element' => 'form',
+    ],
+    'author_image_link' => [
+      'variables' => ['data'=>NULL],
+    ],
+	'group_public_group_add_form' => [
+       'template' => 'form-group-page',
+      'render element' => 'form',
+    ],
+	'group_open_group_add_form' => [
+       'template' => 'form-group-page',
+      'render element' => 'form',
+    ],
+	'group_closed_group_add_form' => [
+       'template' => 'form-group-page',
+      'render element' => 'form',
+    ],
+	'group_public_group_edit_form' => [
+       'template' => 'form-group-page',
+      'render element' => 'form',
+    ],
+	'group_closed_group_edit_form' => [
+       'template' => 'form-group-page',
+      'render element' => 'form',
+    ],
+	'group_open_group_edit_form' => [
+       'template' => 'form-group-page',
+      'render element' => 'form',
+    ],	
+  ];
+}
+
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function talawa_theme_suggestions_page_alter(array &$suggestions, array $variables) {
+  /*if ($node = \Drupal::routeMatch()->getParameter('node')) {
+    $content_type = $node->bundle();
+    if(array_search("page__node__edit",$suggestions) && ($content_type == "article")){
+        $suggestions[] = 'page__node__form';
+    }
+    if(array_search("page__node__edit",$suggestions) && ($content_type == "topic")){
+        $suggestions[] = 'page__node__form';
+    }
+	if(array_search("page__node__edit",$suggestions) && ($content_type == "event")){
+        $suggestions[] = 'page__node__form';
+    }
+	if(array_search("page__node__edit",$suggestions) && ($content_type == "page")){
+        $suggestions[] = 'page__node__form';
+    }
+    if(array_search("page__node__edit",$suggestions) && ($content_type == "job_opportunities")){
+        $suggestions[] = 'page__node__form';
+    }
+  }*/
+  if (array_search("page__node__edit", $suggestions)) {
+    $suggestions[] = 'page__node__form';
+  }
+  if (array_search("page__node__add", $suggestions)) {
+    $suggestions[] = 'page__node__form';
+  }
+
+  if (!!array_intersect([
+    'page__user__profile',
+    'page__user__edit',
+  ], $suggestions)) {
+    $suggestions[] = 'page__user__form';
+  }
+
+  $route_name = \Drupal::routeMatch()->getRouteName();
+  switch ($route_name) {
+    case 'system.401':
+      // Unauthorized Access.
+      $error = 401;
+      break;
+
+    case 'system.403':
+      // Access Denied.
+      $error = 403;
+      break;
+
+    case 'system.404':
+      // Page Not Found.
+      $error = 404;
+      break;
+  }
+  if (isset($error)) {
+    $suggestions[] = 'page__' . $error;
+  }
+  $term = \Drupal::routeMatch()->getParameter('taxonomy_term');
+  if($term){
+      $vid = $term->getVocabularyId();
+      $suggestions[] = 'page__taxonomy__' . $vid;
+      if($vid == 'faq'){
+          $uid = \Drupal::currentUser()->id();
+          if ($vid == 'faq' && $uid > 0) {
+              $user = \Drupal\user\Entity\User::load($uid);
+              $is_industry_user = $user->hasRole('industry');
+			  $variables['is_industry_user'] = $is_industry_user;
+              $access_field = $term->get('field_hide_for_industry')->getValue();
+              if (!empty($access_field) && isset($access_field[0]['value']) && $access_field[0]['value'] == 1 && $is_industry_user) {
+                  $is_sitemanager_user = $user->hasRole('sitemanager');
+                  $is_contentmanager_user = $user->hasRole('contentmanager');
+                  $is_administrator_user = $user->hasRole('administrator');
+                  if($is_sitemanager_user == FALSE && $is_contentmanager_user == FALSE && $is_administrator_user == FALSE){
+                       $redirect = new RedirectResponse('/system/403');
+                       $redirect->send();
+                  }
+              }
+          }
+      }
+  }
+}
+
+/**
+ * Implements hook_preprocess_image_widget().
+ */
+function talawa_preprocess_image_widget(&$variables) {
+  global $base_url;
+  $variables['theme_path'] = $base_url . "/" . $variables['directory'];
+  $element = $variables['element'];
+  $variables['attributes'] = [
+    'class' => [
+      'image-widget',
+      'js-form-managed-file',
+      'form-managed-file',
+      'clearfix',
+    ],
+  ];
+  if (!empty($element['fids']['#value'])) {
+    $file = reset($element['#files']);
+    $element['file_' . $file->id()]['filename']['#suffix'] = ' <span class="file-size">(' . format_size($file->getSize()) . ')</span> ';
+    $file_variables = [
+      'style_name' => $element['#preview_image_style'],
+      'uri' => $file->getFileUri(),
+    ];
+
+    // Determine image dimensions.
+    if (isset($element['#value']['width']) && isset($element['#value']['height'])) {
+      $file_variables['width'] = $element['#value']['width'];
+      $file_variables['height'] = $element['#value']['height'];
+    }
+    else {
+      $image = \Drupal::service('image.factory')->get($file->getFileUri());
+      if ($image->isValid()) {
+        $file_variables['width'] = $image->getWidth();
+        $file_variables['height'] = $image->getHeight();
+      }
+      else {
+        $file_variables['width'] = $file_variables['height'] = NULL;
+      }
+    }
+
+    $element['preview'] = [
+      '#weight' => -10,
+      '#theme' => 'image_style',
+      '#width' => $file_variables['width'],
+      '#height' => $file_variables['height'],
+      '#style_name' => $file_variables['style_name'],
+      '#uri' => $file_variables['uri'],
+    ];
+
+    // Store the dimensions in the form so the file doesn't have to be
+    // accessed again. This is important for remote files.
+    $element['width'] = [
+      '#type' => 'hidden',
+      '#value' => $file_variables['width'],
+    ];
+    $element['height'] = [
+      '#type' => 'hidden',
+      '#value' => $file_variables['height'],
+    ];
+  }
+
+  $variables['data'] = [];
+  foreach (\Drupal\Core\Render\Element::children($element) as $child) {
+    $variables['data'][$child] = $element[$child];
+  }
+
+}
+
+function talawa_preprocess_file_widget_multiple(&$variables) {
+  if (preg_match("/^field_image/", $variables['element']['#field_name'])) {
+    $variables['table']['#attributes']['type'] = "image";
+    $variables['image_type'] = "image";
+  }
+}
+
+
+/**
+ * Implements template_preprocess_table().
+ */
+function talawa_preprocess_table(&$variables) {
+
+}
+
+
+/**
+ * Implements hook_preprocess_image_widget().
+ */
+function talawa_preprocess_node(&$variables) {
+  	
+  $category = null;
+  $variables['post_icon'] = 'fa fa-pencil';
+  $logo = file_url_transform_relative(file_create_url(theme_get_setting('logo.url')));
+  $variables['relative_logo_url'] = $logo;
+
+  global $base_url;
+  $node = $variables['node'];
+	$nid = $node->get('nid')->getValue();
+	$user = \Drupal::currentUser();
+	$type = $node->get('type')->getValue();
+	$changed = $node->get('created')->getValue();
+	$variables['created'] = $changed[0]['value'];
+	
+	
+	
+	if ($node->access('update')) {
+		$variables['edit_link'] = $base_url . '/node/' . $nid[0]['value'] . '/edit';
+	} else {
+		$variables['edit_link'] = null;
+	}
+
+	$changed = $node->get('created')->getValue();
+	$variables['created'] = $changed[0]['value'];
+	$type = $node->get('type')->getValue();
+
+  if ($type[0]['target_id'] == 'article' || $type[0]['target_id'] == 'topic') {
+    $gallery = $node->get('field_image_gallery')->getValue();
+    foreach ($gallery as $item) {
+      $fid = $item['target_id'];
+      $file = \Drupal\file\Entity\File::load($fid);
+	  if($file){
+		  $path = $file->getFileUri();
+		  $variables['image_array'][] = file_create_url($path);
+	  }
+    }
+  }
+
+  $node = $variables['node'];
+  $variables['node_alias'] = $base_url.\Drupal::service('path.alias_manager')->getAliasByPath('/node/' . $nid[0]['value']);
+  $changed = $node->get('changed')->getValue();
+  $changed = $changed[0]['value'];
+  $tchanged = format_date($changed, 'custom', 'm M Y');
+  $variables['tdate'] = $tchanged;
+  $variables['date'] = $tchanged;
+
+  if ($type[0]['target_id'] == 'event') {
+    $event_type = $node->get('field_event_type')->getValue();
+	$category = $event_type;
+	
+	
+	
+	
+    if (isset($event_type[0]['target_id']) && $event_type[0]['target_id'] == 53) {
+      $category_class = 'exhibition';
+    }
+    if (isset($event_type[0]['target_id']) && $event_type[0]['target_id'] == 54) {
+      $category_class = 'festival';
+    }
+    if (isset($event_type[0]['target_id']) && $event_type[0]['target_id'] == 55) {
+      $category_class = 'performance';
+    }
+    if (isset($event_type[0]['target_id']) && $event_type[0]['target_id'] == 56) {
+      $category_class = 'talk';
+	  $variables['post_icon'] = 'fa fa-calendar';
+    }
+    if (isset($event_type[0]['target_id']) && $event_type[0]['target_id'] == 57) {
+      $category_class = 'workshop';
+	  $variables['post_icon'] = 'fa fa-calendar';
+    }
+	
+	
+
+    $variables['category_class'] = $category_class;
+    $variables['content_data'] = 'event';
+    $variables['type_class'] = 'event';
+	
+	
+	$event_image = $node->get('field_event_image')->getValue();	
+	$variables['event_image'] = null;
+	if(isset($event_image[0]['target_id']) && !empty($event_image[0]['target_id'])) {
+		$file = \Drupal\file\Entity\File::load($event_image[0]['target_id']);
+		if(!empty($file)) {
+			$variables['event_image'] = \Drupal\image\Entity\ImageStyle::load('sidebar_image_size')->buildUrl($file->getFileUri());	
+		}		
+	}
+	
+	
+	
+	
+	
+    $variables['view_mode'] = $variables['elements']['#view_mode'];
+    $view_mode = $variables['view_mode'];
+
+
+
+    if ($view_mode == 'full') {
+
+      $book_link = $node->get('field_book_link')->getValue();
+      $variables['book_now'] = $book_link[0]['uri'];
+
+      $created = $node->get('created')->getValue();
+      $created = $created[0]['value'];
+      $created_month = format_date($created, 'custom', 'M');
+      $created_day = format_date($created, 'custom', 'd');
+      $variables['created_month'] = $created_month;
+      $variables['created_day'] = $created_day;
+
+      $contact = $node->get('field_contact')->getValue();
+      $contact = isset($contact[0]) ? $contact[0]['value'] : NULL;
+      $variables['contact'] = $contact;
+
+      $address = $node->get('field_address')->getValue();
+      if (!empty($address)) {
+        $variables['formated_venue'] = $address[0]['value'];
+      }
+
+      $nid = $node->get('nid')->getValue();
+      $venue = views_embed_view('venue', 'block_1', $nid[0]['value']);
+      $variables["venue"] = drupal_render($venue);
+      $enroll = views_embed_view('event_attending', 'event_enrollments', $nid[0]['value']);
+      $variables['attending_count'] = drupal_render($enroll);
+      $form = \Drupal::formBuilder()
+        ->getForm('Drupal\social_event\Form\EnrollActionForm');
+
+      $render_array = [
+        'enroll_action_form' => $form,
+      ];
+      $variables['event_enrollment'] = $form;
+    }
+  }
+
+  if ($type[0]['target_id'] == 'article') {
+    $variables['content_data'] = 'article';
+    $variables['type_class'] = 'article';
+	
+	$feature_image = $node->get('field_feature_image')->getValue();	
+	$variables['feature_image'] = null;
+	if(isset($feature_image[0]['target_id']) && !empty($feature_image[0]['target_id'])) {
+		$file = \Drupal\file\Entity\File::load($feature_image[0]['target_id']);
+		if(!empty($file)) {
+			$variables['feature_image'] = \Drupal\image\Entity\ImageStyle::load('sidebar_image_size')->buildUrl($file->getFileUri());	
+		}		
+	}
+	
+
+	
+	$uid = $node->get('uid')->getValue();
+	$author = \Drupal::entityTypeManager()->getStorage('user')->load($uid[0]['target_id']);
+	$role = $author->getRoles();
+	
+	$artist_class = array();
+	if(in_array('sitemanager', $role) || in_array('contentmanager', $role) || in_array('administrator', $role)) {
+		$artist_class[] = 'talawa_make';	
+	}
+	
+	if(in_array('artist', $role)) {
+		$artist_class[] = 'from_artist';	
+	}
+
+	if(in_array('industry', $role)) {
+		$artist_class[] = 'from_industry';	
+	}
+	$artist_class_1 = implode(' ', $artist_class); 
+	$variables['artist_class'] = $artist_class_1;
+  }
+
+  if ($type[0]['target_id'] == 'topic') {
+    $nid = $node->get('nid')->getValue();
+
+	$category = $node->get('field_topic_type')->getValue();
+	if(isset($category[0]['target_id']) && $category[0]['target_id'] == 1) {
+		$variables['post_icon'] = 'fa fa-newspaper-o';
+	}
+	//$variables['post_icon'] = 'fa-newspaper-o';
+    $variables['content_data'] = 'topic';
+    $variables['type_class'] = 'topic_cl topic noble-gas';
+	
+	$topic_image = $node->get('field_topic_image')->getValue();	
+	$variables['topic_image'] = null;
+	if(isset($topic_image[0]['target_id']) && !empty($topic_image[0]['target_id'])) {
+		$file = \Drupal\file\Entity\File::load($topic_image[0]['target_id']);
+		if(!empty($file)) {
+			$variables['topic_image'] = \Drupal\image\Entity\ImageStyle::load('sidebar_image_size')->buildUrl($file->getFileUri());	
+		}		
+	}
+	
+	
+	
+    $field_topic_type = $node->get('field_topic_type')->getValue();
+    $topic_type = $field_topic_type[0]['target_id'];
+    $variables['nid'] = $nid[0]['value'];
+    if ($topic_type == 2) {
+      $variables['topic_types'] == TRUE;
+    }
+
+    $uid = $node->get('uid')->getValue();
+    $author = \Drupal::entityTypeManager()
+      ->getStorage('user')
+      ->load($uid[0]['target_id']);
+    $role = $author->getRoles();
+
+	$artist_class = array();
+    if (in_array('sitemanager', $role) || in_array('contentmanager', $role) || in_array('administrator', $role)) {
+      $artist_class[] = 'talawa_make';
+    }
+
+    if (in_array('artist', $role)) {
+      $artist_class[] = 'from_artist';
+    }
+
+    if (in_array('industry', $role)) {
+      $artist_class[] = 'from_industry';
+    }
+	$artist_class_1 = implode(' ', $artist_class); 
+	
+    $variables['artist_class'] = $artist_class_1;
+
+  }
+
+  $uid = $node->get('uid')->getValue();
+    $author = \Drupal::entityTypeManager()
+      ->getStorage('user')
+      ->load($uid[0]['target_id']);
+  $user_profile = \Drupal::entityTypeManager()
+				->getStorage('profile')
+				->loadByUser($author, ProfileType::load('profile')->id(), TRUE)->toArray();
+
+			  if(isset($user_profile['field_profile_image'][0]['target_id'])) {
+				$file = \Drupal\file\Entity\File::load($user_profile['field_profile_image'][0]['target_id']);
+				if(!empty($file)) {
+					$path = $file->getFileUri();
+					if(!empty($path)) {
+						$path = \Drupal\image\Entity\ImageStyle::load('thumbnail')->buildUrl($path);
+						//$variables['author_picture'] = $path;	
+						
+						
+						$variables['user_picture_custom'] = [
+							'#theme' => 'author_image_link',
+							'#data' => $path,
+							'#cache' => ['contexts' => ['url.path', 'url.query_args']]
+						];
+					}	
+				}
+			  }
+			  
+			  
+			  
+			  
+			  
+  if ($type[0]['target_id'] == 'job_opportunities') {
+	$variables['post_icon'] = 'fa fa-briefcase';
+	$category = $node->get('field_type')->getValue();
+		
+    $variables['content_data'] = 'job-opportunity';
+    $variables['type_class'] = 'job_cl';
+    $daily = $node->get('field_daily')->getValue();
+    $weekly = $node->get('field_weekly')->getValue();
+    $yearly = $node->get('field_yearly_salary')->getValue();
+    $salary = 0;
+    if (isset($daily[0]['value']) && !empty($daily[0]['value'])) {
+      $salary = $daily[0]['value'];
+    }
+
+    if (isset($weekly[0]['value']) && !empty($weekly[0]['value'])) {
+      $salary = $weekly[0]['value'];
+    }
+
+    if (isset($yearly[0]['value']) && !empty($yearly[0]['value'])) {
+      $salary = $yearly[0]['value'];
+    }
+
+    $variables['salary'] = $salary;
+    $job_type = $node->get('field_type')->getValue();
+    $array = array(0 => 'Jobs', 1 => 'Opportunities');
+    $variables['post_types'] = isset($array[$job_type[0]['value']]) ? $array[$job_type[0]['value']] : null;
+	$variables['post_category'] = isset($array[$job_type[0]['value']]) ? $array[$job_type[0]['value']] : null;
+    $address = $node->get('field_location')->getValue();
+
+
+    $address = $node->get('field_job_address')->getValue();
+	$job_category = $node->get('field_job_category')->getValue();
+	if(isset($job_category[0]['target_id']) && $job_category[0]['target_id'] == 52) {
+		$variables['post_category'] = 'Volunteer';
+	}
+	
+    if (!empty($address)) {
+      $variables['location'] = $address[0]['value'];
+    }
+
+    $job_application = $node->get('field_job_application')->getValue();
+    $external_link = $node->get('field_link_to_external_site')->getValue();
+	
+    $variables['apply_now'] = NULL;
+
+    if (!empty($external_link) && empty($job_application)) {
+      $variables['apply_now'] = $external_link[0]['uri'];
+    }
+
+    $application_deadline_date = NULL;
+    if (isset($job_type[0]['value']) && $job_type[0]['value'] == 1) {
+      $application_deadline_date = $node->get('field_call_open_until')
+        ->getValue();
+    }
+    else {
+      $application_deadline_date = $node->get('field_application_deadline_date')
+        ->getValue();
+    }
+    $deadline_call_untill = $application_deadline_date;
+
+
+    $variables['deadline_call_untill'] = NULL;
+    if (isset($deadline_call_untill[0]['value']) && !empty($deadline_call_untill[0]['value'])) {
+      $date = strtotime($deadline_call_untill[0]['value']);
+      $tchanged = format_date($date, 'custom', 'jS F Y');
+      $variables['deadline_call_untill'] = 'Closes: ' . $tchanged;
+    }
+
+    $variables['view_mode'] = $variables['elements']['#view_mode'];
+    $view_mode = $variables['view_mode'];
+
+    if ($view_mode == 'grid') {
+      $title = $node->getTitle();
+      $variables['job_title'] = $title;
+    }
+
+    $changed = $node->get('created')->getValue();
+    $variables['created'] = $changed[0]['value'];
+    $title = $node->getTitle();
+    $variables['job_title'] = $title;
+
+    
+    $feature_image = $node->get('field_feature_image')->getValue();	
+    $variables['feature_image'] = null;
+    if(isset($feature_image[0]['target_id']) && !empty($feature_image[0]['target_id'])) {
+      $file = \Drupal\file\Entity\File::load($feature_image[0]['target_id']);
+      if(!empty($file)) {
+        if($feature_image[0]['width'] >= 800 && $feature_image[0]['height'] >= 600) {
+          $variables['feature_image'] = \Drupal\image\Entity\ImageStyle::load('job_opportunity_800x600')->buildUrl($file->getFileUri());
+        }else{
+          $path = $file->getFileUri();
+          $variables['feature_image_tile'] = file_create_url($path);
+        }	
+      }	
+    }
+  }
+  
+  if($type[0]['target_id'] == 'job_opportunities') {
+		$category = $node->get('field_type')->getValue();
+		if($category[0]['value'] == 0) {
+			$variables['cate_class'] = 'job_post';
+		}
+		else {
+			$variables['cate_class'] = 'opportunity_post';
+		}			
+	} else {
+	  	if(isset($category[0]['target_id']) && !empty($category[0]['target_id'])) {
+			$term = taxonomy_term_load($category[0]['target_id']);
+			$term_name = $term->get('name')->value;
+			$variables['cate_class'] = strtolower($term_name);	
+		}
+	}
+
+    $variables['user_class'] = null;
+	$custom_url = '/node';
+	$variables['curl'] = $custom_url;
+    $data = '';
+    /* $variables['user_picture_custom'] = [
+        '#theme' => 'author_image_link',
+        '#data' => $data,
+        '#cache' => ['contexts' => ['url.path', 'url.query_args']]
+    ]; */
+
+    /*$variables['group_title'] = '';
+	if($node->hasField('field_group')){
+	    $field_group = $node->get('field_group')->getValue();
+	    if(!empty($field_group)){
+	        $group_id = $field_group[0]['target_id'];
+	        $group_entity = \Drupal::entityTypeManager()->getStorage('group')->load($group_id);
+	        if($group_entity){
+                kint($variables);
+                $variables['group_title'] = $group_entity->label() . '-' . $view_mode;
+	        }
+	    }
+	}*/
+}
+
+
+/**
+ * Implements hook_form_alter
+ *
+ */
+function talawa_form_node_form_alter(&$form, &$form_state, $form_id) {
+  $user = \Drupal\user\Entity\User::load(\Drupal::currentUser()->id());
+  $role = $user->getRoles();
+  if (in_array('administrator', $role) || in_array('contentmanager', $role) || in_array('sitemanager', $role)) {
+	$form['admin_access'] =  array(
+		  '#type' => 'hidden',
+		  '#title' => 'admin_access',
+		  '#size' => 60,
+		  '#maxlength' => 128,
+	);
+  }
+  if (in_array('industry', $role)) {
+    $form['hide_group'] =  array(
+    		  '#type' => 'hidden',
+    		  '#title' => 'group_access',
+    		  '#size' => 60,
+    		  '#maxlength' => 128,
+    );
+  }
+
+  if (isset($form['field_event_image'])) {
+    $form['field_event_image']['widget'][0]['#description'] = 'Must be less than 8MB in size and at least 1,000 pixels wide, though we encourage an optimal width of 2,000 pixels. Files must be less than 8 MB. Allowed file types: png gif jpg jpeg.';
+  }
+
+  if (isset($form['field_page_image'])) {
+    $form['field_page_image']['widget'][0]['#description'] = 'Must be less than 8MB in size and at least 1,000 pixels wide, though we encourage an optimal width of 2,000 pixels. Files must be less than 8 MB. Allowed file types: png gif jpg jpeg.';
+  }
+
+  if (isset($form['field_topic_image'])) {
+    $form['field_topic_image']['widget'][0]['#description'] = 'Must be less than 8MB in size and at least 1,000 pixels wide, though we encourage an optimal width of 2,000 pixels. Files must be less than 8 MB. Allowed file types: png gif jpg jpeg.';
+  }
+
+  if (isset($form['field_feature_image'])) {
+    $form['field_feature_image']['widget'][0]['#description'] = 'Must be less than 8MB in size and at least 1,000 pixels wide, though we encourage an optimal width of 2,000 pixels. Files must be less than 8 MB. Allowed file types: png gif jpg jpeg.';
+  }
+
+  if ($form_id == 'node_job_opportunities_form' || $form_id == 'node_job_opportunities_edit_form') {
+    $form['actions']['submit']['#submit'][] = 'talawa_job_opportunity_submit';
+  }
+}
+
+function talawa_job_opportunity_submit(&$form, \Drupal\Core\Form\FormStateInterface $form_state) {
+  $val = $form_state->getValues('');
+  $user = \Drupal\user\Entity\User::load(\Drupal::currentUser()->id());
+  $role = $user->getRoles();
+  if (!in_array('administrator', $role) && !in_array('contentmanager', $role) && !in_array('sitemanager', $role) && !in_array('premium', $role) && !in_array('premium', $role)) {
+    if ($val['moderation_state'][0]['value'] == 'submitted') {
+      drupal_set_message('your post will be reviewed and published as soon as possible.  This may take longer if you are posting on a Friday.');
+    }
+  }
+
+  if ($val['moderation_state'][0]['value'] == 'published' && $form['moderation_state']['widget'][0]['current']['#markup'] != 'Published') {
+    drupal_set_message('your post is now live.');
+  }
+}
+
+function talawa_preprocess_page(&$variables) {
+  $node = NULL;
+  $node = \Drupal::routeMatch()->getParameter('node');
+  $current_path = \Drupal::service('path.current')->getPath();
+  $url = explode('/', $current_path);
+  if (isset($url[1]) && $url[1] == 'group' && isset($url[2]) && $url[2] == 'add') {
+    $variables['beadcrumb_add'] = ['Home', 'Make', 'Groups', 'Post something...'];
+  }
+  if (isset($url[1]) && $url[1] == 'group' && (is_numeric($url[2])) && $url[3] == 'content') {
+    $variables['beadcrumb_add'] = ['Home', 'Make', 'Groups', 'Post something...'];
+  }
+
+  if (isset($url[1]) && $url[1] == 'node' && isset($url[2]) && $url[2] == 'add' && isset($url[3]) && !empty($url[3])) {
+    $variables['beadcrumb_add'] = ['Home', 'Make', 'Post something...'];
+  }
+  if ($node) {
+    $type = $node->getType();
+
+    if ($type == 'event' || $type == 'article' || $type == 'topic' || $type == 'page' || $type == 'job_opportunities') {
+      $variables['beadcrumb'] = [
+        'Home' => '/',
+        'Resource' => \Drupal::service('path.alias_manager')
+          ->getAliasByPath('/resources'),
+      ];
+      $variables['node_title'] = strlen($node->getTitle()) > 18 ? substr($node->getTitle(), 0, 18) . "..." : $node->getTitle();
+    }
+	if ($type == 'talawa_landing_page')
+	{
+		$hero_carousel = $node->get('field_hero_carousel')->getValue();
+		if(isset($hero_carousel[0]['target_id']) && !empty($hero_carousel[0]['target_id'])) {
+			$variables['hero_carousel'] = true;
+		}
+	}
+	
+  }
+
+  // Retrieve an array which contains the path pieces.
+  $current_path = \Drupal::service('path.current')->getPath();
+  $path_args = explode('/', $current_path);
+  if ($path_args[1] == 'user' && $path_args[2] == 'register') {
+    unset($variables['page']['header']['talawa_mainnavigation']);
+    unset($variables['page']['header']['talawa_accountheaderblock']);
+    unset($variables['page']['title']);
+  }
+
+  $variables['show_column'] = TRUE;
+  $variables['user_classes'] = 'col-lg-6 col-md-8';
+  if (($path_args[1] == 'user' && (isset($path_args[3]) && $path_args[3] == 'following')) || ($path_args[1] == 'group' && (isset($path_args[3]) && $path_args[3] == 'members'))) {
+    $variables['show_column'] = FALSE;
+    $variables['user_classes'] = 'col-lg-9 col-md-8';
+  }
+
+   $term = \Drupal::routeMatch()->getParameter('taxonomy_term');
+   if($term){
+        $vid = $term->getVocabularyId();
+        if($vid == 'faq' || $vid == 'faq_discover_make'){
+            $block = \Drupal\block\Entity\Block::load('faq_2');
+            if($block){
+                $block_content = \Drupal::entityTypeManager()
+                  ->getViewBuilder('block')
+                  ->view($block);
+                 $variables['hero_block'] = $block_content;
+            }else{
+                 $variables['hero_block'] = '';
+            }
+            $variables['faq_title'] = $term->getName();
+        }
+        if($vid == 'tags'){
+            $variables['hero_block'] = $term->getName();
+        }
+    }
+}
+
+/**
+ * Prepares variables for swiftmailer templates.
+ *
+ * Default template: swiftmailer.html.twig.
+ *
+ * @param array $variables
+ *   An associative array containing:
+ *   - message: An associative array containing the message array.
+ *   - body: The processed body.
+ */
+function talawa_preprocess_swiftmailer(&$variables) {
+  $variables['subject'] = $variables['message']['subject'];
+  $variables['body'] = $variables['message']['body'];
+  $variables['site_base_url'] = \Drupal::request()->getSchemeAndHttpHost();
+}
+
+
+/**
+ * Prepares variables for block templates.
+ *
+ * Default template: block.html.twig.
+ *
+ * Prepares the values passed to the theme_block function to be passed
+ * into a pluggable template engine. Uses block properties to generate a
+ * series of template file suggestions. If none are found, the default
+ * block.html.twig is used.
+ *
+ * Most themes use their own copy of block.html.twig. The default is located
+ * inside "core/modules/block/templates/block.html.twig". Look in there for the
+ * full list of available variables.
+ *
+ * @param array $variables
+ *   An associative array containing:
+ *   - elements: An associative array containing the properties of the element.
+ *     Properties used: #block, #configuration, #children, #plugin_id.
+ */
+function talawa_preprocess_block(&$variables) {
+  $element = $variables['elements'];
+  if ($element['#id'] == 'footerright') {
+    $variables['card'] = FALSE;
+  }
+}
+
+
+function talawa_mail($key, &$message, $params) {
+  $data['user'] = $params['account'];
+  $options['langcode'] = $message['langcode'];
+  user_mail_tokens($variables, $data, $options);
+  switch ($key) {
+    case 'notice':
+
+      // If the recipient can receive such notices by instant-message, do
+      // not send by email.
+      if (example_im_send($key, $message, $params)) {
+        $message['send'] = FALSE;
+        break;
+      }
+      $message['subject'] = t('Notification from @site', $variables, $options);
+      $message['body'][] = t("Dear @username\n\nThere is new content available on the site.", $variables, $options);
+      break;
+  }
+}
+
+
+/**
+ * Prepares variables for Activity templates.
+ *
+ * Default template: activity.html.twig.
+ *
+ * @param array $variables
+ *   An associative array containing:
+ *   - elements: An associative array containing the user information and any
+ *   - attributes: HTML attributes for the containing element.
+ */
+function talawa_preprocess_activity(array &$variables) {
+  // Fetch Activity Entity Object.
+  /** @var \Drupal\activity_creator\Entity\Activity $activity */
+  $activity = $variables['elements']['#activity'];
+
+  // Helpful $content variable for templates.
+  foreach (Element::children($variables['elements']) as $key) {
+    $variables['content'][$key] = $variables['elements'][$key];
+  }
+
+  // Get the url to the related entity.
+  $full_url = $activity->getRelatedEntityUrl();
+
+  //  $entity = $activity->get('field_activity_entity')->referencedEntities();
+  //  $node = $entity[0]->toArray();
+
+  // Display activity created date in format 'time ago'.
+  $created_time_ago = \Drupal::service('date.formatter')
+    ->formatTimeDiffSince($activity->getCreatedTime(), [
+      'granularity' => 1,
+      'return_as_object' => TRUE,
+    ]);
+  $date = t('%time ago', ['%time' => $created_time_ago->getString()]);
+  if ($full_url == '') {
+    $variables['date'] = $date;
+  }
+  else {
+    //$variables['date'] = Link::fromTextAndUrl($date, $full_url);
+	 $variables['date'] = $date;
+  }
+  $variables['#cache']['max-age'] = $created_time_ago->getMaxAge();
+
+  // To change user picture settings (e.g. image style), edit the
+  // 'compact_notification' view mode on the User entity. Note that the
+  // 'compact_notification' view mode might not be configured, so remember to
+  // always check the theme setting first.
+  $account = $activity->getOwner();
+  if ($account) {
+    $storage = \Drupal::entityTypeManager()->getStorage('profile');
+    if (!empty($storage)) {
+      $user_profile = $storage->loadByUser($account, 'profile');
+      if ($user_profile) {
+        $content = \Drupal::entityTypeManager()
+          ->getViewBuilder('profile')
+          ->view($user_profile, 'compact_notification');
+        if ($full_url == '') {
+          $variables['actor'] = $content;
+        }
+        else {
+          //$variables['actor'] = Link::fromTextAndUrl($content, $account->toUrl());
+		  $variables['actor'] = $content;
+		  
+        }
+
+        $first_name = $user_profile->get('field_profile_first_name')->getValue();
+        $last_name = $user_profile->get('field_profile_last_name')->getValue();
+
+        if (!empty($first_name[0]['value'])) {
+          $fullname = $first_name[0]['value'] . ' ' . $last_name[0]['value'];
+        }
+        else {
+          $fullname = $account->getAccountName();
+        }
+
+        $variables['fullname'] = Link::fromTextAndUrl($fullname, $account->toUrl());
+      }
+    }
+  }
+
+  $variables['full_url'] = $full_url;
+
+  $status = $activity->get('field_activity_status')->getValue();
+
+  switch ($status['0']['value']) {
+    case ACTIVITY_STATUS_READ:
+      $status_class = 'bg-white';
+      break;
+
+    default:
+      $status_class = 'bg-gray-lightest';
+      break;
+  }
+
+  if (isset($status_class)) {
+    $variables['status_class'] = $status_class;
+  }
+
+}
+
+function talawa_preprocess_group(&$variables) {
+  global $base_url;	
+
+  $group = $variables['elements']['#group'];
+  $uid = $group->get('uid')->getValue();
+  $id = $group->get('id')->getValue();
+  
+  $variables['group_title'] = $group->label();
+
+
+  if (isset($id[0]['value'])) {
+    $variables['gid'] = 'group/' . $id[0]['value'] . '/stream';
+    $view = Views::getView('count_group_members');
+    $view->setDisplay('page_group_members');
+    $view->setArguments([$id[0]['value']]);
+    $view->execute();
+    $variables['member_count'] = count($view->result) . ' Members';
+  }
+
+  if (isset($id[0]['value'])) {
+    $variables['gid'] = 'group/' . $id[0]['value'] . '/stream';
+  }
+
+  $author = \Drupal::entityTypeManager()
+    ->getStorage('user')
+    ->load($uid[0]['target_id']);
+  $role = $author->getRoles();
+
+  $artist_class = null;
+  
+    if (in_array('artist', $role)) {
+    $artist_class = 'user_artist';
+    $artist_class_data = 'user_artist';
+  }
+  
+  if (in_array('sitemanager', $role) || in_array('contentmanager', $role) || in_array('administrator', $role)) {
+    $artist_class = 'talawa_make';
+    $artist_class_data = 'talawa_make';
+  }
+
+  $variables['artist_class_data'] = $artist_class_data;
+  $variables['artist_class'] = $artist_class;
+  
+  $logo = file_url_transform_relative(file_create_url(theme_get_setting('logo.url')));
+  $variables['relative_logo_url'] = $logo;
+  
+  
+  	$img_style = 'small_square';	
+	if($group->hasField('field_view_mode')) {
+		$width = $group->get('field_view_mode')->getValue();	
+	 if ($width[0]['value'] == 'Small Square') {
+		$img_style = 'small_square';
+	  }
+	  elseif ($width[0]['value'] == 'Big Square') {
+		$img_style = 'big_square';
+	  }
+	  elseif ($width[0]['value'] == 'Portrait Shape') {
+		$img_style = 'portrait_shape';
+	  }
+	}
+  
+    $group_image = $group->get('field_group_image')->getValue();	
+	$variables['group_image'] = null;
+	if(isset($group_image[0]['target_id']) && !empty($group_image[0]['target_id'])) {
+		$file = \Drupal\file\Entity\File::load($group_image[0]['target_id']);
+		if(!empty($file)) {
+			$variables['group_image'] = \Drupal\image\Entity\ImageStyle::load($img_style)->buildUrl($file->getFileUri());	
+		}		
+	}
+		
+	$author_name = $author->get('name')->getValue();		
+	if(isset($author_name[0]['value']) && !empty($author_name[0]['value'])) {
+		$variables['author_name'] =  $author_name[0]['value'];	
+		
+		 $user_profile = \Drupal::entityTypeManager()
+				->getStorage('profile')
+				->loadByUser($author, ProfileType::load('profile')->id(), TRUE)->toArray();
+
+			  if(isset($user_profile['field_profile_image'][0]['target_id'])) {
+				$file = \Drupal\file\Entity\File::load($user_profile['field_profile_image'][0]['target_id']);
+				if(!empty($file)) {
+					$path = $file->getFileUri();
+					if(!empty($path)) {
+						$path = \Drupal\image\Entity\ImageStyle::load('thumbnail')->buildUrl($path);
+						$variables['author_picture'] = $path;	
+					}	
+				}
+			  }		
+	}
+}
+
+
+/**
+ * Implement fullcalendar view theme preprocess function.
+ *
+ * @param array $variables
+ *   Template variables.
+ */
+function talawa_preprocess_views_view_fullcalendar(array &$variables) {
+  $account = \Drupal::routeMatch()->getParameter('user');
+  $variables['account_id'] = $account;
+}
+
+
+/**
+ * Implements hook_preprocess_status_messages()
+ */
+function talawa_preprocess_status_messages(&$variables) {
+	if(!empty($variables['message_list']['status']) && isset($variables['message_list']['status'])){
+		foreach ($variables['message_list']['status'] as $key => $states) {	
+		  if (strpos((string) $states, 'You have successfully enrolled to this event. Also you are now following the event, which means you will receive notifications when a new comment is placed') !== FALSE) {
+				$variables['message_list']['status'][$key] = "You are now following the event, which means you will receive notifications when a new comment is placed.";
+			}
+			
+			if ($states instanceof \Drupal\Component\Render\MarkupInterface) {
+				if ((string) $states == (string) t("Webforms must first be created before referencing them in the below form.")) {
+					unset($status_messages[$key]);
+					break;
+				}
+			 }
+		}
+	}
+}
+
+
+
+/**
+ * Implements hook_theme_suggestions_HOOK().
+ */
+function talawa_theme_suggestions_form_alter(array &$suggestions, array $variables) {	
+    $suggestions[] = 'form__' . $variables['element']['#form_id'];
+}
+
+
+
+function talawa_theme_suggestions_taxonomy_term_alter(&$suggestions, $vars, $hook) {  
+
+  $suggestions[] = 'taxonomy_term__' . $vars['elements']['#view_mode'];
+  
+}
+
+
+
+/**
+ * Implements hook_form_alter().
+ */
+function talawa_form_alter(&$form, &$form_state, $form_id) {
+  $social_group_types = [
+    'open_group',
+    'closed_group',
+    'public_group',
+  ];
+  \Drupal::moduleHandler()->alter('social_group_types', $social_group_types);
+
+  $membership_add_forms = [];
+
+  foreach ($social_group_types as $social_group_type) {
+    $membership_add_forms[] = "group_content_{$social_group_type}-group_membership_add_form";
+  }
+
+  $action_forms = array_merge($join_forms, $leave_forms, $membership_delete_forms, $membership_add_forms);
+  $membership_forms = array_merge($membership_add_forms, $membership_edit_forms);
+
+  if (in_array($form_id, $membership_add_forms)) {
+    $form['entity_id']['widget'][0]['target_id']['#type'] = 'social_group_user_entity_autocomplete';
+  }
+}

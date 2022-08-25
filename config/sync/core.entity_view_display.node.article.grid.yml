@@ -1,0 +1,83 @@
+uuid: 32a67b8e-645f-4cd2-ae9b-16848ad65812
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.grid
+    - field.field.node.article.body
+    - field.field.node.article.field_article_comments
+    - field.field.node.article.field_content_visibility
+    - field.field.node.article.field_except
+    - field.field.node.article.field_feature_image
+    - field.field.node.article.field_group
+    - field.field.node.article.field_image_gallery
+    - field.field.node.article.field_promoted_to_landing_page
+    - field.field.node.article.field_tags
+    - field.field.node.article.field_type_of_content
+    - field.field.node.article.field_view_mode
+    - node.type.article
+  module:
+    - dynamic_entity_reference
+    - image
+    - user
+id: node.article.grid
+targetEntityType: node
+bundle: article
+mode: grid
+content:
+  field_except:
+    weight: 103
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_feature_image:
+    weight: 104
+    label: above
+    settings:
+      image_style: footer_block_image_size
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_image_gallery:
+    weight: 105
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_tags:
+    weight: 106
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: dynamic_entity_reference_label
+    region: content
+  field_type_of_content:
+    weight: 107
+    label: above
+    settings:
+      link: false
+    third_party_settings: {  }
+    type: dynamic_entity_reference_label
+    region: content
+hidden:
+  addtoany: true
+  body: true
+  field_article_comments: true
+  field_content_visibility: true
+  field_group: true
+  field_promoted_to_landing_page: true
+  field_view_mode: true
+  flag_follow_content: true
+  groups: true
+  groups_type_closed_group: true
+  groups_type_open_group: true
+  groups_type_public_group: true
+  links: true
+  private_message_link: true

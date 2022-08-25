@@ -1,0 +1,23 @@
+uuid: 0c091554-97cb-4e4f-8a9b-fefefdf1cbb2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_carousel_action_links
+    - paragraphs.paragraphs_type.carousel
+  module:
+    - link
+id: paragraph.carousel.field_carousel_action_links
+field_name: field_carousel_action_links
+entity_type: paragraph
+bundle: carousel
+label: 'Action Links'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+field_type: link

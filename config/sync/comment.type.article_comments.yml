@@ -1,0 +1,8 @@
+uuid: 7c528be2-7e01-4f54-8a62-304416fa48c3
+langcode: en
+status: true
+dependencies: {  }
+id: article_comments
+label: 'Article Comments'
+target_entity_type_id: node
+description: ''

@@ -1,0 +1,33 @@
+uuid: 42a64258-26e1-4857-b27c-2653cbf61021
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - profile
+id: profile.field_profile_completed
+field_name: field_profile_completed
+entity_type: profile
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: details
+      label: details
+    -
+      value: profile
+      label: profile
+    -
+      value: questions
+      label: questions
+    -
+      value: confirmation
+      label: confirmation
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

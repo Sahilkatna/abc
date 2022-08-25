@@ -1,0 +1,27 @@
+uuid: 966ce170-135a-4c10-8c0e-22567833e548
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: all_content_type
+label: 'All Content type'
+type: 'canonical_entities:node'
+pattern: '[node:title]'
+selection_criteria:
+  41930690-71d4-412f-a4fe-613daa791a3b:
+    id: node_type
+    bundles:
+      landing_page: landing_page
+      lead_slider: lead_slider
+      page: page
+      talawa_landing_page: talawa_landing_page
+      testcontent: testcontent
+      webform: webform
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 41930690-71d4-412f-a4fe-613daa791a3b
+selection_logic: and
+weight: -10
+relationships: {  }

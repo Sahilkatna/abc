@@ -1,0 +1,16 @@
+uuid: 0ccfd884-a8e4-44ae-8dc1-8dec2c32c5b1
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.closed_group
+_core:
+  default_config_hash: '-u_jXfI7SRmQKCnvH0mEoXRyoThERG0Uzmg0h5Se2Uk'
+id: closed_group-outsider
+label: Outsider
+weight: -101
+internal: true
+audience: outsider
+group_type: closed_group
+permissions_ui: true
+permissions: {  }

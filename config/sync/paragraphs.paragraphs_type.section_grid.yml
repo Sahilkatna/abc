@@ -1,0 +1,9 @@
+uuid: 40cc5370-8753-442e-96d8-37b587eba28c
+langcode: en
+status: true
+dependencies: {  }
+id: section_grid
+label: 'Section Grid'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

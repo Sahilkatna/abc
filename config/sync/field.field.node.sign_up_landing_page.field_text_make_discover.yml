@@ -1,0 +1,19 @@
+uuid: c51f80b6-ab8c-49ac-a820-a6f382343842
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_text_make_discover
+    - node.type.sign_up_landing_page
+id: node.sign_up_landing_page.field_text_make_discover
+field_name: field_text_make_discover
+entity_type: node
+bundle: sign_up_landing_page
+label: 'Text Make Discover'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

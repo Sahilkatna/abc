@@ -1,0 +1,27 @@
+uuid: 433eb5c4-04b7-4226-b7ae-1a62763e5c14
+langcode: en
+status: true
+dependencies:
+  module:
+    - field_permissions
+    - node
+    - talawa_profile
+    - taxonomy
+third_party_settings:
+  field_permissions:
+    permission_type: custom
+id: node.field_job
+field_name: field_job
+entity_type: node
+type: dynamic_entity_reference
+settings:
+  exclude_entity_types: false
+  entity_type_ids:
+    taxonomy_term: taxonomy_term
+module: talawa_profile
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

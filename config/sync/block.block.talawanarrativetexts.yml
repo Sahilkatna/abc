@@ -1,0 +1,26 @@
+uuid: 6f9e0f9c-39d3-4f44-8aed-018dac09a12a
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+    - talawa_profile
+  theme:
+    - talawa
+id: talawanarrativetexts
+theme: talawa
+region: content
+weight: -56
+provider: null
+plugin: narrative_texts_block
+settings:
+  id: narrative_texts_block
+  label: 'Talawa: Narrative Texts'
+  provider: talawa_profile
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: '/user/*/following'
+    negate: false
+    context_mapping: {  }

@@ -1,0 +1,30 @@
+uuid: cb6a86bd-8f8f-432c-b70f-b3b279e7c1fc
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - user
+id: user.field_view_mode
+field_name: field_view_mode
+entity_type: user
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: 'Big Square'
+      label: 'Big Square'
+    -
+      value: 'Small Square'
+      label: 'Small Square'
+    -
+      value: 'Portrait Shape'
+      label: 'Portrait Shape'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,15 @@
+uuid: f46c1281-b81d-456e-9bf1-b4ffb5413b27
+langcode: en
+status: true
+dependencies: {  }
+name: footer_block_image_size
+label: 'Footer Block Image Size'
+effects:
+  ea02a016-6779-4316-8de4-7f80c3567abc:
+    uuid: ea02a016-6779-4316-8de4-7f80c3567abc
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 455
+      height: 500
+      anchor: center-center

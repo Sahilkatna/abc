@@ -1,0 +1,14 @@
+uuid: cfa5fb6a-96fd-4cb9-9e80-097f1855d850
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.artist
+  module:
+    - user
+id: user_add_role_action.artist
+label: 'Add the Artist role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: artist

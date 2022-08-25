@@ -1,0 +1,31 @@
+uuid: 66ad02eb-2c44-4182-bc1a-76f7d4c42041
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.job_opportunities_profile
+  module:
+    - system
+    - views
+  theme:
+    - talawa
+id: views_profile_block_job_opportunities_on_profile
+theme: talawa
+region: complementary_bottom
+weight: -57
+provider: null
+plugin: 'views_block:job_opportunities_profile-block_job_opportunities_on_profile'
+settings:
+  id: 'views_block:job_opportunities_profile-block_job_opportunities_on_profile'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+  context_mapping: {  }
+visibility:
+  request_path:
+    id: request_path
+    pages: '/user/*/stream'
+    negate: false
+    context_mapping: {  }

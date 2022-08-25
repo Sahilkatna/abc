@@ -1,0 +1,21 @@
+uuid: eaddbe36-b3e8-40e6-b892-cb8028fa87ee
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_audience
+    - node.type.event
+  module:
+    - options
+id: node.event.field_audience
+field_name: field_audience
+entity_type: node
+bundle: event
+label: Audience
+description: 'Using the drop down, please highlight the audience group that best represents your target market, from Artist, Industry, or General Public'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

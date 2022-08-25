@@ -1,0 +1,30 @@
+uuid: 4c198d32-6eeb-4a4e-b45c-357f3b381933
+langcode: en
+status: true
+dependencies:
+  module:
+    - addtoany
+    - node
+  theme:
+    - talawa
+id: talawa_addtoanybuttons_2
+theme: talawa
+region: complementary_bottom
+weight: -67
+provider: null
+plugin: addtoany_block
+settings:
+  id: addtoany_block
+  label: 'Share this page'
+  provider: addtoany
+  label_display: visible
+visibility:
+  node_type:
+    id: node_type
+    bundles:
+      event: event
+      page: page
+      topic: topic
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

@@ -1,0 +1,23 @@
+uuid: 67b3b1e8-5d0f-49b9-8855-a833da1adf54
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_sticky_top_of_lists
+    - node.type.article
+id: node.article.field_sticky_top_of_lists
+field_name: field_sticky_top_of_lists
+entity_type: node
+bundle: article
+label: 'Sticky top of lists'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'Yes'
+  off_label: 'No'
+field_type: boolean

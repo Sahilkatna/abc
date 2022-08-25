@@ -1,0 +1,29 @@
+uuid: 714c0806-a96e-414c-a409-084b608f6780
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.group_events
+  module:
+    - system
+    - views
+  theme:
+    - talawa
+id: talawa_exposedformgroup_eventspage_group_events
+theme: talawa
+region: complementary_top
+weight: -56
+provider: null
+plugin: 'views_exposed_filter_block:group_events-page_group_events'
+settings:
+  id: 'views_exposed_filter_block:group_events-page_group_events'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: Filter
+visibility:
+  request_path:
+    id: request_path
+    pages: '/group/*/events'
+    negate: false
+    context_mapping: {  }

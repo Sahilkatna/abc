@@ -1,0 +1,31 @@
+uuid: 44c4ba92-29de-4b04-8119-c9e8639d27db
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:platform_intro:90fd32ff-a579-47ea-b99b-7a8d6938f144'
+  module:
+    - block_content
+    - system
+  theme:
+    - talawa
+id: headlinesblock
+theme: talawa
+region: header_node_edit
+weight: -50
+provider: null
+plugin: 'block_content:90fd32ff-a579-47ea-b99b-7a8d6938f144'
+settings:
+  id: 'block_content:90fd32ff-a579-47ea-b99b-7a8d6938f144'
+  label: 'Headlines Block'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: "/node/add/*\r\n/node/*/edit\r\n"
+    negate: false
+    context_mapping: {  }

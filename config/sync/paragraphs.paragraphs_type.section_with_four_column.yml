@@ -1,0 +1,9 @@
+uuid: 53f00332-5698-4f21-8d2b-7b182d6a2742
+langcode: en
+status: true
+dependencies: {  }
+id: section_with_four_column
+label: 'Section With Four Column'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

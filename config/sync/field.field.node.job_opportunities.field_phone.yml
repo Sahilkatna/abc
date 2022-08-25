@@ -1,0 +1,27 @@
+uuid: dfdd42eb-f40a-4397-b3dc-ad4ae9018433
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_phone
+    - node.type.job_opportunities
+  module:
+    - telephone
+    - telephone_validation
+third_party_settings:
+  telephone_validation:
+    format: 0
+    country:
+      - GB
+id: node.job_opportunities.field_phone
+field_name: field_phone
+entity_type: node
+bundle: job_opportunities
+label: 'Phone number'
+description: 'Enter a phone number for applicants to contact you.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: telephone

@@ -1,0 +1,39 @@
+uuid: 2373102d-f03e-40a1-9a5f-d5f868469e51
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.talawa_carousel
+    - field.field.node.talawa_landing_page.field_carousel_height_small
+    - field.field.node.talawa_landing_page.field_hero_carousel
+    - field.field.node.talawa_landing_page.field_section
+    - node.type.talawa_landing_page
+  module:
+    - entity_reference_revisions
+    - user
+id: node.talawa_landing_page.talawa_carousel
+targetEntityType: node
+bundle: talawa_landing_page
+mode: talawa_carousel
+content:
+  field_hero_carousel:
+    type: entity_reference_revisions_entity_view
+    weight: 0
+    region: content
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+hidden:
+  addtoany: true
+  field_carousel_height_small: true
+  field_content_visibility: true
+  field_section: true
+  flag_follow_content: true
+  groups: true
+  groups_type_closed_group: true
+  groups_type_open_group: true
+  groups_type_public_group: true
+  links: true
+  private_message_link: true

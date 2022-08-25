@@ -1,0 +1,17 @@
+uuid: 4cdc9cf8-50ac-4031-a8e8-cc24d26faa2e
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.open_group
+  enforced:
+    config:
+      - user.role.industry
+id: open_group-0406d427d
+label: Industry
+weight: 5
+internal: true
+audience: outsider
+group_type: open_group
+permissions_ui: false
+permissions: {  }

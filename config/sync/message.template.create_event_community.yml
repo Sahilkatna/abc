@@ -1,0 +1,36 @@
+uuid: b7460672-a0ee-41e3-990e-d33a65a2bc6c
+langcode: en
+status: true
+dependencies:
+  module:
+    - activity_logger
+third_party_settings:
+  activity_logger:
+    activity_context: community_activity_context
+    activity_destinations:
+      stream_home: stream_home
+      notifications: notifications
+      stream_explore: stream_explore
+      stream_profile: stream_profile
+      stream_group: stream_group
+    activity_create_direct: 0
+    activity_action: create_entitiy_action
+    activity_bundle_entities:
+      node-event: node-event
+    activity_aggregate: 0
+    activity_entity_condition: ''
+_core:
+  default_config_hash: d_hYLyzo043jYPuyxksHaDanlpT5yoICTkQSdCnSyJA
+template: create_event_community
+label: 'Create event'
+description: 'A user created an event in the community'
+text:
+  -
+    value: "<p>[message:author:display-name] created an event</p>\r\n"
+    format: full_html
+settings:
+  'token options':
+    clear: false
+    'token replace': true
+  purge_override: false
+  purge_methods: {  }

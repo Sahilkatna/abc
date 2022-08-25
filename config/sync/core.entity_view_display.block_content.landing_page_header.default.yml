@@ -1,0 +1,31 @@
+uuid: 9b1920ca-06e1-4f38-a2d8-e7db62e1f07f
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.landing_page_header
+    - field.field.block_content.landing_page_header.body
+    - field.field.block_content.landing_page_header.field_heading
+  module:
+    - text
+id: block_content.landing_page_header.default
+targetEntityType: block_content
+bundle: landing_page_header
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_heading:
+    type: string
+    weight: 1
+    region: content
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+hidden: {  }

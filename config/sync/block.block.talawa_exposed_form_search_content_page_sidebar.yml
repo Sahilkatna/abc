@@ -1,0 +1,29 @@
+uuid: 2ef86da4-3e33-498e-a83a-aa4ade50f722
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.search_content
+  module:
+    - system
+    - views
+  theme:
+    - talawa
+id: talawa_exposed_form_search_content_page_sidebar
+theme: talawa
+region: sidebar_second
+weight: -58
+provider: null
+plugin: 'views_exposed_filter_block:search_content-page'
+settings:
+  id: 'views_exposed_filter_block:search_content-page'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: Filter
+visibility:
+  request_path:
+    id: request_path
+    pages: "/search/content\r\n/search/content/*"
+    negate: false
+    context_mapping: {  }

@@ -1,0 +1,29 @@
+uuid: d0b2273d-5750-46b3-a819-0d1e67540f51
+langcode: en
+status: true
+dependencies:
+  module:
+    - group
+    - node
+    - paragraphs
+    - profile
+    - talawa_profile
+_core:
+  default_config_hash: KKbANXhZ_2XODhSqcgsKdfPBN1s0h8ysG2xrNL1SiTs
+id: paragraph.field_featured_items
+field_name: field_featured_items
+entity_type: paragraph
+type: dynamic_entity_reference
+settings:
+  exclude_entity_types: false
+  entity_type_ids:
+    node: node
+    group: group
+    profile: profile
+module: talawa_profile
+locked: false
+cardinality: 3
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

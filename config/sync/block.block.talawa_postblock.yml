@@ -1,0 +1,26 @@
+uuid: 48d4234b-2bc5-49b4-8f86-3e39ab46360f
+langcode: en
+status: true
+dependencies:
+  module:
+    - social_post
+    - system
+  theme:
+    - talawa
+id: talawa_postblock
+theme: talawa
+region: hidden
+weight: -37
+provider: null
+plugin: post_block
+settings:
+  id: post_block
+  label: 'Post block'
+  provider: social_post
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: /stream
+    negate: false
+    context_mapping: {  }

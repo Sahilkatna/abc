@@ -1,0 +1,27 @@
+uuid: 09ee77e1-bae9-4751-9182-9957c243ae6a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_attachments
+    - node.type.job_opportunities
+  module:
+    - file
+id: node.job_opportunities.field_attachments
+field_name: field_attachments
+entity_type: node
+bundle: job_opportunities
+label: Attachments
+description: 'Use this field to upload documents related to the position you would wish to share with the applicants'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'txt pdf doc docx xls xlsx ppt pptx csv jpg png'
+  max_filesize: ''
+  description_field: false
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

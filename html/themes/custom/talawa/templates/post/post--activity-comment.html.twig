@@ -1,0 +1,38 @@
+{#
+/**
+* @file post-activity-comment.html.twig
+* @deprecated
+*
+* The template is not used anymore since comments are aggegrated with
+* the post itself. If a developer disables aggegration of comments
+* this template will be used again.
+*
+* Available variables:
+* - content: A list of content items. Use 'content' to print all content, or
+* - attributes: HTML attributes for the container element.
+*
+* @see template_preprocess_post()
+*
+* @ingroup themeable
+*/
+#}
+{{ attach_library('socialbase/comment') }}
+
+{%
+  set classes = [
+    'teaser',
+    'teaser--stream',
+    'teaser__notes'
+  ]
+%}
+<div{{ attributes.addClass(classes) }}>
+  <div class="teaser__body">
+    <div class="teaser__content">
+      <div class="iframe-container">
+          {% if content.field_post %}
+              {{ content.field_post }}
+          {% endif %}
+      </div>
+    </div>
+  </div>
+</div>

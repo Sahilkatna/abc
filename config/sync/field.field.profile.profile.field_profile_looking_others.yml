@@ -1,0 +1,19 @@
+uuid: 6cdddc06-f77e-4465-b0c4-13630e578486
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.profile.field_profile_looking_others
+    - profile.type.profile
+id: profile.profile.field_profile_looking_others
+field_name: field_profile_looking_others
+entity_type: profile
+bundle: profile
+label: profile_looking_others
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

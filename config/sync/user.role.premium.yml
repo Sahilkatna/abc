@@ -1,0 +1,43 @@
+uuid: 18da0ed7-c24f-404a-8b37-9719666b8f44
+langcode: en
+status: true
+dependencies: {  }
+id: premium
+label: Premium
+weight: 7
+is_admin: null
+permissions:
+  - 'create article content'
+  - 'create closed_group group'
+  - 'create event content'
+  - 'create field_event_image'
+  - 'create field_job_category'
+  - 'create field_topic_image'
+  - 'create job_opportunities content'
+  - 'create open_group group'
+  - 'create public_group group'
+  - 'delete article revisions'
+  - 'delete own article content'
+  - 'delete own event content'
+  - 'edit field_job_category'
+  - 'edit field_topic_image'
+  - 'edit own article content'
+  - 'edit own event content'
+  - 'edit own field_event_image'
+  - 'edit own field_job_category'
+  - 'edit own field_topic_image'
+  - 'edit own job_opportunities content'
+  - 'edit own topic content'
+  - 'use editorial transition archive'
+  - 'use editorial transition create_new_draft'
+  - 'use editorial transition publish'
+  - 'use editorial transition submitted'
+  - 'view article revisions'
+  - 'view field_job_category'
+  - 'view field_topic_image'
+  - 'view job_opportunities revisions'
+  - 'view node.job_opportunities.field_content_visibility:public content'
+  - 'view own field_event_image'
+  - 'view own field_job_category'
+  - 'view own field_topic_image'
+  - 'view topic revisions'

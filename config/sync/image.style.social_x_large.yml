@@ -1,0 +1,34 @@
+uuid: 1251ee74-1ab9-421c-b108-956a6cd475e9
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.profile_listing
+  module:
+    - crop
+    - image_effects
+_core:
+  default_config_hash: Y22L0Lq2-UwFKkP8KHInX7cfe6hxw7Bj028pYvOVaqw
+name: social_x_large
+label: 'social extra large (361 x 438)'
+effects:
+  8caebde6-8403-4c7c-8a0b-75374fb31168:
+    uuid: 8caebde6-8403-4c7c-8a0b-75374fb31168
+    id: crop_crop
+    weight: -10
+    data:
+      crop_type: profile_listing
+  06429c13-485a-4b8e-80a8-91ca034b566f:
+    uuid: 06429c13-485a-4b8e-80a8-91ca034b566f
+    id: image_effects_auto_orient
+    weight: -8
+    data:
+      scan_exif: true
+  7ed62d8f-4426-425b-b254-281556d82947:
+    uuid: 7ed62d8f-4426-425b-b254-281556d82947
+    id: image_scale_and_crop
+    weight: -9
+    data:
+      width: 361
+      height: 438
+      anchor: center-center

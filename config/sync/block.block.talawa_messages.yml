@@ -1,0 +1,20 @@
+uuid: 1008f329-3211-4fe0-8661-8ac202763ce7
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - talawa
+id: talawa_messages
+theme: talawa
+region: content
+weight: -59
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  provider: system
+  label_display: '0'
+visibility: {  }

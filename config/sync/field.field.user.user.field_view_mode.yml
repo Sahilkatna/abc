@@ -1,0 +1,21 @@
+uuid: 050802a3-8340-4c86-bd14-2e2f6d33f081
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_view_mode
+  module:
+    - options
+    - user
+id: user.user.field_view_mode
+field_name: field_view_mode
+entity_type: user
+bundle: user
+label: 'View Mode'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

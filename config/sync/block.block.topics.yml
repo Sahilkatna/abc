@@ -1,0 +1,31 @@
+uuid: 7c734d68-c055-451a-b135-99ae150fdd1d
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:landing_page_header:79580e47-ecfc-4cdc-bd8c-cd7c506aad0b'
+  module:
+    - block_content
+    - system
+  theme:
+    - talawa
+id: topics
+theme: talawa
+region: hero
+weight: 0
+provider: null
+plugin: 'block_content:79580e47-ecfc-4cdc-bd8c-cd7c506aad0b'
+settings:
+  id: 'block_content:79580e47-ecfc-4cdc-bd8c-cd7c506aad0b'
+  label: Topics
+  provider: block_content
+  label_display: visible
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: /news-landing-page
+    negate: false
+    context_mapping: {  }

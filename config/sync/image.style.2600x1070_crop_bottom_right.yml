@@ -1,0 +1,15 @@
+uuid: 4e55a9d3-3b71-4a3c-8526-98ab1d0059bc
+langcode: en
+status: true
+dependencies: {  }
+name: 2600x1070_crop_bottom_right
+label: '2600X1070 Crop Bottom Right'
+effects:
+  a49bc079-5996-4544-9cde-a9ca26d89aa2:
+    uuid: a49bc079-5996-4544-9cde-a9ca26d89aa2
+    id: image_crop
+    weight: 1
+    data:
+      width: 2600
+      height: 1070
+      anchor: right-bottom

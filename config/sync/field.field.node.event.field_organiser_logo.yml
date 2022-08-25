@@ -1,0 +1,38 @@
+uuid: 759620da-e3be-4c9e-a1fc-160cec1c7b5d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_organiser_logo
+    - node.type.event
+  module:
+    - image
+id: node.event.field_organiser_logo
+field_name: field_organiser_logo
+entity_type: node
+bundle: event
+label: 'Organiser logo'
+description: 'For the organiser logo, upload an image that best represents the event’s organiser. Please make sure that the image meets the standard size requirements- between 1000 and 2000 pixels wide, no larger than 2mb file size, and must be a png, a gif, a jpg, or a jpeg file type.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'png gif jpg jpeg'
+  max_filesize: 2MB
+  max_resolution: ''
+  min_resolution: ''
+  alt_field: false
+  alt_field_required: true
+  title_field: false
+  title_field_required: false
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: image

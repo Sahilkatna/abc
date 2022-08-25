@@ -1,0 +1,23 @@
+uuid: 6be45d29-0d49-4587-a7b1-8bbf62197c98
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.faq_discover_make.field_hero_carousel
+    - taxonomy.vocabulary.faq_discover_make
+  module:
+    - text
+id: taxonomy_term.faq_discover_make.default
+targetEntityType: taxonomy_term
+bundle: faq_discover_make
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_hero_carousel: true

@@ -1,0 +1,81 @@
+uuid: 9a90d2c8-f332-43af-b99b-ce30195248bc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.section_grid.field_background_image
+    - field.field.paragraph.section_grid.field_color
+    - field.field.paragraph.section_grid.field_heading_color
+    - field.field.paragraph.section_grid.field_section_heading
+    - field.field.paragraph.section_grid.field_section_wfc
+    - paragraphs.paragraphs_type.section_grid
+  module:
+    - bg_image_formatter
+    - color_field
+    - entity_reference_revisions
+id: paragraph.section_grid.default
+targetEntityType: paragraph
+bundle: section_grid
+mode: default
+content:
+  field_background_image:
+    weight: 2
+    label: hidden
+    settings:
+      image_style: ''
+      css_settings:
+        bg_image_selector: '#paragraph--id--[paragraph:id]'
+        bg_image_z_index: auto
+        bg_image_color: '#FFFFFF'
+        bg_image_x: left
+        bg_image_y: top
+        bg_image_attachment: scroll
+        bg_image_repeat: no-repeat
+        bg_image_background_size: cover
+        bg_image_media_query: all
+        bg_image_important: '1'
+        bg_image_path_format: absolute
+        bg_image_background_size_ie8: 0
+    third_party_settings: {  }
+    type: bg_image_formatter
+    region: content
+  field_color:
+    weight: 3
+    label: hidden
+    settings:
+      selector: '#paragraph--id--[paragraph:id]'
+      property: background-color
+      important: '1'
+      opacity: '1'
+    third_party_settings: {  }
+    type: color_field_formatter_css
+    region: content
+  field_heading_color:
+    weight: 4
+    label: hidden
+    settings:
+      selector: '#paragraph--id--[paragraph:id] .title-blue'
+      property: color
+      important: '1'
+      opacity: '1'
+    third_party_settings: {  }
+    type: color_field_formatter_css
+    region: content
+  field_section_heading:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_section_wfc:
+    type: entity_reference_revisions_entity_view
+    weight: 1
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+hidden: {  }

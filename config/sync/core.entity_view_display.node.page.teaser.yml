@@ -1,0 +1,64 @@
+uuid: 1374eb1d-828b-407b-ba85-68df1073aa63
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.page.body
+    - field.field.node.page.field_content_visibility
+    - field.field.node.page.field_except
+    - field.field.node.page.field_files
+    - field.field.node.page.field_page_comments
+    - field.field.node.page.field_page_image
+    - field.field.node.page.field_page_related_content
+    - image.style.social_x_large
+    - node.type.page
+  module:
+    - image
+    - options
+    - user
+_core:
+  default_config_hash: fvnV1FD8J0vpiQ30A86PeeMlepyrELqZ_fvPC7SZc10
+id: node.page.teaser
+targetEntityType: node
+bundle: page
+mode: teaser
+content:
+  field_content_visibility:
+    type: list_default
+    weight: 2
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_page_image:
+    type: image
+    weight: 0
+    label: above
+    settings:
+      image_style: social_x_large
+      image_link: content
+    third_party_settings: {  }
+    region: content
+  flag_follow_content:
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  links:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  addtoany: true
+  body: true
+  field_except: true
+  field_files: true
+  field_page_comments: true
+  field_page_related_content: true
+  groups: true
+  groups_type_closed_group: true
+  groups_type_open_group: true
+  groups_type_public_group: true
+  private_message_link: true

@@ -1,0 +1,28 @@
+uuid: b100f34b-42a2-48e5-b083-edbc4b8e73a4
+langcode: en
+status: true
+dependencies:
+  module:
+    - social_private_message
+    - system
+  theme:
+    - socialblue
+_core:
+  default_config_hash: xQ9nMy4zXCenXWqK5De34HV2f2Qjpe7Zcve0exq9484
+id: socialblue_pm_add_block
+theme: socialblue
+region: complementary_top
+weight: -97
+provider: null
+plugin: pm_add_block
+settings:
+  id: pm_add_block
+  label: 'Private Message add block'
+  provider: social_private_message
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: /user/inbox
+    negate: false
+    context_mapping: {  }

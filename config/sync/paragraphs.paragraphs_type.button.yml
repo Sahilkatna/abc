@@ -1,0 +1,11 @@
+uuid: 06e31e4a-9b81-4701-8920-4c086f0893ba
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: UHw_BT5Cdl80rdYumhNiASPhPGWOqDOflSUsOYLY2X4
+id: button
+label: Button
+icon_uuid: null
+description: 'Contain one link field for Logged in user and one for Anonymous, button style can be selected.'
+behavior_plugins: {  }

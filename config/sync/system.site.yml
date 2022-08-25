@@ -1,0 +1,14 @@
+uuid: 8db57bb5-9492-4b09-a649-18b1da57e849
+name: 'TALAWA MAKE'
+mail: alessandro@winonaesolutions.net
+slogan: ''
+page:
+  403: ''
+  404: ''
+  front: /node/28
+admin_compact_mode: false
+weight_select_max: 100
+langcode: en
+default_langcode: en
+_core:
+  default_config_hash: yXadRE77Va-G6dxhd2kPYapAvbnSvTF6hO4oXiOEynI

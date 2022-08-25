@@ -1,0 +1,10 @@
+uuid: b07b8569-bb7f-4fba-896b-ab0116051f5d
+langcode: en
+status: true
+dependencies:
+  module:
+    - group
+id: group.search_list
+label: 'Search List'
+targetEntityType: group
+cache: true

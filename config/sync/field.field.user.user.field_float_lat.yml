@@ -1,0 +1,24 @@
+uuid: 065efd22-2f32-4df5-a73e-cb13f17753a0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_float_lat
+  module:
+    - user
+id: user.user.field_float_lat
+field_name: field_float_lat
+entity_type: user
+bundle: user
+label: 'Float Lat'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: float

@@ -1,0 +1,33 @@
+uuid: 289b1b2f-1543-4fd6-8790-c417791ac766
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.talawa_block.field_talawa_block
+    - paragraphs.paragraphs_type.talawa_block
+  module:
+    - content_moderation
+    - social_landing_page
+id: paragraph.talawa_block.default
+targetEntityType: paragraph
+bundle: talawa_block
+mode: default
+content:
+  field_talawa_block:
+    weight: 101
+    settings:
+      plugin_id: ''
+      settings: {  }
+    third_party_settings: {  }
+    type: block_field_default
+    region: content
+  moderation_state:
+    type: moderation_state_default
+    weight: 100
+    settings: {  }
+    region: content
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true
+  uid: true

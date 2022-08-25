@@ -1,0 +1,18 @@
+uuid: dc39a4e4-ac71-40e6-8aa4-ff4380b4e6ab
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: 'Sign Up Landing Page'
+type: sign_up_landing_page
+description: ''
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true

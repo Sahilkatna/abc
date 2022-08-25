@@ -1,0 +1,32 @@
+uuid: 3cddaaf6-c5e8-43a3-85fc-64fa556420f9
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.event_view
+  module:
+    - node
+    - views
+  theme:
+    - talawa
+id: views_block__event_view_block_1
+theme: talawa
+region: content_bottom
+weight: 0
+provider: null
+plugin: 'views_block:event_view-block_1'
+settings:
+  id: 'views_block:event_view-block_1'
+  label: 'Read Next'
+  provider: views
+  label_display: visible
+  views_label: 'Read Next'
+  items_per_page: none
+visibility:
+  node_type:
+    id: node_type
+    bundles:
+      event: event
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

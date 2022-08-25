@@ -1,0 +1,26 @@
+uuid: eb5de01d-ab02-4367-9fb1-e2dc7881eea0
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+    - talawa_landing_pages
+  theme:
+    - talawa
+id: blogpageheaderbottom
+theme: talawa
+region: hero_bottom
+weight: 0
+provider: null
+plugin: blog_page_header_bottom
+settings:
+  id: blog_page_header_bottom
+  label: 'Blog page header bottom'
+  provider: talawa_landing_pages
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: /resources
+    negate: false
+    context_mapping: {  }

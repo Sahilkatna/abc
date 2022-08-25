@@ -1,0 +1,21 @@
+uuid: 5c0d4bc2-9651-410c-a689-3c084f4fbba5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.message.field_message_destination
+    - message.template.create_article_group
+  module:
+    - options
+id: message.create_article_group.field_message_destination
+field_name: field_message_destination
+entity_type: message
+bundle: create_article_group
+label: field_message_destination
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

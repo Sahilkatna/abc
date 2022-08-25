@@ -1,0 +1,27 @@
+uuid: 7e461ff2-28c8-4974-82db-de4d052abd46
+langcode: en
+status: true
+dependencies:
+  config:
+    - comment.type.comment
+    - core.entity_view_mode.comment.activity_comment
+    - field.field.comment.comment.field_comment_2
+    - field.field.comment.comment.field_description
+_core:
+  default_config_hash: UCH4wjLm2bBbHP6hQrLLcnkU7wU1OEpJYJKiKS0Xwwo
+id: comment.comment.activity_comment
+targetEntityType: comment
+bundle: comment
+mode: activity_comment
+content:
+  links:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  addtoany: true
+  field_comment_2: true
+  field_description: true
+  like_and_dislike: true
+  private_message_link: true

@@ -1,0 +1,88 @@
+{#
+/**
+ * @file
+ * Default theme implementation for an image field widget.
+ *
+ * Available variables:
+ * - attributes: HTML attributes for the containing element.
+ * - data: Render elements of the image widget.
+ *
+ * @see template_preprocess_image_widgettemplate_preprocess_image_widget()
+ *
+ * @ingroup themeable
+ */
+#}
+
+{% if data.upload['#id'] starts with "edit-field-post-image-0-upload" %}
+  {% set in_post = true %}
+{% else %}
+  {% set in_post = false %}
+{% endif %}
+
+{% if data.preview %}
+  {{ attach_library('socialbase/image-widget') }}
+  <div{{ attributes.addClass('image-widget').removeClass('clearfix') }}>
+    <div class="preview">
+      {{ data.preview }}
+        <div class="remove-image-btn">
+            <img src="{{ theme_path }}/images/remove.png">
+        </div>
+    </div>
+
+    <div class="data image-widget-data">
+
+      {% if in_post %}
+        {# Render widget data for photo's in posts without the file fields, image preview and remove button. #}
+        {{ data|without('preview', 'image_crop', 'file_' ~ data.fids['#value'][0], 'remove_button' ) }}
+      {% else %}
+        {# Render widget data without the image preview that was output already. #}
+        {{ data|without('preview', 'image_crop', 'file_' ~ data.fids['#value'][0]) }}
+      {% endif %}
+
+    </div>
+  </div>
+
+  {% if in_post %}
+    {# Render a "fake" remove button that triggers the actual (hidden) remove button. #}
+    <div class="hidden">{{ data.remove_button }}</div>
+    <button type="button" id="post-photo-remove" class="btn--post-remove-image">
+      <i class="fa fa-camera"></i>
+      <span class="sr-only">
+        {% trans %}Remove image{% endtrans %}
+      </span>
+    </button>
+
+  {% else %}
+
+    {{ attach_library('image_widget_crop/cropper') }}
+    {{ data.image_crop }}
+
+  {% endif %}
+
+{% else %}
+
+  {% if in_post %}
+
+    {# Render a "fake" image add button that triggers the actual (hidden) upload field. #}
+    <div{{ attributes.addClass(classes, 'hidden') }}>
+      {{ data }}
+    </div>
+    <button type="button" id="post-photo-add" class="btn btn-default">
+      <i class="fa fa-camera"></i>
+      <span>
+        {% trans %}Image{% endtrans %}
+      </span>
+    </button>
+
+  {% else %}
+
+    <div{{ attributes.addClass(classes, 'image-widget-btn') }}>
+        {{ data }}
+        <div class="input-image-btn">
+            <img src="{{ theme_path }}/images/image-upload.png">
+        </div>
+    </div>
+      
+  {% endif %}
+
+{% endif %}

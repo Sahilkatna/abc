@@ -1,0 +1,10 @@
+uuid: 11289dc4-d9c6-451b-bf30-a5b9b78917e7
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.big_square
+label: 'Big Square'
+targetEntityType: node
+cache: true

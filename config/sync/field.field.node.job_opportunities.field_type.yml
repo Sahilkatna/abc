@@ -1,0 +1,23 @@
+uuid: 2c2b66cf-9e88-4f4a-b80b-86d66504b6ca
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_type
+    - node.type.job_opportunities
+id: node.job_opportunities.field_type
+field_name: field_type
+entity_type: node
+bundle: job_opportunities
+label: Type
+description: 'Choosing from Job or Opportunity, select the type of ad you wish to post. Please be aware that the minimum salary for Jobs is £80/day. Anything below this will be changed to the  ‘Opportunity’ type.'
+required: true
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Opportunities
+  off_label: Jobs
+field_type: boolean

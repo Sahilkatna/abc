@@ -1,0 +1,21 @@
+uuid: 163fba5b-bb9c-4e9f-9842-3922b9189ca4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.message.field_message_context
+    - message.template.create_article_profile_stream
+  module:
+    - options
+id: message.create_article_profile_stream.field_message_context
+field_name: field_message_context
+entity_type: message
+bundle: create_article_profile_stream
+label: Context
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

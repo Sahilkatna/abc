@@ -1,0 +1,19 @@
+uuid: 7e87056d-8cb0-4c1f-be1a-379c7dbcecb5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_audience_description
+    - node.type.sign_up_landing_page
+id: node.sign_up_landing_page.field_audience_description
+field_name: field_audience_description
+entity_type: node
+bundle: sign_up_landing_page
+label: 'Audience Description'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

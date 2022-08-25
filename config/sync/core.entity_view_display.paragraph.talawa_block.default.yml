@@ -1,0 +1,22 @@
+uuid: c242c8a9-8116-4db6-be83-0c5df1e802bc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.talawa_block.field_talawa_block
+    - paragraphs.paragraphs_type.talawa_block
+  module:
+    - block_field
+id: paragraph.talawa_block.default
+targetEntityType: paragraph
+bundle: talawa_block
+mode: default
+content:
+  field_talawa_block:
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: block_field
+    region: content
+hidden: {  }

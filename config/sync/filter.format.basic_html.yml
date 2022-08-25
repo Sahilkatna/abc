@@ -1,0 +1,98 @@
+uuid: 6cabc942-42f4-4b28-926c-4443d8f13b07
+langcode: en
+status: true
+dependencies:
+  module:
+    - ckeditor_media_embed
+    - editor
+    - mentions
+    - social_embed
+    - talawa_profile
+    - url_embed
+_core:
+  default_config_hash: SQ4OQMLT5Ik1QbaFZ4BIzZHXUCwSEMO3PCznCaBH_jU
+name: 'Basic HTML'
+format: basic_html
+weight: 0
+filters:
+  filter_html:
+    id: filter_html
+    provider: filter
+    status: true
+    weight: -10
+    settings:
+      allowed_html: '<a href hreflang> <em> <strong> <cite> <blockquote cite> <code> <ul type> <ol start type> <li> <dl> <dt> <dd> <h2 id> <h3 id> <h4 id> <h5 id> <h6 id> <p> <br> <span> <img src alt data-entity-type data-entity-uuid data-align data-caption width height> <mention id> <drupal-url data-*> <div data-oembed-url>'
+      filter_html_help: false
+      filter_html_nofollow: false
+  filter_align:
+    id: filter_align
+    provider: filter
+    status: true
+    weight: 7
+    settings: {  }
+  filter_caption:
+    id: filter_caption
+    provider: filter
+    status: true
+    weight: 8
+    settings: {  }
+  filter_html_image_secure:
+    id: filter_html_image_secure
+    provider: filter
+    status: true
+    weight: 9
+    settings: {  }
+  editor_file_reference:
+    id: editor_file_reference
+    provider: editor
+    status: true
+    weight: 11
+    settings: {  }
+  filter_url:
+    id: filter_url
+    provider: filter
+    status: true
+    weight: 0
+    settings:
+      filter_url_length: 72
+  filter_autop:
+    id: filter_autop
+    provider: filter
+    status: true
+    weight: 0
+    settings: {  }
+  filter_mentions:
+    id: filter_mentions
+    provider: mentions
+    status: true
+    weight: 40
+    settings:
+      mentions_filter:
+        ProfileMention: ProfileMention
+        UserMention: UserMention
+  url_embed:
+    id: url_embed
+    provider: url_embed
+    status: true
+    weight: -50
+    settings: {  }
+  social_embed_convert_url:
+    id: social_embed_convert_url
+    provider: social_embed
+    status: true
+    weight: -2
+    settings:
+      url_prefix: ''
+  talawa_social_embed_convert_url:
+    id: talawa_social_embed_convert_url
+    provider: talawa_profile
+    status: true
+    weight: -1
+    settings:
+      url_prefix: ''
+  filter_ckeditor_media_embed:
+    id: filter_ckeditor_media_embed
+    provider: ckeditor_media_embed
+    status: true
+    weight: 0
+    settings: {  }

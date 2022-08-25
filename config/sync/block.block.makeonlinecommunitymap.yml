@@ -1,0 +1,31 @@
+uuid: 1edba020-c91a-4015-b5f1-a6a96ebb8481
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:map_page_header:a2125066-2ce9-466b-8d70-8494944dfae5'
+  module:
+    - block_content
+    - system
+  theme:
+    - talawa
+id: makeonlinecommunitymap
+theme: talawa
+region: hero
+weight: 0
+provider: null
+plugin: 'block_content:a2125066-2ce9-466b-8d70-8494944dfae5'
+settings:
+  id: 'block_content:a2125066-2ce9-466b-8d70-8494944dfae5'
+  label: 'MAKE Online Community Map'
+  provider: block_content
+  label_display: visible
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: /home-landing-page-map
+    negate: false
+    context_mapping: {  }

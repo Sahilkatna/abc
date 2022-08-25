@@ -1,0 +1,22 @@
+uuid: a51a2abd-9ae4-4f62-856a-a06f86ae16f0
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.faq_discover_make
+id: node.faq_discover_make.status
+field_name: status
+entity_type: node
+bundle: faq_discover_make
+label: Published
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

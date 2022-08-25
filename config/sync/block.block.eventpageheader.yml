@@ -1,0 +1,26 @@
+uuid: 1a5a1210-c574-4088-b7a2-47ce7f849fee
+langcode: en
+status: false
+dependencies:
+  module:
+    - system
+    - talawa_landing_pages
+  theme:
+    - talawa
+id: eventpageheader
+theme: talawa
+region: hero
+weight: -50
+provider: null
+plugin: event_page_header
+settings:
+  id: event_page_header
+  label: 'Event page header'
+  provider: talawa_landing_pages
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: /event-landing-page
+    negate: false
+    context_mapping: {  }

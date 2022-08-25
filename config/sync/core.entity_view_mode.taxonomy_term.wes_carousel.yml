@@ -1,0 +1,10 @@
+uuid: f3591f4c-61b8-4b63-ab44-b81eb77e4d40
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: taxonomy_term.wes_carousel
+label: 'Wes Carousel'
+targetEntityType: taxonomy_term
+cache: true

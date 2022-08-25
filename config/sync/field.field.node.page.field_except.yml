@@ -1,0 +1,19 @@
+uuid: 019c8f77-8fb1-4adb-b907-08acf08c6cad
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_except
+    - node.type.page
+id: node.page.field_except
+field_name: field_except
+entity_type: node
+bundle: page
+label: Except
+description: 'Enter a title for your page'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

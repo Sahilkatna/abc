@@ -1,0 +1,21 @@
+uuid: d3a4b8e9-0ffb-4b25-8851-5e18ea77c4a7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_view_mode
+    - node.type.job_opportunities
+  module:
+    - options
+id: node.job_opportunities.field_view_mode
+field_name: field_view_mode
+entity_type: node
+bundle: job_opportunities
+label: 'View Mode'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

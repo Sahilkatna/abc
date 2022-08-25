@@ -1,0 +1,29 @@
+uuid: 0f16ec9d-ea51-4197-88fb-ada58e46155a
+langcode: en
+status: false
+dependencies:
+  module:
+    - system
+    - user
+  theme:
+    - talawa
+id: talawa_breadcrumbs
+theme: talawa
+region: breadcrumb
+weight: 0
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  provider: system
+  label_display: '0'
+visibility:
+  user_role:
+    id: user_role
+    roles:
+      authenticated: authenticated
+      administrator: administrator
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'

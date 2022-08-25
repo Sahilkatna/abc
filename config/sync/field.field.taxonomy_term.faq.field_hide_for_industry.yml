@@ -1,0 +1,23 @@
+uuid: 61041158-ad68-4fad-9d3b-a4f3c8db3821
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_hide_for_industry
+    - taxonomy.vocabulary.faq
+id: taxonomy_term.faq.field_hide_for_industry
+field_name: field_hide_for_industry
+entity_type: taxonomy_term
+bundle: faq
+label: 'Hide for Industry'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'Yes'
+  off_label: 'No'
+field_type: boolean

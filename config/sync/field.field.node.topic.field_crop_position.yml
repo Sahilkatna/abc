@@ -1,0 +1,21 @@
+uuid: 5975079f-2944-441e-8ac9-815c02616c67
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_crop_position
+    - node.type.topic
+  module:
+    - options
+id: node.topic.field_crop_position
+field_name: field_crop_position
+entity_type: node
+bundle: topic
+label: 'Crop Position'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

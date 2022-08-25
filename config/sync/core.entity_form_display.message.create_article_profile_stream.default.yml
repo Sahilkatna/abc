@@ -1,0 +1,38 @@
+uuid: 7cd01223-a9de-4220-a583-2d97b6b63020
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.message.create_article_profile_stream.field_message_context
+    - field.field.message.create_article_profile_stream.field_message_destination
+    - field.field.message.create_article_profile_stream.field_message_related_object
+    - message.template.create_article_profile_stream
+  module:
+    - dynamic_entity_reference
+id: message.create_article_profile_stream.default
+targetEntityType: message
+bundle: create_article_profile_stream
+mode: default
+content:
+  field_message_context:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_message_destination:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_message_related_object:
+    weight: 2
+    settings:
+      match_operator: CONTAINS
+      size: 40
+      placeholder: ''
+    third_party_settings: {  }
+    type: dynamic_entity_reference_default
+    region: content
+hidden: {  }

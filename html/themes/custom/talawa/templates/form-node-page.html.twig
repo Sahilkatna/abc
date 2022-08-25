@@ -1,0 +1,125 @@
+{#
+/**
+ * @file
+ * Default theme implementation for a node edit form.
+ *
+ * Two column template for the node add/edit form.
+ *
+ * This template will be used when a node edit form specifies 'node_edit_form'
+ * as its #theme callback.  Otherwise, by default, node add/edit forms will be
+ * themed by form.html.twig.
+ *
+ * Available variables:
+ * - form: The node add/edit form.
+ *
+ * @see seven_form_node_form_alter()
+ *
+ * @ingroup themeable
+ */
+#}
+{{ form.form_build_id }}
+{{ form.form_token }}
+{{ form.form_id }}
+
+
+<div class="add-article">
+
+    <div class="row article-row node-type">
+        <div class="col-md-3">
+            <div class="border-top border-mg-right">
+                <h4>{{ form.title.widget['#title'] }}</h4>
+                <p><small>{{ form.field_except.widget['#description'] }}</small></p>
+            </div>
+        </div>
+        <div class="col-md-9">
+            <div class="form-widget">{{ form.title }}</div>
+			<div class="form-widget">{{ form.field_except.widget }}</div>
+        </div>
+    </div>
+	<div class="row article-row">
+        <div class="col-md-3">
+            <div class="border-top border-mg-right">
+                <h4>{{ form.field_page_image.widget[0]['#title'] }}</h4>
+                <div class="image-help-text"><p><small>{{ form.field_page_image.widget[0]['#description'] }}</small></p></div>
+            </div>
+        </div>
+        <div class="col-md-9 field-checkboxes feature-image-edit">
+            {{ form.field_page_image.widget }}
+        </div>
+    </div>
+    <div class="row article-row">
+        <div class="col-md-3">
+            <div class="border-top border-mg-right">
+                <h4>{{ form.body.widget['#title'] }}</h4>
+                <p><small>{{ form.body.widget['#description'] }}</small></p>
+            </div>
+        </div>
+        <div class="col-md-9 field-checkboxes">
+            {{ form.body.widget }}
+        </div>
+    </div>
+    <div class="row article-row">
+        <div class="col-xs-12 col-sm-12 col-md-3">
+            <div class="border-top border-mg-right">
+				<h4>{{ form.field_files.widget['#title'] }}</h4>
+				<p><small>{{ form.field_files.widget['#description'] }}</small></p>
+			</div>
+		</div>
+		
+        <div class="col-xs-12 col-sm-12 col-md-9 field-files-uploads">
+            {{ form.field_files.widget }}
+        </div>
+    </div>
+	
+    <div class="row article-row">
+        <div class="col-md-3">
+            <div class="border-top border-mg-right">
+                <h4>{{ form.field_page_related_content.widget['#title'] }}</h4>
+                <p><small>{{ form.field_page_related_content.widget['#description'] }}</small></p>
+            </div>
+        </div>
+        <div class="col-md-9 field-label-hidden add-more-content">
+            {{ form.field_page_related_content.widget }}
+        </div>
+    </div>
+ 
+    <div class="row article-row">
+        <div class="col-md-3">
+            <div class="border-top border-mg-right">
+                <h4>{{ form.field_content_visibility.widget['#title'] }}</h4>
+                <p><small>{{ form.field_content_visibility.widget['#description'] }}</small></p>
+            </div>
+        </div>
+        <div class="col-md-9 field-checkboxes-visibility">
+            {{ form.field_content_visibility.widget }}
+        </div>
+    </div>
+	
+    <div class="row article-row">
+        <div class="col-md-3">
+            <div class="border-top border-mg-right">
+                {#{{ vardumper(form.status) }}#}
+                <h4>{{ form.status.widget['#title'] }}</h4>
+                <p><small>{{ form.status.widget['#description'] }}</small></p>
+            </div>
+        </div>
+        <div class="col-md-9 field-checkboxes field-checkboxes-visibility">
+            {{ form.status.widget }}
+        </div>
+    </div>
+	
+</div>
+
+<div class="row article-row">
+	<div class="col-md-3 hidden-xs">
+	</div>
+	<div class="col-md-9">
+		<div class="form-butns">
+		{{ form.actions }}
+			</div>
+	</div>
+</div>
+<!--tabs end-->
+<div class="display-none">
+
+</div>

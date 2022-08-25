@@ -1,0 +1,23 @@
+uuid: 37cf360b-9936-44ef-9dcb-58eca2ee29b9
+langcode: en
+status: true
+dependencies:
+  module:
+    - image_effects
+name: 1000x1000
+label: 1000X1000
+effects:
+  c74db80f-2a94-4425-ad6c-66529895ea0a:
+    uuid: c74db80f-2a94-4425-ad6c-66529895ea0a
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 1000
+      height: 1000
+      anchor: center-center
+  3dc43222-d37a-4295-935f-0dac6dce1dc2:
+    uuid: 3dc43222-d37a-4295-935f-0dac6dce1dc2
+    id: image_effects_auto_orient
+    weight: 2
+    data:
+      scan_exif: true

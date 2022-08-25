@@ -1,0 +1,36 @@
+uuid: 9cb8e2be-cf3c-45b9-ab94-6d1e308fb9eb
+langcode: en
+status: true
+dependencies:
+  module:
+    - field_permissions
+    - file
+    - group
+    - image
+third_party_settings:
+  field_permissions:
+    permission_type: public
+_core:
+  default_config_hash: u7wTgG3APVnwXqEqtYhU-FN9kPGC5Rp3ha2eHf7rXas
+id: group.field_group_image
+field_name: field_group_image
+entity_type: group
+type: image
+settings:
+  uri_scheme: private
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+  target_type: file
+  display_field: false
+  display_default: false
+module: image
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

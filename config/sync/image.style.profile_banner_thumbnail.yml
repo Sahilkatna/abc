@@ -1,0 +1,15 @@
+uuid: 350e6e01-8897-4669-8096-35b445295749
+langcode: en
+status: true
+dependencies: {  }
+name: profile_banner_thumbnail
+label: 'Profile Banner Thumbnail'
+effects:
+  cd9ae72d-b2af-485f-bb61-667f90edc3d3:
+    uuid: cd9ae72d-b2af-485f-bb61-667f90edc3d3
+    id: image_scale_and_crop
+    weight: 3
+    data:
+      width: 330
+      height: 126
+      anchor: center-center

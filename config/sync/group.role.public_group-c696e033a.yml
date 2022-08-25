@@ -1,0 +1,17 @@
+uuid: 54bccfad-5824-4b52-81be-6fc0c19e3e05
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.public_group
+  enforced:
+    config:
+      - user.role.premium
+id: public_group-c696e033a
+label: Premium
+weight: 7
+internal: true
+audience: outsider
+group_type: public_group
+permissions_ui: false
+permissions: {  }

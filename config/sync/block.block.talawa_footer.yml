@@ -1,0 +1,28 @@
+uuid: ea737cf6-460c-4336-91d4-46119146f2b3
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.footer
+  module:
+    - block_class
+    - system
+  theme:
+    - talawa
+third_party_settings:
+  block_class:
+    classes: 'col-lg-2 col-md-3 col-sm-3 col-xs-12 block--intro-text card'
+id: talawa_footer
+theme: talawa
+region: footer
+weight: -34
+provider: null
+plugin: 'system_menu_block:footer'
+settings:
+  id: 'system_menu_block:footer'
+  label: Footer
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 0
+visibility: {  }

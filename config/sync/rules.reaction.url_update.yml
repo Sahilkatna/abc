@@ -1,0 +1,15 @@
+uuid: 6f5ad5e1-0dc4-4ada-86d7-a4e160742b73
+langcode: en
+status: true
+dependencies: {  }
+id: url_update
+label: 'Url Update'
+events:
+  -
+    event_name: 'rules_entity_insert:node'
+description: ''
+tags:
+  - ''
+config_version: '3'
+expression:
+  id: rules_rule

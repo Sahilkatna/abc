@@ -1,0 +1,31 @@
+uuid: e9cb5261-9a64-480d-8454-3d14b3ce3fda
+langcode: en
+status: true
+dependencies:
+  config:
+    - comment.type.article_comments
+    - field.field.comment.article_comments.field_comment_body
+    - field.field.comment.article_comments.field_description
+  module:
+    - text
+id: comment.article_comments.default
+targetEntityType: comment
+bundle: article_comments
+mode: default
+content:
+  field_comment_body:
+    weight: 1
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  links:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  addtoany: true
+  field_description: true
+  private_message_link: true

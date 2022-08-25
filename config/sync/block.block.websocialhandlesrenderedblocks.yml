@@ -1,0 +1,22 @@
+uuid: 9014c78f-f469-4e90-9be7-9c3434101a61
+langcode: en
+status: true
+dependencies:
+  module:
+    - talawa_profile
+  theme:
+    - talawa
+id: websocialhandlesrenderedblocks
+theme: talawa
+region: sidebar_first
+weight: -50
+provider: null
+plugin: profile_web_social_handles_block
+settings:
+  id: profile_web_social_handles_block
+  label: 'Web & social'
+  provider: talawa_profile
+  label_display: visible
+  context_mapping:
+    user: '@social_user.user_route_context:user'
+visibility: {  }

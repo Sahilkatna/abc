@@ -1,0 +1,7 @@
+edit_user:
+  excerpt: 'Change or update your information settings.'
+edit_profile:
+  excerpt: 'Tailor and update your profile.'
+profile_view:
+  title: 'Profiles you are following on MAKE Online.'
+  subtitle: 'Other members of the community will not be informed that you are following them, and you cannot see who is following you.'

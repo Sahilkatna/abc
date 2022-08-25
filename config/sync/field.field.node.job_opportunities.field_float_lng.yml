@@ -1,0 +1,23 @@
+uuid: ff7e4882-3433-48e3-a175-d59b0ec58e57
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_float_lng
+    - node.type.job_opportunities
+id: node.job_opportunities.field_float_lng
+field_name: field_float_lng
+entity_type: node
+bundle: job_opportunities
+label: 'Float Lng'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: float

@@ -1,0 +1,15 @@
+uuid: 5520debd-e938-4697-94b1-3545d98a3c69
+langcode: en
+status: true
+dependencies: {  }
+name: basic_page_sidebar
+label: 'basic page sidebar'
+effects:
+  93c3fdf3-1547-4b9b-9d00-b37c0b7229dc:
+    uuid: 93c3fdf3-1547-4b9b-9d00-b37c0b7229dc
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 69
+      height: 94
+      anchor: center-center

@@ -1,0 +1,29 @@
+uuid: e91dc292-863f-4005-b6a0-55f40665a2df
+langcode: en
+status: true
+dependencies:
+  module:
+    - book
+    - node
+  theme:
+    - talawa
+id: talawa_booknavigation_2
+theme: talawa
+region: complementary_top
+weight: -48
+provider: null
+plugin: book_navigation
+settings:
+  id: book_navigation
+  label: 'Table of contents'
+  provider: book
+  label_display: visible
+  block_mode: 'book pages'
+visibility:
+  node_type:
+    id: node_type
+    bundles:
+      book: book
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

@@ -1,0 +1,23 @@
+uuid: d240a841-8368-4e4a-8e4c-10589368b83e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_testimonial
+    - node.type.lead_slider
+  module:
+    - link
+id: node.lead_slider.field_testimonial
+field_name: field_testimonial
+entity_type: node
+bundle: lead_slider
+label: Testimonial
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+field_type: link

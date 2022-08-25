@@ -1,0 +1,37 @@
+uuid: 0591dc08-5cd1-4c6d-8f52-c2a0d9cf7d82
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.events
+  module:
+    - system
+    - user
+    - views
+  theme:
+    - talawa
+id: talawa_exposedformeventsevents_overview
+theme: talawa
+region: hidden
+weight: -36
+provider: null
+plugin: 'views_exposed_filter_block:events-events_overview'
+settings:
+  id: 'views_exposed_filter_block:events-events_overview'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: Filter
+visibility:
+  user_role:
+    id: user_role
+    roles:
+      authenticated: authenticated
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+  request_path:
+    id: request_path
+    pages: '/user/*/events'
+    negate: false
+    context_mapping: {  }

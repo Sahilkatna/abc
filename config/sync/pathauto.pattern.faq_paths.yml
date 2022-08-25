@@ -1,0 +1,24 @@
+uuid: 9e8ade3c-8273-4d63-8e11-1a17bbd24d5d
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - taxonomy
+id: faq_paths
+label: 'FAQ Paths'
+type: 'canonical_entities:taxonomy_term'
+pattern: '[term:vocabulary]/[term:parents:join-path]/[term:name]'
+selection_criteria:
+  b441c96b-1fb8-481b-91d3-872fcb0e31fe:
+    id: 'entity_bundle:taxonomy_term'
+    bundles:
+      faq: faq
+      faq_discover_make: faq_discover_make
+    negate: false
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    uuid: b441c96b-1fb8-481b-91d3-872fcb0e31fe
+selection_logic: and
+weight: -4
+relationships: {  }

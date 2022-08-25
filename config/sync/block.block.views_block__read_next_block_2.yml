@@ -1,0 +1,41 @@
+uuid: f97b5e5f-f03c-45c5-909b-0c3230de4cec
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.read_next
+  module:
+    - ctools
+    - node
+    - views
+  theme:
+    - talawa
+id: views_block__read_next_block_2
+theme: talawa
+region: sidebar_second
+weight: -63
+provider: null
+plugin: 'views_block:read_next-block_2'
+settings:
+  id: 'views_block:read_next-block_2'
+  label: Latest
+  provider: views
+  label_display: visible
+  views_label: Latest
+  items_per_page: none
+  context_mapping: {  }
+visibility:
+  node_type:
+    id: node_type
+    bundles:
+      article: article
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      article: article
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

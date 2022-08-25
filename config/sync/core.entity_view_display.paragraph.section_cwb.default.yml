@@ -1,0 +1,111 @@
+uuid: f2ad1dc9-0dfe-4f49-a230-a90e400654c0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.section_cwb.field_background_image
+    - field.field.paragraph.section_cwb.field_caption_bg_color
+    - field.field.paragraph.section_cwb.field_description
+    - field.field.paragraph.section_cwb.field_heading_color
+    - field.field.paragraph.section_cwb.field_link
+    - field.field.paragraph.section_cwb.field_second_title
+    - field.field.paragraph.section_cwb.field_section_heading
+    - field.field.paragraph.section_cwb.field_title
+    - paragraphs.paragraphs_type.section_cwb
+  module:
+    - bg_image_formatter
+    - color_field
+    - talawa_landing_pages
+    - text
+id: paragraph.section_cwb.default
+targetEntityType: paragraph
+bundle: section_cwb
+mode: default
+content:
+  field_background_image:
+    weight: 6
+    label: hidden
+    settings:
+      image_style: ''
+      css_settings:
+        bg_image_selector: '#paragraph--id--[paragraph:id]'
+        bg_image_z_index: auto
+        bg_image_color: '#FFFFFF'
+        bg_image_x: left
+        bg_image_y: top
+        bg_image_attachment: scroll
+        bg_image_repeat: no-repeat
+        bg_image_background_size: cover
+        bg_image_media_query: all
+        bg_image_important: '1'
+        bg_image_path_format: absolute
+        bg_image_background_size_ie8: 0
+    third_party_settings: {  }
+    type: bg_image_formatter
+    region: content
+  field_caption_bg_color:
+    weight: 7
+    label: hidden
+    settings:
+      selector: '#paragraph--id--[paragraph:id] .blue-type-links .field--item a'
+      property: background-color
+      important: '1'
+      opacity: '1'
+    third_party_settings: {  }
+    type: color_field_formatter_css
+    region: content
+  field_description:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_heading_color:
+    weight: 8
+    label: hidden
+    settings:
+      selector: '#paragraph--id--[paragraph:id] .title-blue'
+      property: color
+      important: '1'
+      opacity: '1'
+    third_party_settings: {  }
+    type: color_field_formatter_css
+    region: content
+  field_link:
+    weight: 2
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link_arrow_circle
+    region: content
+  field_second_title:
+    weight: 4
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_section_heading:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_title:
+    weight: 5
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden: {  }

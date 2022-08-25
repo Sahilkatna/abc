@@ -1,0 +1,23 @@
+uuid: db28b47e-dc25-4998-afcd-5f2cad228463
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_sticky_top_of_lists
+    - node.type.job_opportunities
+id: node.job_opportunities.field_sticky_top_of_lists
+field_name: field_sticky_top_of_lists
+entity_type: node
+bundle: job_opportunities
+label: 'Sticky top of lists'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'Yes'
+  off_label: 'No'
+field_type: boolean

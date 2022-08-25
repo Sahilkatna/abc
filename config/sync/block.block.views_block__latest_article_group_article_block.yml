@@ -1,0 +1,31 @@
+uuid: 9ca2880a-b4f3-44a2-8532-768a6c9e29c4
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.latest_article
+  module:
+    - system
+    - views
+  theme:
+    - talawa
+id: views_block__latest_article_group_article_block
+theme: talawa
+region: complementary_bottom
+weight: -60
+provider: null
+plugin: 'views_block:latest_article-group_article_block'
+settings:
+  id: 'views_block:latest_article-group_article_block'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+  context_mapping: {  }
+visibility:
+  request_path:
+    id: request_path
+    pages: "/group/*/stream\r\n/group/*/about"
+    negate: false
+    context_mapping: {  }

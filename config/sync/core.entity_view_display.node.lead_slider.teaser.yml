@@ -1,0 +1,67 @@
+uuid: 132d09c7-3933-4cd1-b38e-90b6a922fa4b
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.lead_slider.field_logout_view
+    - field.field.node.lead_slider.field_slide_desc
+    - field.field.node.lead_slider.field_slide_image
+    - field.field.node.lead_slider.field_testimonial
+    - node.type.lead_slider
+  module:
+    - user
+id: node.lead_slider.teaser
+targetEntityType: node
+bundle: lead_slider
+mode: teaser
+content:
+  flag_follow_content:
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  groups:
+    label: above
+    weight: -5
+    region: content
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  groups_type_closed_group:
+    label: above
+    weight: -5
+    region: content
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  groups_type_open_group:
+    label: above
+    weight: -5
+    region: content
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  groups_type_public_group:
+    label: above
+    weight: -5
+    region: content
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  links:
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  addtoany: true
+  field_logout_view: true
+  field_slide_desc: true
+  field_slide_image: true
+  field_testimonial: true
+  private_message_link: true

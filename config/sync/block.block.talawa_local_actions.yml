@@ -1,0 +1,18 @@
+uuid: 70365952-fc7a-40b2-9306-e7328e4685f6
+langcode: en
+status: true
+dependencies:
+  theme:
+    - talawa
+id: talawa_local_actions
+theme: talawa
+region: complementary_top
+weight: -59
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  provider: core
+  label_display: '0'
+visibility: {  }

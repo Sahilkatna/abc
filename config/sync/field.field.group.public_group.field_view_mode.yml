@@ -1,0 +1,23 @@
+uuid: 332ba303-1464-417c-a992-4a0645bdc41d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.group.field_view_mode
+    - group.type.public_group
+  module:
+    - options
+id: group.public_group.field_view_mode
+field_name: field_view_mode
+entity_type: group
+bundle: public_group
+label: 'View Mode'
+description: 'Lorem Ipsum dollar sit amet is a simply dummy text'
+required: true
+translatable: false
+default_value:
+  -
+    value: 'Big Square'
+default_value_callback: ''
+settings: {  }
+field_type: list_string

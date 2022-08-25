@@ -1,0 +1,31 @@
+uuid: 672c0dbf-54bf-4594-ba32-0cd7fec12c75
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:landing_page_header:6ff46090-a053-4d33-82ba-3763b58f6f87'
+  module:
+    - block_content
+    - system
+  theme:
+    - talawa
+id: resourcesfromthecommunity
+theme: talawa
+region: hero
+weight: 0
+provider: null
+plugin: 'block_content:6ff46090-a053-4d33-82ba-3763b58f6f87'
+settings:
+  id: 'block_content:6ff46090-a053-4d33-82ba-3763b58f6f87'
+  label: 'Resources from the Community'
+  provider: block_content
+  label_display: visible
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: /resources
+    negate: false
+    context_mapping: {  }

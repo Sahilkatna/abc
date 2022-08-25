@@ -1,0 +1,23 @@
+uuid: cd583131-0ab5-4a5c-a887-4081c7b7a48e
+langcode: en
+status: true
+dependencies:
+  module:
+    - private_message
+  theme:
+    - talawa
+_core:
+  default_config_hash: YyBv3P89JqhFXGtEQj5CYIzIXVd8YzgjkBCvgYQJUU8
+id: privatemessagenotification
+theme: talawa
+region: hidden
+weight: -3
+provider: null
+plugin: private_message_notification_block
+settings:
+  id: private_message_notification_block
+  label: 'Private Message Notification'
+  provider: private_message
+  label_display: '0'
+  ajax_refresh_rate: 15
+visibility: {  }

@@ -1,0 +1,32 @@
+uuid: 1f551da7-9e20-4c4f-87c0-8c050e5c687d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_job_application
+    - node.type.job_opportunities
+    - webform.webform.job_apply_form
+  module:
+    - webform
+id: node.job_opportunities.field_job_application
+field_name: field_job_application
+entity_type: node
+bundle: job_opportunities
+label: 'Job Application'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    default_data: ''
+    status: open
+    open: ''
+    close: ''
+    target_uuid: b54feb5d-cb00-4302-8c5f-1b23de30f3e3
+default_value_callback: ''
+settings:
+  handler: 'default:webform'
+  handler_settings:
+    target_bundles: null
+    auto_create: false
+field_type: webform
